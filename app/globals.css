@@ -39,7 +39,6 @@ html, body {
   scroll-snap-align: start;
 }
 
-/* HeroSection.module.css */
 
 .hero-section {
   position: relative;
@@ -61,72 +60,24 @@ html, body {
   z-index: 10;
 }
 
-/* 로고 */
-.hero-logo img {
-  display: block;
-  width: 141px;
-  height: auto;
-}
 
-/* 햄버거 버튼 */
-.hero-menu {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 32px;
-  height: 24px;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-}
-.hero-menu span {
-  display: block;
-  height: 3px;
-  background: #e10600;
-  border-radius: 2px;
-}
 
-/* 중앙 텍스트 영역 */
-.hero-content {
-  position: absolute;
-  top: 50%; left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  color: #e10600;
-  z-index: 5;
-  padding: 0 1rem;
-  width: 100%;
-  max-width: 800px;
-}
 
-/* 한글 타이틀 */
-.hero-title {
-  font-family: 'Noto Sans KR', sans-serif;
-  font-weight: 900;
-  font-size: 2.5rem;
-  line-height: 1.1;
-  margin: 0;
-}
-@media (min-width: 640px) {
-  .hero-title { font-size: 3.5rem; }
-}
-@media (min-width: 1024px) {
-  .hero-title { font-size: 4.5rem; }
-}
+/* ── 600px 이하에서는 스냅 기능 해제 ── */
+@media (max-width: 600px) {
+  html, body {
+    overflow: auto;           /* 모바일에서 전체 스크롤 허용 */
+  }
 
-/* 영어 서브타이틀 */
-.hero-subtitle {
-  font-family: 'Roboto', sans-serif;
-  font-weight: 500;
-  font-size: 0.875rem;
-  text-transform: uppercase;
-  letter-spacing: 0.15em;
-  margin-top: 0.75rem;
-}
-@media (min-width: 640px) {
-  .hero-subtitle { font-size: 1rem; }
-}
-@media (min-width: 1024px) {
-  .hero-subtitle { font-size: 1.125rem; }
-}
+  .snap-container {
+    height: auto;             /* 컨테이너 높이를 컨텐츠에 맞춤 */
+    overflow-y: auto;         /* 세로 스크롤 허용 */
+    scroll-snap-type: none;   /* 스냅 기능 해제 */
+  }
 
+  /* 개별 섹션 높이도 auto로 돌려줘야 자연 스크롤 */
+  .snap-container > .snap-start {
+    scroll-snap-align: none;
+    min-height: auto;
+  }
+}
