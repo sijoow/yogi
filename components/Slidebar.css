@@ -1,0 +1,215 @@
+/* Slidebar.css */
+
+/* ─── (1) 오버레이 ───────────────────────────────────────────── */
+.slide-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 19;
+}
+.slide-overlay.visible {
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* ─── (2) X 닫기 버튼 ───────────────────────────────────────── */
+.close-btn {
+  position: fixed;               /* 뷰포트 기준 고정 */
+  top: calc(60/1080 * 100%);     /* 햄버거 버튼과 동일 */
+  right: calc(90/1920 * 100%);
+  width: 48px;                   /* 햄버거 버튼과 동일 */
+  height: 48px;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  z-index: 100;                  /* 햄버거 버튼보다 위 */
+  pointer-events: all;
+  font-size: 0;                  /* 텍스트 숨김 */
+}
+
+/* X 아이콘: 두 개의 선으로 그림 */
+.close-btn::before,
+.close-btn::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 24px;    /* 선 길이 */
+  height: 2px;    /* 선 두께 */
+  background: #fff;
+}
+.close-btn::before {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+.close-btn::after {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+/* ─── (3) 슬라이드 패널 ─────────────────────────────────────── */
+.slidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #000;
+  color: #fff;
+  transform: translateX(100%);
+  transition: transform 0.3s ease-in-out;
+  z-index: 20;
+  padding: 60px 20px 20px; /* 헤더(60px)만큼 패딩 */
+  box-sizing: border-box;
+  overflow-y: auto;
+}
+.slidebar.open {
+  transform: translateX(0);
+}
+
+
+/* ─── (6) 햄버거 버튼 컨테이너 ───────────────────────────────── */
+.btn_tl {
+  display: block;
+  position: fixed;
+  top: calc(60/1080 * 100%);
+  right: calc(60/1920 * 100%);
+  width: 40px;
+  height: 32px;
+  z-index: 20;   /* 슬라이드바보다 낮게, X 버튼이 대신 위로 올라옴 */
+  cursor: pointer;
+}
+
+.btn_tl.open_btn {
+  z-index:22;
+}
+
+/* ─── (7) 햄버거 3줄 기본 스타일 ───────────────────────────── */
+.btn_tl span {
+  display: block;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: #fff;
+  transition: all 0.2s ease-out;
+}
+.btn_tl span.top {
+  top: 0;
+  transform: rotate(0);
+}
+.btn_tl span.middle {
+  top: 14px;  /* (32 - 4) / 2 */
+  opacity: 1;
+}
+.btn_tl span.bottom {
+  bottom: 0;
+  transform: rotate(0);
+}
+
+/* ─── (8) open_btn 붙었을 때 X 변신 ─────────────────────────── */
+.btn_tl.open_btn span.top {
+  transform: translateY(14px) rotate(45deg);
+}
+.btn_tl.open_btn span.middle {
+  opacity: 0;
+}
+.btn_tl.open_btn span.bottom {
+  transform: translateY(-14px) rotate(-45deg);
+}
+
+
+
+/*안쪽 데이터*/
+
+.inner {
+  width: calc(505 / 1430 * 100%);
+  min-width: 450px;
+  max-width: 505px;
+  padding: 0;
+  text-align: left;
+  margin:0 auto;
+}
+
+.inner #header{
+  display:inline-block;
+  width:100%;
+}
+.inner #header ul li{ 
+  width:100%;
+  margin-top:8%;
+}
+.inner #header ul li:first-child{
+  margin-top:0px;
+}
+
+.inner #footer{
+  border-top:1px solid #fff;
+  padding-top:5%;
+  margin-top:7%;
+}
+
+
+/*이너 부분 css 반응형*/
+@media (max-width: 600px) {
+/* 기본버튼 */
+h1.logo{
+  top:calc(12/720*100%);
+  left:calc(28/720*100%);
+  width:calc(156/720*100%);
+}
+
+.btn_tl{
+  top: 22.5px;
+  right: 16.5px;
+  width:28px;
+  height:21.5px;
+}
+.btn_tl span{height:2px;}
+.btn_tl span.middle{top:10px;}
+.btn_tl.close span.top{top:9px;}
+.btn_tl.close span.bottom{bottom:10.5px;}
+
+.btn_tl.open_btn span.top {
+  transform: translateY(5px) rotate(45deg);
+}
+.btn_tl.open_btn span.middle {
+  opacity: 0;
+}
+.btn_tl.open_btn span.bottom {
+  transform: translateY(-14px) rotate(-45deg);
+}
+
+
+/*레이아웃*/
+.inner{
+  width:90%;
+  max-width:665px;
+  min-width:320px;
+}
+ nav ul li:nth-child(1) img{width: auto; height:31px; }
+ nav ul li:nth-child(2) img{width: auto; height:31px; }
+ nav ul li:nth-child(3) img{width: auto; height:31px; }
+ nav ul li:nth-child(4) img{width: auto; height:31px; }
+ nav ul li:nth-child(5) img{width: auto; height:31px; }
+ nav ul li:nth-child(6) img{width: auto; height:31px; }
+nav ul li:nth-child(7) img{width: auto; height:31px; }
+#site_map footer{
+  margin-top:calc(80/846*100%);
+  padding-top:calc(20/846*100%);;
+}
+
+#header{width:90%}
+ #nav{width:90%}
+.inner #footer{
+  border-top:1px solid #fff;
+  padding-top:5%;
+  margin-top:7%;
+  width:90%
+}
+
+
+
+}

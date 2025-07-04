@@ -1,0 +1,160 @@
+/*간격바*/
+.section-indicator {
+  position: fixed;
+  right: 5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;          /* Tailwind의 space-y-3 정도 */
+  z-index: 4;
+}
+
+.section-indicator__bar {
+  width: 1.5rem;         /* Tailwind w-6 */
+  height: 0.12rem;       /* Tailwind h-1 */
+  border-radius: 0.125rem;
+  background-color: #ff0000; /* 기본 빨강 */
+  transition: background-color 0.3s;
+}
+
+.section-indicator__bar--active {
+  background-color: #ffffff;
+  width:3rem;
+}
+
+/* ── 1. landing-bg: 영역, overflow 설정 ── */
+.landing-bg {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+i{font-style:normal;}
+
+
+
+/* ── 2. 배경 레이어 (::before) ── */
+.landing-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;  
+  background-image: url('https://www.boosterz.co.kr/img/bg/sub21_bg.png');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  transform-origin: center center;
+  /* 배경만 확대 애니메이션 */
+  animation: bgZoom 5s ease-in-out forwards;
+  z-index: 0;
+}
+
+/* ── 3. 텍스트 컨텐츠 래퍼 ── */
+.content {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ── 1) hero-text: 2줄 묶음 container ── */
+.hero-text {
+  display: block;
+  max-width: 90vw;
+  margin: 0 auto;
+  /* 텍스트만 줄어드는 애니메이션 */
+  transform-origin: center center;
+  animation: textZoom 5s ease-in-out forwards;
+}
+
+/* ── 2) 각 span: inline-grid 으로 NO / <i>…</i> 배치 ── */
+.hero-text span {
+  display: inline-grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  white-space: nowrap;
+
+  font-family: 'Roboto', sans-serif;
+  font-weight: 1000;
+  line-height: 1;
+  color: #fff;
+
+  /* 반응형 폰트 크기: viewport 너비 기준, 최소 3rem, 최대 20rem */
+  font-size: clamp(3rem, 11vw, 20rem);
+}
+
+/* i 요소는 content 그대로 보여 주기 */
+.hero-text span i {
+  display: inline;
+}
+
+/* ── 3) 두 줄로 나누기 ── */
+.hero-text span + span {
+  display: block;
+}
+
+/* ── 4) 모바일 (≤1000px): 1열×4행 ── */
+@media (max-width: 1000px) {
+  .section-indicator { display: none; }
+  .hero-text { width: 100%; }
+
+  .hero-text span {
+    /* 한 열로 바꿔 줄바꿈 허용 */
+    display: block;
+    white-space: normal;
+    font-weight: 900;
+    line-height: 0.9;
+
+    /* 모바일용 클램프: 최소 4rem, viewport 20vw, 최대 20rem */
+    font-size: clamp(4rem, 25vw, 20rem);
+  }
+
+  .hero-text span i {
+    display: block;
+    margin-top: -1rem
+  }
+
+}
+
+
+/* ── 배경 확대 애니메이션 ── */
+@keyframes bgZoom {
+  from { transform: scale(1); }
+  to   { transform: scale(1.1); }
+}
+
+
+/* ── 텍스트 깜빡임 애니메이션: opacity 0.4 → 1 두 번 깜빡 ── */
+@keyframes textBlink {
+  0%   { opacity: 0.4; }
+  20%  { opacity: 1; }
+  40%  { opacity: 0.4; }
+  60%  { opacity: 1; }
+  100% { opacity: 1; }
+}
+
+/* ── .hero-text 에 애니메이션 적용 ── */
+.hero-text {
+  /* 4초 동안 두 번 깜빡이고, 끝나면 opacity:1 유지 */
+  animation: textBlink 1s ease-in-out forwards;
+  opacity: 0.4; /* 시작 상태 */
+}
+
+
+
+/*SECTION2 CSS부분*/
+
+.section2_bg {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background-image: url('http://yogibo.openhost.cafe24.com/yogico/img/test/0001.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 100% 100%;
+}

@@ -1,0 +1,188 @@
+/* SearchIcon.css */
+
+/* ─── (1) 검색 아이콘 버튼 ───────────────────────────────── */
+
+
+.search-icon-btn{
+    display: block;
+    position: fixed;
+    bottom: calc(60 / 1080 * 100%);
+    right: calc(60 / 1920 * 100%);
+    width: calc(27 / 1920 * 100%);
+    height: calc(42 / 1920 * 100%);
+    min-width: 14px;
+    min-height: 30px;
+    max-width: 20px;
+    max-height: 42px;
+    transition: all 0.2s ease-in-out;
+    z-index: 3;
+    cursor:pointer;
+}
+
+
+  .search-icon-btn img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  /* ─── (2) 전체 오버레이 컨테이너 ───────────────────────────── */
+  .map-overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    transform: translateX(100%);
+    transition: transform 0.4s ease-in-out;
+    z-index: 25;
+    box-shadow: inset 0 0 0 2000px rgba(0,0,0,0.2);
+  }
+  .map-overlay.open {
+    transform: translateX(0);
+  }
+  
+  /* ─── (3) 좌측 맵 컨테이너 ──────────────────────────────────── */
+  .map-container {
+    flex: 1;              /* 남는 공간 모두 차지 */
+    overflow: hidden;
+  }
+  .map-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+  
+  /* ─── (4) 우측 정보 패널 ──────────────────────────────────── */
+/* 1) map-info 컨테이너를 flex-end 로 변경해서 내용이 아래로 붙도록 */
+.map-info {
+    display: flex;              /* flex 로 재정의 */
+    flex-direction: column;     /* 세로축 정렬 */
+    justify-content: flex-end;  /* 아래쪽에 몰아넣기 */
+    align-items: center;        /* 가로 중앙 정렬 (원하시면 제거) */
+    padding: 60px 20px 40px;    /* 아래쪽 여유(40px) 주기 */
+    background:#111;
+    width:20%
+  }
+  
+  /* 2) .info-logo 필터 적용으로 흰색 느낌 내기 */
+  .map-info .info-logo {
+    /* 로고 png가 컬러일 때, 흰색처럼 보이게 필터로 반전+밝기 조정 */
+    filter: brightness(0) invert(1);
+    width: 120px;
+    margin-bottom: 20px;
+  }
+  
+  /* 닫기 버튼(X) */
+  .map-info .close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 32px; height: 32px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  .info-content{width:100%;}
+  .map-info .close-btn::before,
+  .map-info .close-btn::after {
+    content: "";
+    position: absolute;
+    top: 50%; left: 50%;
+    width: 24px; height: 2px;
+    background: #fff;
+  }
+  .map-info .close-btn::before {
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+  .map-info .close-btn::after {
+    transform: translate(-50%, -50%) rotate(-45deg);
+  }
+  
+  /* 로고 */
+  .info-logo {
+    width: 150px;
+    margin-bottom: 20px;
+    display: block;
+  }
+  
+  /* 주소/전화/팩스 */
+  .map-info address {
+    font-style: normal;
+    font-size: 14px;
+    line-height: 1.5;
+    color:#fff;
+  }
+  
+ /* ─── (추가) 모바일(≤600px) 반응형 ─────────────────────────── */
+ @media (max-width: 600px) {
+    /* (1) 세로 레이아웃 유지 */
+    .map-overlay {
+      flex-direction: column;
+    }
+  
+    /* (2) 지도 패널 높이를 50vh로 */
+    .map-container {
+      height: 50vh;
+    }
+    .map-container iframe {
+      height: 100%;
+    }
+  
+    /* (3) 정보 패널도 50vh, 내용은 세로축 중앙정렬 */
+    .map-info {
+      width: 100%;
+      height: 30vh;
+      padding: 20px;
+      box-sizing: border-box;
+  
+      display: flex;
+      flex-direction: column;
+      justify-content: center;    /* 세로 중앙정렬 */
+      align-items: flex-start;     /* 왼쪽 정렬 (원하시면 center로) */
+    }
+  
+    /* (4) 로고 크기 & 여백 조정 */
+    .map-info .info-logo {
+      width: 120px;
+      margin-bottom: 16px;
+    }
+  
+    /* (5) 닫기 버튼 위치 */
+    .map-info .close-btn {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      width: 32px;
+      height: 32px;
+      top:74%
+    }
+  
+    /* (6) 주소/폰트 사이즈 조정 */
+    .map-info address {
+      font-size: 13px;
+      line-height: 1.4;
+    }
+
+    .info-content{
+        width:90%;
+        margin:0 auto
+    }
+
+    .search-icon-btn {
+        z-index: 3;
+        cursor: pointer;
+        width: 100%;
+        max-width: 35px;
+        max-height: 42px;
+        transition: all .2s ease-in-out;
+        display: block;
+        position: fixed;
+        bottom: 8.33333%;
+        right: 2.60417%;
+    }
+
+  }
+  

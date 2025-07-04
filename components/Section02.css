@@ -1,0 +1,167 @@
+/*──────────────────────────────────────────────────────────
+  Section02.css — Section01과 완전 분리된 네이밍, 1430px 기준 이미지 크기
+──────────────────────────────────────────────────────────*/
+
+/* 배경 & 풀뷰포트 */
+.sec02-bg {
+    background-color: #ff0000;
+  }
+  .sec02-fullvh {
+    width: 100dvw;
+    height: 100dvh;
+  }
+  
+  /* 컨테이너 가로 중앙 고정 */
+  .sec02-inner {
+    width: calc(1390 / 1430 * 100%);
+    max-width: 1390px;
+    margin: 0 auto;
+    position: relative;
+    padding-top: 120px;
+  }
+  
+  /* 공통 줄 스타일 */
+  .sec02-line {
+    display: flex;
+    justify-content: flex-start;
+    opacity: 1;
+  }
+  
+  /* 1st line: static (바로 보이기) */
+  .sec02-line1.static {
+    opacity: 1;
+    transform: none;
+  }
+
+  .sec02-line{
+    margin-top:20px
+  }
+
+    .sec02-img3{
+    width: calc(850 / 1200 * 100%);
+    max-width: 850px;
+    }
+
+  .sec02-arr{
+    padding-top: calc(100 / 665 * 100%);
+    padding-left: calc(31 / 665 * 100%);
+  }
+  
+
+
+
+  /* 1) 슬라이드 다운 (위→아래) 키프레임 */
+@keyframes sec02-fadeDown {
+    from {
+      opacity: 0;
+      transform: translateY(-50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* 2) 화살표 깜빡임 */
+  @keyframes sec02-blink {
+    0%, 50%, 100% { opacity: 1; }
+    25%, 75%     { opacity: 0; }
+  }
+  
+  /* 3) 초기 상태: 보이지 않고 위로 살짝 올라가 있음 */
+  .sec02-line2,
+  .sec02-line3 {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  
+  /* 4) 인터섹션 관찰 후 붙는 .visible 에 애니메이션 연결 */
+  .sec02-line2.visible {
+    animation: sec02-fadeDown 0.8s ease-out forwards;
+  }
+  .sec02-line3.visible {
+    animation: sec02-fadeDown 0.8s ease-out 0.4s forwards;
+  }
+  
+  /* 5) 3rd line 화살표에 깜빡임 추가 */
+  .sec02-line3.visible .sec02-arr {
+    animation: sec02-blink 1s infinite;
+  }
+
+  @media (max-width: 1500px) {
+    .sec02-inner {
+      width: 90% !important;     /* 기존 calc(...) 덮어쓰기 */
+      max-width: none !important; /* max-width 해제 */
+      margin: 0 auto !important;  /* 좌우 중앙 정렬 */
+    }
+  }
+
+
+  /*──────────────────────────────────────────────────────────
+  Section02.css — 모바일 레이아웃 (≤ 600px)
+──────────────────────────────────────────────────────────*/
+@media (max-width: 600px) {
+    /* 컨테이너 폭·패딩 조정 */
+    .sec02-inner {
+      width: 90%;
+      margin: 0 auto;
+      padding-top: 250px;
+    }
+  
+    /* 모든 줄을 세로 스택 */
+    .sec02-line {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+
+  
+    /* 3rd 줄만 텍스트 너비만큼 shrink-to-fit */
+    .sec02-line3 {
+      display: inline-block !important;
+      position: relative !important;
+      width: auto !important;
+    }
+  
+    /* PARTNER 바로 아래 우측 끝에 arrow 고정 */
+    .sec02-line3 .sec02-arr {
+      position: absolute !important;
+      right: 10% !important;
+      width: 24px !important;
+      height: auto !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      animation: sec02-blink 1s infinite !important;
+    }
+  
+
+    
+    .sec02-img1 {
+        width: calc(1300 / 1390 * 100%); max-width: 462px;
+    }
+    .sec02-img2 {
+        width: calc(800 / 1390 * 100%); max-width: 462px;
+    }
+    /* 둘째 줄 */
+    .sec02-img3 {
+        width: calc(1100 / 1390 * 100%); max-width: 462px;
+    }
+
+    .sec02-arr {
+        position: absolute !important;
+        bottom: 0;          
+        right: 25%;          
+        width: 20px !important;  
+        height: auto !important;
+        padding: 0 !important;   
+        margin: 0 !important;
+        animation: blink 1s infinite !important;
+      }
+
+
+
+
+  }
+
+  

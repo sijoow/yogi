@@ -1,0 +1,141 @@
+/*──────────────────────────────────────────────────────────
+  Section03.css — Section01과 충돌 없는 sec03- 네이밍
+──────────────────────────────────────────────────────────*/
+
+/* background & full viewport */
+.sec03-bg {
+    background-color: #000;
+  }
+  .sec03-fullvh {
+    width: 100dvw;
+    height:100dvh;
+  }
+  
+  /* inner container */
+  .sec03-inner {
+    width: calc(1390 / 1430 * 100%);
+    max-width: 1390px;
+    margin: 0 auto;
+    position: relative;
+    padding-top: 220px;
+  }
+  
+  /* common line style */
+  .sec03-line {
+    width:100%;
+    display: flex;
+    justify-content: flex-start;
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  
+  /* slide-in from left */
+  @keyframes sec03-fadeSlideIn {
+    from { opacity: 0; transform: translateX(-50px); }
+    to   { opacity: 1; transform: translateX(0); }
+  }
+  /* slide-in from right */
+  @keyframes sec03-fadeSlideInRight {
+    from { opacity: 0; transform: translateX(50px); }
+    to   { opacity: 1; transform: translateX(0); }
+  }
+  /* arrow blink */
+  @keyframes sec03-blink {
+    0%,50%,100% { opacity: 1; }
+    25%,75%     { opacity: 0; }
+  }
+  
+  /* visible 클래스 붙였을 때 애니메이션 */
+  .sec03-line1.visible {
+    animation: sec03-fadeSlideIn 0.8s ease-out forwards;
+  }
+  .sec03-line2.visible {
+    animation: sec03-fadeSlideInRight 0.8s ease-out 0.4s forwards;
+  }
+  /* 2nd line arrow blink */
+  .sec03-line2.visible .sec03-arr {
+    animation: sec03-blink 1s infinite;
+  }
+  
+  /* 데스크탑 이미지 크기 (1430px 캔버스 기준 비율) */
+  .sec03-img1 {
+    /* 예: PARTNER 이미지가 700px일 때 */
+    width: calc(1192 / 1200 * 100%);
+    height: auto;
+    display: inline-block;
+  }
+  .sec03-img2 {
+    /* 예: SHIP 이미지가 600px일 때 */
+    width: calc(604 / 1200 * 100%);
+    max-width: 604px;
+    height: auto;
+    display: inline-block;
+    margin-top:20px;
+  }
+  /* 화살표 (재사용: Section01과 동일한 비율) */
+
+
+  .sec03-arr{
+    padding-top: calc(100 / 665 * 100%);
+    padding-left: calc(31 / 665 * 100%);
+  }
+  
+
+
+  @media (max-width: 1500px) {
+    .sec03-inner {
+      width: 90% !important;     /* 기존 calc(...) 덮어쓰기 */
+      max-width: none !important; /* max-width 해제 */
+      margin: 0 auto !important;  /* 좌우 중앙 정렬 */
+    }
+  }
+
+  /*──────────────────────────────────────────────────────────
+    모바일 레이아웃 (≤ 600px)
+  ──────────────────────────────────────────────────────────*/
+  @media (max-width: 600px) {
+    /* inner 폭/패딩 */
+    .sec03-inner {
+      width: 90%;
+      margin: 0 auto;
+      padding-top: 290px;
+    }
+  
+    /* 모든 줄을 세로 스택 */
+    .sec03-line {
+      flex-direction: column;
+      align-items: flex-start;
+      margin-bottom: 16px;
+      opacity: 0;
+      transform: none;
+    }
+
+    
+    .sec03-img1 {
+        width: calc(1300 / 1390 * 100%); max-width: 462px;
+    }
+    .sec03-img2 {
+        width: calc(700 / 1390 * 100%); max-width: 462px;
+    }
+
+
+    .sec03-arr {
+        position: absolute !important;
+        bottom: 0;          
+        right: 33%;          
+        width: 20px !important;  
+        height: auto !important;
+        padding: 0 !important;   
+        margin: 0 !important;
+        animation: blink 1s infinite !important;
+      }
+
+    /* 모바일에서도 애니메이션 유지 */
+    .sec03-line1.visible {
+      animation: sec03-fadeSlideIn 0.8s ease-out forwards !important;
+    }
+    .sec03-line2.visible {
+      animation: sec03-fadeSlideInRight 0.8s ease-out 0.4s forwards !important;
+    }
+  }
+  

@@ -1,0 +1,173 @@
+
+.inner-tit{width:95%;margin:0 auto;}
+.inner-tit {
+  width: calc(1390 / 1430 * 100%);
+  max-width: 1390px;
+  margin: 0 auto;
+  position: relative; /* 이 안에서 절대 위치를 잡기 위함 */
+  padding-top:220px;
+}
+
+.line {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  opacity: 0;               
+  transform: translateX(-50px);
+}
+
+
+.line2 {
+  /* 초기 상태를 line1 과 똑같이 */
+  opacity: 0;
+  transform: translateX(-50px);
+}
+.line2 {
+  display:inline-block;
+  width: 100%;
+  padding-top:20px;
+  
+}
+
+
+.line2 img{display:inline-block;}
+.line2 .arr{
+  padding-top: calc(100 / 665 * 100%);
+  padding-left: calc(31 / 665 * 100%);
+}
+
+
+
+.img_section1 {
+  width: calc(462 / 1390 * 100%); max-width: 462px;
+}
+.img_section2 {
+  width: calc(928 / 1390 * 100%); max-width: 928px;
+}
+/* 둘째 줄 */
+.img_section3 {
+  width: calc(462 / 1390 * 100%); max-width: 462px;
+}
+.img_section4 {
+  width: calc(700 / 1390 * 100%); max-width: 700px;
+}
+
+
+
+.fullvh{
+  width:100dvw;
+  height:100dvh;
+}
+
+/* ① 기존 fadeSlideIn(좌측 슬라이드) 키프레임 */
+@keyframes fadeSlideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* ② 새로운 fadeSlideInRight(우측 슬라이드) 키프레임 */
+@keyframes fadeSlideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* ③ 기본 .line 애니메이션 (첫 줄) */
+.line1.visible {
+  animation: fadeSlideIn 0.8s ease-out forwards;
+}
+
+/* ④ 두 번째 줄은 오른쪽에서 슬라이드-인 */
+.line2.visible {
+  animation: fadeSlideInRight 0.8s ease-out forwards;
+  padding-top:30px;
+  animation-delay: 0.4s; /* 순차 딜레이 */
+}
+/* ── 2) 깜빡이는 애니메이션 정의 ───────────────────────────── */
+@keyframes blink {
+  0%, 50%, 100% {
+    opacity: 1;
+  }
+  25%, 75% {
+    opacity: 0;
+  }
+}
+
+.line2.visible .arr {
+  animation: blink 1s infinite;
+}
+
+
+
+
+@media (max-width: 1500px) {
+  .inner-tit {
+    width: 90% !important;     /* 기존 calc(...) 덮어쓰기 */
+    max-width: none !important; /* max-width 해제 */
+    margin: 0 auto !important;  /* 좌우 중앙 정렬 */
+  }
+}
+
+
+
+@media (max-width: 600px) {
+  .tit01{width:90%;margin:0 auto;}
+  /* 1) inner-tit 좌측 마진 주기 */
+  .inner-tit {
+    width: 90%;
+    padding-top: 150px      /* 필요에 따라 조정 */
+
+  }
+
+  /* 2) .line 세로 스택 & 왼쪽 정렬 */
+  .line {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;  /* 가운데 정렬 → 왼쪽 정렬 */
+    justify-content: flex-start;
+    position: relative;       /* .arr 절대 위치 기준 */
+    opacity: 0;
+    transform: translateX(0);
+    margin-bottom: 16px;      /* 줄 간 간격 */
+  }
+
+  .line1 {margin-bottom:0px;}
+  .line1 img:first-of-type{width:40%;padding-bottom:10px}
+  .line1 img:nth-child(2) { width: calc(580 / 655 * 100%);}
+
+  .line2{margin-top:5px}
+  .line2 img:first-of-type{width:40%;width:40%;padding-bottom:10px}
+  .line2 img:nth-child(2) {width: calc(420/ 655 * 100%);}
+
+
+  /* 화살표 위치 & 크기 */
+  .line2 .arr {
+    position: absolute !important;
+    bottom: 0;          
+    right: 25%;          
+    width: 20px !important;  
+    height: auto !important;
+    padding: 0 !important;   
+    margin: 0 !important;
+    animation: blink 1s infinite !important;
+  }
+
+  .line1.visible {
+    animation: fadeSlideIn 0.8s ease-out forwards !important;
+  }
+  .line2.visible {
+    animation: fadeSlideInRight 0.8s ease-out 0.4s forwards !important;
+  }
+
+}
