@@ -20,7 +20,7 @@ h1.logo {
 }
 
 
-h1.logo a {
+h1.logo span{
   display: block;
   position: absolute;
   top: 0; left: 0;

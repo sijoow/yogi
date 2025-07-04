@@ -1,8 +1,8 @@
 'use client';
-import React, { useState } from 'react';
-import './Slidebar.css';          
-import Slidebar from './SlideBar';
 import Link from 'next/link';
+import React, { useState } from 'react';
+import './Slidebar.css';          // Slidebar 스타일
+import Slidebar from './SlideBar';
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -16,7 +16,9 @@ export default function Navbar() {
     <>
       <header className="navbar">
         <h1 className="logo">
-          <Link href="/"></Link>
+          <Link href="/" aria-label="Home">
+          <span role="img" aria-label="Home"></span>
+        </Link>
         </h1>
         <button
           className={`menu btn_tl ${menuOpen ? 'open_btn' : ''}`}
