@@ -50,7 +50,7 @@ export default function MainSection({
     >
       <div className="content">
         <div className="inner">
-          <h3>
+          <h3 onClick={() => { window.location.href = '/we'; }} style={{cursor:'pointer'}}>
             {TITLES.map((src, idx) => (
               <span key={idx}>
                 <img src={src} alt={ALT_TEXTS[idx]} />
