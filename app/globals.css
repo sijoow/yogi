@@ -19,28 +19,37 @@
     --foreground: #ededed;
   }
 }
-
 /* globals.css */
 html, body {
   margin: 0;
   padding: 0;
   height: 100%;
-  -webkit-overflow-scrolling: touch; /* iOS 부드러운 스크롤 */
-  scroll-behavior: smooth;    /* 키보드·터치 스크롤도 부드럽게 */
-  
+  overflow-y: auto;  
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
 }
 
+/* 1. Make the wrapper scrollable */
 .snap-container {
-  height: 100vh;
-  overflow-y: hidden;
+  /* remove the fixed 100vh and hidden overflow */
+  /* height: 100vh; */
+  overflow-y: auto;           
+  scroll-snap-type: y mandatory; /* enable snap */
 }
 
-/* 섹션마다 화면 상단에 딱 멈추도록 */
-.snap-container > .snap-start {
-  scroll-snap-align: start;
+/* 2. Give each child section a full-screen height */
+.snap-container > section {
+  min-height: 100vh;           /* fills viewport on all devices */
+  scroll-snap-align: start;    /* snap to its top */
 }
 
-/* HeroSection.module.css */
+/* 3. (Optional) if you still need the container to be exactly viewport-high on desktop only */
+@media (min-width: 601px) {
+  .snap-container {
+    height: 100vh;
+  }
+}
+
 
 .hero-section {
   position: relative;
