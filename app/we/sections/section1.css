@@ -1,0 +1,55 @@
+/* section1.css */
+/* 1) 컨테이너 기본 */
+#section1 {
+    position: relative;
+    width: 100%;
+    height: 100dvh;             /* 필요에 따라 조정 */
+    overflow: hidden;
+  }
+  
+  /* 2) 반짝임 keyframes */
+  @keyframes bgSparkle {
+    0%, 100% { filter: brightness(1); }
+    50%      { filter: brightness(1.6); }
+  }
+  
+  /* 3) 배경이미지 + 초기 위치(조금 아래) */
+  #section1::after {
+    content: '';
+    position: absolute;
+    top: 20px;                 /* 시작할 때 살짝 아래 */
+    left: 0; right: 0; bottom: 0;
+    background: url('https://yogibo.openhost.cafe24.com/yogico/img/section/test_bg.png')
+                no-repeat center/cover;
+    transform: scale(1.05);
+    animation: bgSparkle 4s ease-in-out infinite;    /* 반짝임 지속 */
+    transition: top 1s ease-in-out;                  /* 위로 올라가는 트랜지션 */
+  }
+  
+  /* 4) .on 클래스가 붙으면 위로 이동 시작 */
+  #section1.on::after {
+    top: 0;
+  }
+  
+
+  
+/* 5) 중앙 텍스트 초기 상태 */
+.section-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.9);
+    opacity: 0;
+    transition:
+      opacity 1s ease-out 0.3s,    /* 0.3초 지연 후 페이드인 */
+      transform 1s ease-out 0.3s;  /* 스케일 업도 함께 */
+    pointer-events: none;
+    max-width: 80%;               /* 필요에 따라 조정 */
+  }
+  
+  /* 6) .on 붙으면 텍스트 페이드인 */
+  #section1.on .section-text {
+    opacity: 1!important;
+    z-index:99;
+    transform: translate(-50%, -50%) scale(0.9);
+  }
