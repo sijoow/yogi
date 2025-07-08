@@ -32,25 +32,54 @@
   }
   
 
+
+
+/* 2) .txt-wrap 을 섹션의 중앙(가로·세로)으로 고정 */
+#section1 .txt-wrap {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 5px;       /* 반응형 여백 */
   
-/* 5) 중앙 텍스트 초기 상태 */
-.section-text {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) scale(0.9);
-    opacity: 0;
-    transition:
-      opacity 1s ease-out 0.3s,    /* 0.3초 지연 후 페이드인 */
-      transform 1s ease-out 0.3s;  /* 스케일 업도 함께 */
-    pointer-events: none;
-    max-width: 80%;               /* 필요에 따라 조정 */
-  }
-  
-  /* 6) .on 붙으면 텍스트 페이드인 */
-  #section1.on .section-text {
-    opacity: 1!important;
-    z-index:99;
-    transform: translate(-50%, -50%) scale(0.9);
-  }
-/*데이터 업데이트 여부확인*/
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  z-index: 10;
+}
+
+/* 3) 이미지 기본 스타일 */
+#section1 .txt-img {
+  opacity: 0;
+  transform: translateY(-50px);
+  height: auto;
+  width: 100%;           /* 래퍼 폭에 맞춰 늘어남 */
+}
+
+/* 4) 애니메이션 */
+#section1.on .txt-img {
+  animation: drop 0.6s forwards ease-out;
+}
+
+/* 5) 순차별 width 고정 (각 이미지 비율에 맞게 개별 조절) */
+#section1.on .txt-wrap .txt-img:nth-child(1) {
+  animation-delay: 0s;
+  width:100%;
+}
+#section1.on .txt-wrap .txt-img:nth-child(2) {
+  animation-delay: 0.5s;
+  width:100%;
+}
+#section1.on .txt-wrap .txt-img:nth-child(3) {
+  animation-delay: 0.8s;
+  width:100%;
+}
+
+@keyframes drop {
+  0%   { opacity: 0; transform: translateY(-50px); }
+  60%  { opacity: 1; transform: translateY(10px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
