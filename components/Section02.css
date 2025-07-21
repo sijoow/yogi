@@ -1,167 +1,80 @@
-/*──────────────────────────────────────────────────────────
-  Section02.css — Section01과 완전 분리된 네이밍, 1430px 기준 이미지 크기
-──────────────────────────────────────────────────────────*/
+/*───────────────────────────────────────────────
+  Section02.css 반응형 추가
+───────────────────────────────────────────────*/
 
-/* 배경 & 풀뷰포트 */
-.sec02-bg {
-    background-color: #ff0000;
+/* 1) 기본 값 (이미 적용한 것) */
+#section02 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  background: #000 url('https://your-domain.com/path/to/clouds.jpg') no-repeat center/cover;
+  overflow: hidden;
+}
+.section02_text {
+  width: 80%;
+  max-width: 1300px;
+  text-align: left;
+}
+.section02_line1,
+.section02_line2 {
+  color: #fff;
+  font-family: 'Anton', sans-serif;
+  margin: 0;
+  opacity: 0;
+  transform: translateY(50px);
+  font-size: clamp(3rem, 14vw, 25vw);
+  line-height: 1;
+}
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(50px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+#section02.play .section02_line1 { animation: fadeInUp 0.8s ease-out forwards; }
+#section02.play .section02_line2 { animation: fadeInUp 0.8s ease-out forwards 0.3s; }
+
+
+/*───────────────────────────────────────────────
+  반응형: 모바일 (최대 767px)
+───────────────────────────────────────────────*/
+@media (max-width: 767px) {
+  .section02_text {
+    width: 90%;               /* 더 좁게 잡아서 좌우 여백 확보 */
   }
-  .sec02-fullvh {
-    width: 100dvw;
-    height: 100dvh;
+  .section02_line1,
+  .section02_line2 {
+    /* 최소 2rem, 뷰포트 너비 기준 18vw, 최대 12rem */
+    font-size: clamp(2rem, 22vw, 12rem);
+    line-height: 1.1;
   }
-  
-  /* 컨테이너 가로 중앙 고정 */
-  .sec02-inner {
-    width: calc(1390 / 1430 * 100%);
-    max-width: 1390px;
-    margin: 0 auto;
-    position: relative;
-    padding-top: 120px;
+}
+
+/*───────────────────────────────────────────────
+  반응형: 태블릿 (768px ~ 1199px)
+───────────────────────────────────────────────*/
+@media (min-width: 768px) and (max-width: 1199px) {
+  .section02_text {
+    width: 85%;
   }
-  
-  /* 공통 줄 스타일 */
-  .sec02-line {
-    display: flex;
-    justify-content: flex-start;
-    opacity: 1;
+  .section02_line1,
+  .section02_line2 {
+    /* 최소 3rem, 뷰포트 너비 기준 16vw, 최대 15rem */
+    font-size: clamp(3rem, 16vw, 15rem);
+    line-height: 1.05;
   }
-  
-  /* 1st line: static (바로 보이기) */
-  .sec02-line1.static {
-    opacity: 1;
-    transform: none;
+}
+
+/*───────────────────────────────────────────────
+  반응형: 데스크탑 (1200px 이상)
+───────────────────────────────────────────────*/
+@media (min-width: 1200px) {
+  .section02_text {
+    width: 80%;
   }
-
-  .sec02-line{
-    margin-top:20px
+  .section02_line1,
+  .section02_line2 {
+    /* 최소 4rem, 뷰포트 너비 기준 14vw, 최대 18rem */
+    font-size: clamp(4rem, 14vw, 18rem);
   }
-
-    .sec02-img3{
-    width: calc(850 / 1200 * 100%);
-    max-width: 850px;
-    }
-
-  .sec02-arr{
-    padding-top: calc(100 / 665 * 100%);
-    padding-left: calc(31 / 665 * 100%);
-  }
-  
-
-
-
-  /* 1) 슬라이드 다운 (위→아래) 키프레임 */
-@keyframes sec02-fadeDown {
-    from {
-      opacity: 0;
-      transform: translateY(-50px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  
-  /* 2) 화살표 깜빡임 */
-  @keyframes sec02-blink {
-    0%, 50%, 100% { opacity: 1; }
-    25%, 75%     { opacity: 0; }
-  }
-  
-  /* 3) 초기 상태: 보이지 않고 위로 살짝 올라가 있음 */
-  .sec02-line2,
-  .sec02-line3 {
-    opacity: 0;
-    transform: translateY(-50px);
-  }
-  
-  /* 4) 인터섹션 관찰 후 붙는 .visible 에 애니메이션 연결 */
-  .sec02-line2.visible {
-    animation: sec02-fadeDown 0.8s ease-out forwards;
-  }
-  .sec02-line3.visible {
-    animation: sec02-fadeDown 0.8s ease-out 0.4s forwards;
-  }
-  
-  /* 5) 3rd line 화살표에 깜빡임 추가 */
-  .sec02-line3.visible .sec02-arr {
-    animation: sec02-blink 1s infinite;
-  }
-
-  @media (max-width: 1500px) {
-    .sec02-inner {
-      width: 90% !important;     /* 기존 calc(...) 덮어쓰기 */
-      max-width: none !important; /* max-width 해제 */
-      margin: 0 auto !important;  /* 좌우 중앙 정렬 */
-    }
-  }
-
-
-  /*──────────────────────────────────────────────────────────
-  Section02.css — 모바일 레이아웃 (≤ 600px)
-──────────────────────────────────────────────────────────*/
-@media (max-width: 600px) {
-    /* 컨테이너 폭·패딩 조정 */
-    .sec02-inner {
-      width: 90%;
-      margin: 0 auto;
-      padding-top: 180px;
-    }
-  
-    /* 모든 줄을 세로 스택 */
-    .sec02-line {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-    }
-  
-
-  
-    /* 3rd 줄만 텍스트 너비만큼 shrink-to-fit */
-    .sec02-line3 {
-      display: inline-block !important;
-      position: relative !important;
-      width: auto !important;
-    }
-  
-    /* PARTNER 바로 아래 우측 끝에 arrow 고정 */
-    .sec02-line3 .sec02-arr {
-      position: absolute !important;
-      right: 10% !important;
-      width: 24px !important;
-      height: auto !important;
-      margin: 0 !important;
-      padding: 0 !important;
-      animation: sec02-blink 1s infinite !important;
-    }
-  
-
-    
-    .sec02-img1 {
-        width: calc(1300 / 1390 * 100%); max-width: 462px;
-    }
-    .sec02-img2 {
-        width: calc(800 / 1390 * 100%); max-width: 462px;
-    }
-    /* 둘째 줄 */
-    .sec02-img3 {
-        width: calc(1100 / 1390 * 100%); max-width: 462px;
-    }
-
-    .sec02-arr {
-        position: absolute !important;
-        bottom: 0;          
-        right: 25%;          
-        width: 20px !important;  
-        height: auto !important;
-        padding: 0 !important;   
-        margin: 0 !important;
-        animation: blink 1s infinite !important;
-      }
-
-
-
-
-  }
-
-  
+}

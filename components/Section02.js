@@ -6,59 +6,25 @@ export default function Section02() {
   const sectionRef = useRef(null);
 
   useEffect(() => {
-    // animate 클래스가 붙은 줄만 관찰
-    const items = sectionRef.current.querySelectorAll('.sec02-line.animate');
+    const el = sectionRef.current;
+    if (!el) return;
     const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-          } else {
-            entry.target.classList.remove('visible');
-            void entry.target.offsetWidth; // 리플로우 강제
-          }
-        });
+      ([entry]) => {
+        entry.isIntersecting
+          ? el.classList.add('play')
+          : el.classList.remove('play');
       },
       { threshold: 0.5 }
     );
-    items.forEach((el) => observer.observe(el));
+    observer.observe(el);
     return () => observer.disconnect();
   }, []);
 
   return (
-    <section id="main03" className="sec02 snap-start" ref={sectionRef}>
-      <div className="sec02-bg sec02-fullvh">
-        <div className="sec02-inner">
-            {/* 1st line: ALLROUND (static) */}
-            <span className="sec02-line sec02-line1 static">
-              <img
-                src="https://www.boosterz.co.kr/img/content/main03_tit01.png"
-                alt="ALLROUND"
-                className="sec02-img1"
-              />
-            </span>
-            {/* 2nd line: MKTG. (animate down) */}
-            <span className="sec02-line sec02-line2 animate">
-              <img
-                src="https://www.boosterz.co.kr/img/content/main03_tit02.png"
-                alt="MKTG."
-                className="sec02-img2"
-              />
-            </span>
-            {/* 3rd line: PARTNER + arrow (animate down + blink) */}
-            <span className="sec02-line sec02-line3 animate">
-              <img
-                src="https://www.boosterz.co.kr/img/content/main03_tit03.png"
-                alt="PARTNER"
-                className="sec02-img3"
-              />
-              <img
-                src="https://www.boosterz.co.kr/img/content/main_arr02.png"
-                alt="Arr"
-                className="sec02-arr"
-              />
-            </span>
-        </div>
+    <section id="section02" ref={sectionRef}>
+      <div className="section02_text">
+        <h1 className="section02_line1">NO SUCCESS</h1>
+        <h1 className="section02_line2">NO BUSINESS</h1>
       </div>
     </section>
   );

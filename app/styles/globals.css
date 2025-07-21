@@ -7,15 +7,20 @@
     padding: 0;
   }
   
-  /* 2) 기본 body 스타일 */
-  html, body {
-    width: 100%;
-    height: 100%;
-    font-family: 'Roboto', sans-serif; /* fallback */
-    background-color: #fff;
-    color: #000;
+  main{
+    overflow-x:hidden;
   }
-  
+/* 2) 기본 body 스타일 */
+html, body {
+  width: 100%;
+  height: 100%;
+  /* Anton 폰트로 변경 (Next.js font variable 사용 시) */
+  font-family: var(--font-anton), sans-serif;
+  background-color: #fff;
+  color: #000;
+  font-family: 'Anton', sans-serif;
+}
+
   /* 3) 스크롤 스냅 */
   .snap-y {
     scroll-snap-type: y mandatory;

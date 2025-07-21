@@ -6,53 +6,25 @@ export default function Section03() {
   const sectionRef = useRef(null);
 
   useEffect(() => {
-    const lines = sectionRef.current.querySelectorAll('.sec03-line');
+    const el = sectionRef.current;
+    if (!el) return;
     const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          const el = entry.target;
-          if (entry.isIntersecting) {
-            el.classList.add('visible');
-          } else {
-            el.classList.remove('visible');
-            void el.offsetWidth; // 리플로우 강제
-          }
-        });
+      ([entry]) => {
+        if (entry.isIntersecting) el.classList.add('play');
+        else el.classList.remove('play');
       },
       { threshold: 0.5 }
     );
-    lines.forEach((line) => observer.observe(line));
+    observer.observe(el);
     return () => observer.disconnect();
   }, []);
 
   return (
-    <section id="main04" className="sec03 snap-start" ref={sectionRef}>
-      <div className="sec03-bg sec03-fullvh">
-        <div className="sec03-inner">
-          <h3 className="sec03-tit">
-            {/* 1st line: PARTNER */}
-            <span className="sec03-line sec03-line1">
-              <img
-                src="https://www.boosterz.co.kr/img/content/main04_tit01.png"
-                alt="PARTNER"
-                className="sec03-img1"
-              />
-            </span>
-            {/* 2nd line: SHIP + arrow */}
-            <span className="sec03-line sec03-line2">
-              <img
-                src="https://www.boosterz.co.kr/img/content/main04_tit02.png"
-                alt="SHIP"
-                className="sec03-img2"
-              />
-              <img
-                src="https://www.boosterz.co.kr/img/content/main_arr01.png"
-                alt="Arr"
-                className="sec03-arr"
-              />
-            </span>
-          </h3>
-        </div>
+    <section id="section03" ref={sectionRef}>
+      <div className="section03_text">
+        <h1 className="section03_line1">BRAND</h1>
+        <h1 className="section03_line2">MANAGEMENT</h1>
+        <h1 className="section03_line3">BUSINESS</h1>
       </div>
     </section>
   );

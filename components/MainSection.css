@@ -1,284 +1,137 @@
+/*───────────────────────────────────────────────
+  MainSection.css
+───────────────────────────────────────────────*/
 
-@keyframes bgSparkle {
-  0%, 100% {
-    filter: brightness(1);
-  }
-  50% {
-    filter: brightness(1.08);
-  }
-}
-
-
-h1.logo {
-  position: fixed;
-  top: calc(40/1080 * 100%);
-  left: calc(90/1920 * 100%);
-  width: calc(200/1920 * 100%);
-  min-width: 78px;
-  padding-top: calc(79/1920 * 100%);
-  z-index: 3;
-}
-
-
-h1.logo span{
-  display: block;
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: url('https://yogibo.kr/yogico/img/icon/Signature03.png') no-repeat center top/contain;
-  transition: all 0.2s ease-in-out;
-
-  /* ← 이 한 줄만 추가 */
-  filter: brightness(0) invert(1);
-}
-
-@media all and (max-width: 600px) {
-  /* 로고 컨테이너 너비를 300px로 고정 */
-  h1.logo {
-    position: fixed;      /* 기존 스타일 유지 */
-    top: calc(40/1080 * 100%);
-    left: calc(90/1920 * 100%);
-    width: 150px !important;      /* 여기서 300px 고정 */
-    min-width: none;             /* 기존 min-width 해제 */
-    padding-top: 70px !important;
-    z-index: 3;
-  }
-  /* a 배경이미지 사이즈 강제 지정 */
-  h1.logo a {
-    background-size: 150px auto !important;
-  }
-}
-
-
-
-
-
-/* 배경 확대/애니메이션 */
-
-/* 2) 기존 #main01:after 에 애니메이션 추가 */
-#main01:after {
-  /* ...기존 스타일 그대로... */
-  content: '';
-  display: block;
-  position: absolute;
-  top: 20px;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: url('https://cdn.creex.ai/boosterz/main00_bg.jpg') no-repeat center/cover;
-  transform: scale(1.05);
-  transition: all 0.5s ease-out;
-  
-  /* ✨추가된 부분 */
-  animation: bgSparkle 4s ease-in-out infinite;
-}
-
-#main01.on:after {
-  top: 0;
-  transition: all 1s ease-in-out;
-  /* on 상태에서도 계속 반짝이려면 여기에도 animation 명시 */
-  animation: bgSparkle 4s ease-in-out infinite;
-}
-
-/* 글자(이미지) 컨테이너 및 흐름 초기화 */
-#main01 h3,
-#main01 p {
-  display: inline-block;
-  clear: both;
-}
-
-/* 타이틀 줄 맞춤 & 크기 */
-#main01 h3 {
-  padding-bottom: calc(45 / 1080 * 100%);
-  width: calc(924 / 1200 * 100%);
-  max-width: 924px;
-}
-
-#main01 .inner {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+/* 1) 섹션 기본 설정 */
+#mainSection {
+  position: relative;
+  z-index: 0;            /* pseudo-element 보다 아래에 배치 */
   width: 100%;
-  max-width: 1200px;              /* 타이틀 너비에 맞춤 */
-  padding: 0 20px;
-  box-sizing: border-box;
-  text-align: center;
-}
-
-
-
-/* 각 글자<span> 기본 상태 */
-#main01 span {
-  float: left;
-  padding: 0 calc(5 / 1200 * 100%);
-  opacity: 0;
-}
-/* .on 클래스가 붙으면 페이드 인 */
-#main01.on span {
-  opacity: 1;
-}
-
-/* 애니메이션 시작 전 상태 */
-#main01 h3 span {
-  transition: all 0.5s ease-out;
-  transition-delay: 0;
-  filter: blur(15px);
-  opacity: 0;
-  transform: scale(0.85);
-}
-/* 애니메이션 실행 */
-#main01.on h3 span {
-  transition: all 0.7s cubic-bezier(0.74, 0.21, 0.17, 1.08);
-  transition-delay: 0.5s;
-  filter: blur(0);
-  opacity: 1;
-  transform: scale(1);
-}
-
-
-/* 글자 이미지 블록 레벨로 */
-#main01 span img {
-  display: block;
-}
-
-/* 글자별 너비 지정 */
-#main01 h3 span:nth-child(1)  { width: calc(93  / 924 * 100%); max-width:  93px; }
-#main01 h3 span:nth-child(2)  { width: calc(92  / 924 * 100%); max-width:  92px; }
-#main01 h3 span:nth-child(3)  { width: calc(94  / 924 * 100%); max-width:  94px; }
-#main01 h3 span:nth-child(4)  { width: calc(94  / 924 * 100%); max-width:  94px; }
-#main01 h3 span:nth-child(5)  { width: calc(94  / 924 * 100%); max-width:  94px; }
-#main01 h3 span:nth-child(6)  { width: calc(94  / 924 * 100%); max-width:  94px; }
-#main01 h3 span:nth-child(7)  { width: calc(94  / 924 * 100%); max-width:  94px; }
-#main01 h3 span:nth-child(8)  { width: calc(87  / 924 * 100%); max-width:  87px; }
-#main01 h3 span:nth-child(9)  { width: calc(87  / 924 * 100%); max-width:  87px; }
-#main01 h3 span:nth-child(10) { width: calc(95 / 924 * 100%); max-width:  95px; }
-
-/* 글자별 애니메이션 지연시간 */
-#main01.on h3 span:nth-child(1)  { transition-delay: 0.50s; }
-#main01.on h3 span:nth-child(2)  { transition-delay: 0.65s; }
-#main01.on h3 span:nth-child(3)  { transition-delay: 0.55s; }
-#main01.on h3 span:nth-child(4)  { transition-delay: 0.70s; }
-#main01.on h3 span:nth-child(5)  { transition-delay: 0.60s; }
-#main01.on h3 span:nth-child(6)  { transition-delay: 0.50s; }
-#main01.on h3 span:nth-child(7)  { transition-delay: 0.85s; }
-#main01.on h3 span:nth-child(8)  { transition-delay: 0.60s; }
-#main01.on h3 span:nth-child(9)  { transition-delay: 0.75s; }
-#main01.on h3 span:nth-child(10) { transition-delay: 0.70s; }
-
-/* 서브타이틀(p) 초기 상태 */
-#main01 p {
-  width: calc(487 / 1200 * 100%);
-  min-width: 365px;
-  max-width: 487px;
-  height: 19px;
-  font-size: 0;
-  transform: translate(0, 10px);
-  transition: all 0.8s ease-in-out;
-  opacity: 0;
-  background: url('https://www.boosterz.co.kr/img/content/main00_txt.png') no-repeat center/contain;
-}
-/* .on 붙이면 등장 */
-#main01.on p {
-  opacity: 1;
-  transform: translate(0);
-  transition-delay: 0.7s;
-}
-
-/* ———————————————————————————————— */
-/* Responsive @media (모바일) */
-/* ———————————————————————————————— */
-@media all and (max-width: 720px) {
-  /* 타이틀 전체 너비 & 간격 변경 */
-  #main01 h3 {
-    width: 100%;
-    padding-bottom: calc(78 / 720 * 100%);
-  }
-  /* 글자별 레이아웃 변경 */
-  #main01 h3 span {
-    float: none;
-    display: inline-block;
-    padding: calc(12 / 720 * 100%) 0;
-    width: calc(100% / 6 - 5px) !important;
-    vertical-align: middle;
-  }
-  /* 서브타이틀 이미지 교체 & 크기 조정 */
-  #main01 p {
-    width: calc(365 / 585 * 100%);
-    max-width: 365px;
-    min-width: 100%;
-    background: url('https://www.boosterz.co.kr/img/content/main00_motxt.png') no-repeat center/contain;
-  }
-
-    #main01 .inner h3 {
-      width: 100%;
-      max-width: 924px;
-      padding-bottom: 4.16667%;
-  }
-
-  
-}
-
-
-/* HeroSection.css */
-#main01 {
-  position: relative;      /* 배경에 relative 기준을 만들고 */
+  height: 100vh;         /* 100dvh 대신 100vh 권장 */
   overflow: hidden;
 }
 
-/* .content 전체를 꽉 채우되, 내부 .inner를 absolute 로 띄움 */
-#main01 .content {
+/* 2) 배경 반짝임 keyframes */
+@keyframes bgSparkle {
+  0%, 100% { filter: brightness(1); }
+  50%      { filter: brightness(1.6); }
+}
+
+/* 3) 화살표 펄스 keyframes */
+@keyframes arrow-pulse {
+  0%, 100% { opacity: 1; transform: translateX(0); }
+  50%      { opacity: 0.6; transform: translateX(5px); }
+}
+
+/* 4) 배경이미지 pseudo-element */
+#mainSection::after {
+  content: '';
+  position: absolute;
+  z-index: -1;           /* 텍스트보다 뒤로 */
+  top: 20px;             /* 시작 시 살짝 아래 */
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('https://yogibo.openhost.cafe24.com/yogico/img/section/test_bg.png')
+              no-repeat center/cover;
+  transform: scale(1.05);
+  animation: bgSparkle 4s ease-in-out infinite;
+  transition: top 1s ease-in-out;
+}
+
+/*───────────────────────────────────────────────
+  텍스트 애니메이션
+─────/*───────────────────────────────────────────────
+  MainSection.css
+  — 배경 + 3줄 텍스트 애니메이션
+───────────────────────────────────────────────*/
+
+/* 1) 섹션 기본 및 배경 (건드리지 마세요) */
+#mainSection {
   position: relative;
   width: 100%;
-  height: 100%;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
-
-/* inner를 배경 중앙에 위치시키기 */
-#main01 .inner {
+@keyframes bgSparkle {
+  0%,100% { filter: brightness(1); }
+  50%     { filter: brightness(1.6); }
+}
+#mainSection::after {
+  content: '';
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;      /* 가운데 정렬 */
-  width: 100%;             /* 필요에 따라 max-width 지정 가능 */
-  box-sizing: border-box;
-  padding: 0 20px;         /* 화면 가장자리에 너무 붙지 않도록 여백 */
-  z-index: 2;              /* 배경보다 위에 뜨도록 */
+  z-index: -1;
+  top: 20px; left: 0; right: 0; bottom: 0;
+  background: url('https://yogibo.openhost.cafe24.com/yogico/img/section/test_bg.png')
+              no-repeat center/cover;
+  transform: scale(1.05);
+  animation: bgSparkle 4s ease-in-out infinite;
+  transition: top 1s ease-in-out;
 }
 
-/* 기존 h3, p는 그대로 사용 */
-#main01 .inner h3 {
-  padding-bottom: calc(45 / 1080 * 100%);
-  width: calc(924 / 1200 * 100%);
-  max-width: 924px;
+/* 1) 섹션 기본 */
+#mainSection {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-#main01 .inner p {
-  margin-top: 10px;
+/* 2) 텍스트 기본 스타일 */
+.main_line1,
+.main_line2,
+.main_line3 {
+  font-family: 'Anton', sans-serif;
+  font-size: 10vw;
+  color: #fff;
+  line-height: 1;
+  opacity: 0;
+  transform: translateY(20px);
 }
 
+/* 3) play 클래스 붙였을 때 애니메이션 */
+#mainSection.play .main_line1 {
+  animation: fadeUp 0.8s ease-out forwards;
+}
+#mainSection.play .main_line2 {
+  animation: fadeUp 0.8s ease-out forwards 0.2s;
+}
+#mainSection.play .main_line3 {
+  animation: fadeUp 0.8s ease-out forwards 0.4s;
+}
 
-
-
-/* ———————————————————————————————— */
-@media all and (max-width: 600px) {
- 
-    #main01 .inner h3 {
-      width: 100%;
-      max-width: 924px;
-      padding-bottom: 4.16667%;
+/* 4) 키프레임 정의 */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
   }
-
-  #main01 .inner {
-    text-align: center;
-    box-sizing: border-box;
-    z-index: 2;
-    width: 100%;
-    padding: 0 20px;
-    position: absolute;
-    top: 55%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
+/* 5) 반응형 */
+@media (max-width: 1199px) {
+  .main_line1,
+  .main_line2,
+  .main_line3 {
+    font-size: 12vw;
+  }
+}
+@media (max-width: 767px) {
+  .main_line1,
+  .main_line2,
+  .main_line3 {
+    font-size: 14vw;
+  }
+}

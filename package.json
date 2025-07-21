@@ -7,14 +7,15 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-      "export:build": "next build && mv out build"
+    "export:build": "next build && mv out build"
   },
   "dependencies": {
     "aos": "^2.3.4",
     "gsap": "^3.13.0",
     "next": "15.3.4",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "splitting": "^1.1.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
