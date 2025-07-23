@@ -28,7 +28,7 @@ export default function PartnerSection_01({ id = 'partnerSec01' }) {
       {/* 2. 상단 소개 블럭 */}
       <div className="ps01-top">
         <div className="ps01-logos">
-          <img src="/imgs/yogi_logo_black.svg" alt="Yogi" className="ps01-logo yogi" />
+          <img src="https://yogibo.kr/yogico/img/icon/symbol.png" alt="Yogi" className="ps01-logo yogi" />
           <span className="ps01-x">×</span>
           <img src="/imgs/orchesta_logo.svg" alt="Orchesta" className="ps01-logo orchesta" />
         </div>

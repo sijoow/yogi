@@ -25,7 +25,7 @@ export default function PartnerSection_02({ id = 'partnerSec02' }) {
       {/* 헤더 */}
       <h2 className="ps02-title">Strategic Partnership</h2>
       <div className="ps02-logos">
-        <img src="/imgs/yogi_logo_black.svg" alt="Yogi" className="ps02-logo yogi" />
+        <img src="https://yogibo.kr/yogico/img/icon/symbol.png" alt="Yogi" className="ps02-logo yogi" />
         <span className="ps02-x">×</span>
         <img src="/imgs/orchesta_logo.svg" alt="Orchesta" className="ps02-logo orchesta" />
       </div>
