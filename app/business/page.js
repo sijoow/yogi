@@ -1,7 +1,7 @@
 // app/we/page.js
 'use client';
 
-import './who.css';
+import './business.css';
 import SectionIndicator from '@/components/SectionIndicator';
 import Section1 from './sections/Section1';
 import Section2 from './sections/Section2';
@@ -22,6 +22,7 @@ export default function WePage() {
       <Section2 id="sec2" />
       <Section3 id="sec3" />
       <Section4 id="sec4" />
+
     </div>
   );
 }

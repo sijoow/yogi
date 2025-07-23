@@ -1,0 +1,77 @@
+/* 배경/섹션 */
+.BusinessSection_03{
+  position:relative;
+  width:100%;
+  min-height:100vh;
+  padding:8vh 6vw 12vh;
+  box-sizing:border-box;
+  background:linear-gradient(90deg, #d3ffe6 0%, #9fc2ff 100%);
+  color:#111;
+  overflow:hidden;
+}
+
+/* 타이틀/서브 */
+.bs3-title{
+  font-family:'Anton', sans-serif;
+  font-size:clamp(32px,4vw,60px);
+  margin:0 0 2vh;
+}
+
+.bs3-sub{
+  font-size:clamp(18px,1.4vw,28px);
+  margin:0 0 6vh;
+  max-width:1200px;
+  line-height:1.35;
+}
+
+/* 그리드 */
+.bs3-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(140px, 1fr));
+  gap:3vw 3vw;
+}
+
+/* 박스(사각형) */
+.bs3-box{
+  background:#fff;
+  border-radius:8px;
+  aspect-ratio: 3 / 2;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:10px;
+  box-shadow:0 3px 8px rgba(0,0,0,.08);
+  opacity:0;
+  transform:translateY(20px);
+  transition:opacity .4s ease, transform .4s ease;
+}
+
+.bs3-box img{
+  max-width:100%;
+  max-height:100%;
+  object-fit:contain;
+}
+
+.bs3-box span{
+  font-family:'Anton', sans-serif;
+  font-size:clamp(18px,1.8vw,28px);
+  text-align:center;
+}
+
+/* play 시 순차 등장 */
+.BusinessSection_03.play .bs3-box{
+  opacity:1;
+  transform:none;
+}
+.BusinessSection_03.play .bs3-box:nth-child(1){transition-delay:.05s;}
+.BusinessSection_03.play .bs3-box:nth-child(2){transition-delay:.1s;}
+.BusinessSection_03.play .bs3-box:nth-child(3){transition-delay:.15s;}
+.BusinessSection_03.play .bs3-box:nth-child(4){transition-delay:.2s;}
+.BusinessSection_03.play .bs3-box:nth-child(5){transition-delay:.25s;}
+/* 필요하면 더 추가 */
+
+/* 반응형 여백 조절 */
+@media(max-width:768px){
+  .BusinessSection_03{padding:10vh 4vw;}
+  .bs3-grid{gap:5vw 4vw;}
+}

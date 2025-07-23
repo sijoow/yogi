@@ -1,0 +1,74 @@
+/* BusinessSection_02.css */
+
+.BusinessSection_02{
+  position:relative;
+  width:100%;
+  min-height:100vh;
+  padding:8vh 6vw 12vh;
+  box-sizing:border-box;
+  color:#111;
+  overflow:hidden;
+  /* 배경 : 연한 그라데이션 + 흐린 이미지(원하면 교체) */
+  background:
+    linear-gradient(90deg, rgba(210,255,236,.6) 0%, rgba(150,190,255,.6) 100%),
+    url('/img/bg_hands.jpg') center/cover no-repeat;
+  font-family:'Anton', sans-serif;
+}
+
+/* 타이틀 */
+.bs2-title{
+  font-size:clamp(32px,4vw,60px);
+  margin:0 0 6vh;
+}
+
+/* 2단 컬럼 래퍼 */
+.bs2-columns{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:4vw 6vw;
+  width:100%;
+}
+
+/* 리스트 공통 */
+.bs2-list{
+  list-style:none;
+  padding:0;
+  margin:0;
+}
+
+/* 항목 */
+.bs2-item{
+  margin-bottom:3.2vh;
+  opacity:0;
+  transform:translateY(20px);
+  transition:opacity .5s ease, transform .5s ease;
+}
+
+.bs2-item h3{
+  margin:0 0 .4rem;
+  font-size:clamp(20px,2vw,30px);
+}
+
+.bs2-item p{
+  margin:0;
+  font-family:'Anton', sans-serif;
+  font-size:clamp(16px,1.3vw,22px);
+  line-height:1.4;
+}
+
+/* 애니메이션 트리거 */
+.BusinessSection_02.play .bs2-item{
+  opacity:1;
+  transform:none;
+}
+.BusinessSection_02.play .bs2-item:nth-child(1){transition-delay:.05s;}
+.BusinessSection_02.play .bs2-item:nth-child(2){transition-delay:.1s;}
+.BusinessSection_02.play .bs2-item:nth-child(3){transition-delay:.15s;}
+.BusinessSection_02.play .bs2-item:nth-child(4){transition-delay:.2s;}
+.BusinessSection_02.play .bs2-item:nth-child(5){transition-delay:.25s;}
+.BusinessSection_02.play .bs2-item:nth-child(6){transition-delay:.3s;}
+
+/* 반응형 */
+@media(max-width:1023px){
+  .bs2-columns{grid-template-columns:1fr;}
+}

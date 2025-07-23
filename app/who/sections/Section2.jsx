@@ -1,4 +1,3 @@
-// components/sections/Section02.jsx
 'use client';
 
 import React, { useEffect, useRef } from 'react';
@@ -13,29 +12,63 @@ export default function Section02({ id = 'sec2' }) {
 
     const io = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) {
-          el.classList.add('play');
-        } else {
-          el.classList.remove('play'); // 다시 올라갈 때 숨기지 않으려면 이 줄 지우세요
-        }
+        entry.isIntersecting ? el.classList.add('play') : el.classList.remove('play');
       },
-      { threshold: 0.5 }
+      { threshold: 0.45 }
     );
-
     io.observe(el);
     return () => io.disconnect();
   }, []);
 
   return (
     <section id={id} ref={ref} className="whoSection_02">
-      <div className="ws2-wrap">
-        <h2 className="ws2-line ws2-1">YOGI CORPORATION IS</h2>
+      {/* ───────── 로고 박스 ───────── */}
+      <div className="w2-logo-box">
+        <img
+          src="https://yogibo.kr/yogico/img/icon/Signature03.png"
+          alt="YOGI CORPORATION"
+        />
+      </div>
 
-        <h2 className="ws2-line ws2-2">MAKING BUSINESS SCALE UP</h2>
-        <p  className="ws2-sub  ws2-2s">BUSINESS CONSULTING &amp; DEVELOPMENT</p>
+      {/* ───────── 회사 소개 텍스트 ───────── */}
+      <div className="w2-intro">
+        Founded in 2016, Yogi Corporation is headquartered in Gangnam, Seoul, South Korea. Yogi
+        Corporation is powered by a team of seasoned professionals with diverse industry expertise
+        and extensive international experience, enabling us to deliver high-impact strategic
+        consulting and business development solutions.
+      </div>
 
-        <h2 className="ws2-line ws2-3">MAKING BRANDS THRIVE</h2>
-        <p  className="ws2-sub  ws2-3s">BRAND MANAGEMENT BUSINESS</p>
+      <div className="w2-desc">
+        We operate our own manufacturing facility and logistics center, ensuring consistent product
+        quality, streamlined operations, and agile supply chain management. In addition, as a fully
+        integrated retail brand operator, we maintain a strong omnichannel presence through a
+        nationwide network of offline stores and dynamic e-commerce platforms. In essence, Yogi
+        Corporation operates across two core business pillars:
+        <br /><br />
+        1. Business Consulting and Development<br />
+        2. Brand Management Business
+      </div>
+
+      {/* ───────── CEO 박스 ───────── */}
+      <div className="w2-ceo-img">
+        <img
+          src="https://yogibo.kr/yogico/img/banner/img_yogicorporation2.jpg"
+          alt="CEO"
+        />
+      </div>
+
+      <div className="w2-ceo-desc">
+        <strong>Daejin (David) Park, Founder and CEO</strong><br /><br />
+        After gaining 15 years of expertise across academia and industry in Israel, including his
+        working at KOTRA, David returned to South Korea and launched KOISRA, a consulting firm
+        specializing in facilitating cross-border business development between Korea, Israel, and
+        other global markets. He later co-founded KOISRA Seed Partners, a startup accelerator that
+        invests in and mentors early-stage startups led by serial entrepreneurs. In addition to his
+        entrepreneurial activities, David authored the Korean-language book "Inside Business in
+        Israel." Expanding his career into the retail sector, he established infrastructure for
+        import, manufacturing, distribution, and export, building a portfolio of lifestyle brands.
+        David currently serves as CEO of Yogi Corporation, overseeing multiple businesses that
+        reflect his broad experience in international business and brand development.
       </div>
     </section>
   );

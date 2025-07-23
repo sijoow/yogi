@@ -1,73 +1,85 @@
-/* ─────────────────────────────────────────────
-   Section 4 : BRAND MANAGEMENT BUSINESS
-─────────────────────────────────────────────*/
-.whoSection_04 {
-    position: relative;
-    width: 100%;
-    min-height: 100vh;
-    padding: 12vh 6vw;
-    box-sizing: border-box;
-  
-    /* 파스텔 그라디언트 배경 */
-    background: linear-gradient(135deg, #c9ffe7 0%, #9ed0ff 100%);
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  /* 공통 텍스트 스타일 */
-  .weSec04_title,
-  .weSec04_desc {
-    font-family: 'Anton', sans-serif;
-    color: #111;
-    text-align: center;
-    opacity: 0;
-    transform: translateY(24px);
-  }
-  
-  /* 타이틀 */
-  .weSec04_title {
-    font-size: clamp(36px, 7vw, 96px);
-    line-height: 1.05;
-    margin-bottom: 8vh;
-  }
-  
-  /* 본문(설명) */
-  .weSec04_desc {
-    font-family: 'Anton', sans-serif; /* 필요 시 다른 폰트로 변경 */
-    font-size: clamp(18px, 2.4vw, 28px);
-    line-height: 1.35;
-    max-width: 1100px;
-  }
-  
-  /* play 붙었을 때 애니메이션 */
-  .whoSection_04.play .weSec04_title {
-    animation: fadeUp 0.7s ease-out forwards;
-  }
-  .whoSection_04.play .weSec04_desc {
-    animation: fadeUp 0.7s ease-out 0.15s forwards;
-  }
-  
-  /* keyframes */
-  @keyframes fadeUp {
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  
-  /* 모바일 조정 */
-  @media (max-width: 768px) {
-    .whoSection_04 {
-      padding: 10vh 5vw;
-      align-items: flex-start;
-      text-align: left;
-    }
-    .weSec04_title,
-    .weSec04_desc {
-      text-align: left;
-    }
-  }
-  
+/* whoSection_04.css – Market Analysis & Marketing */
+
+.whoSection_04{
+  position:relative;
+  width:100%;
+  min-height:100vh;
+  padding:8vh 6vw 12vh;
+  box-sizing:border-box;
+  background: url('/img/bg_building.jpg') center/cover no-repeat, #000000;
+  color:#fff;
+  overflow:hidden;
+  font-family:'Anton', sans-serif;
+}
+
+/* 제목 */
+.ws4-heading{
+  font-size:clamp(32px,4vw,60px);
+  margin:0 0 6vh;
+  display:inline-block;
+  padding:.4rem 1.2rem;
+}
+
+/* 카드 리스트 */
+.ws4-cards{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:4vw 3vw;
+}
+
+/* 카드 */
+.ws4-card{
+  max-width:420px;
+  margin:0 auto;
+  text-align:center;
+  opacity:0;
+  transform:translateY(25px);
+  transition:opacity .6s ease, transform .6s ease;
+}
+
+/* 등장 순서 */
+.whoSection_04.play .ws4-card:nth-child(1){opacity:1;transform:none;transition-delay:.1s;}
+.whoSection_04.play .ws4-card:nth-child(2){opacity:1;transform:none;transition-delay:.2s;}
+.whoSection_04.play .ws4-card:nth-child(3){opacity:1;transform:none;transition-delay:.3s;}
+
+/* 아바타 */
+.ws4-avatar{
+  width:180px;
+  height:180px;
+  margin:0 auto 1.5rem;
+  border-radius:50%;
+  background:#e5e5e5;
+  overflow:hidden;
+  border:8px solid #fff;
+}
+.ws4-avatar img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+/* 텍스트 */
+.ws4-name{
+  font-size:clamp(22px,2.4vw,36px);
+  margin:0 0 .4rem;
+}
+.ws4-role{
+  font-size:clamp(18px,1.6vw,26px);
+  margin:0 0 1.2rem;
+}
+.ws4-bio{
+  font-family:'Anton', sans-serif;
+  font-size:clamp(16px,1.4vw,22px);
+  line-height:1.35;
+  margin:0;
+}
+
+/* 반응형 */
+@media(max-width:1199px){
+  .ws4-cards{grid-template-columns:1fr 1fr;}
+}
+@media(max-width:767px){
+  .whoSection_04{padding:12vh 6vw 16vh;}
+  .ws4-cards{grid-template-columns:1fr;gap:8vh 0;}
+  .ws4-avatar{width:160px;height:160px;border-width:6px;}
+}

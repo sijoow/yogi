@@ -1,0 +1,82 @@
+/*───────────────────────────────────────────────
+  BusinessSection_01.css
+───────────────────────────────────────────────*/
+
+/* 섹션 기본 */
+.BusinessSection_01{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  width:100%;
+  height:100vh;
+  background:#000;            /* 필요 시 이미지로 교체 */
+  overflow:hidden;
+}
+
+/* 텍스트 래퍼 */
+.BusinessSection_01_text{
+  width:80%;
+  max-width:1300px;
+  text-align:left;
+}
+
+/* 텍스트 기본 상태 (깜빡임 방지용 visibility) */
+.BusinessSection_01_line1,
+.BusinessSection_01_line2{
+  color:#fff;
+  font-family:'Anton', sans-serif;
+  margin:0;
+  text-align:center;
+
+  visibility:hidden;
+  opacity:0;
+  transform:translateY(30px);
+
+  font-size:clamp(3rem, 14vw, 25vw);
+  line-height:1;
+  transition:opacity .4s ease-out, transform .4s ease-out, visibility 0s linear .4s;
+  will-change:opacity, transform;
+}
+
+/* play일 때 보이기 */
+.BusinessSection_01.play .BusinessSection_01_line1,
+.BusinessSection_01.play .BusinessSection_01_line2{
+  visibility:visible;
+  opacity:1;
+  transform:translateY(0);
+  transition-delay:0s;
+}
+
+/* 개별 딜레이 */
+.BusinessSection_01.play .BusinessSection_01_line1{
+  transition-delay:0s;
+}
+.BusinessSection_01.play .BusinessSection_01_line2{
+  transition-delay:.12s;
+}
+
+/* ───────── 반응형 ───────── */
+@media (max-width:767px){
+  .BusinessSection_01_text{ width:90%; }
+  .BusinessSection_01_line1,
+  .BusinessSection_01_line2{
+    text-align:left;
+    font-size:clamp(2rem, 22vw, 12rem);
+    line-height:1.1;
+  }
+}
+@media (min-width:768px) and (max-width:1199px){
+  .BusinessSection_01_text{ width:85%; }
+  .BusinessSection_01_line1,
+  .BusinessSection_01_line2{
+    font-size:clamp(3rem, 16vw, 15rem);
+    line-height:1.05;
+  }
+}
+@media (min-width:1200px){
+  .BusinessSection_01_text{ width:80%; }
+  .BusinessSection_01_line1,
+  .BusinessSection_01_line2{
+    font-size:clamp(4rem, 14vw, 18rem);
+  }
+}

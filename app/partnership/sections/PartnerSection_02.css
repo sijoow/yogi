@@ -1,0 +1,107 @@
+/* 섹션 기본 */
+.PartnerSection_02{
+  width:100%;
+  min-height:100vh;
+  background:#fff;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  overflow:hidden;
+}
+
+/* 래퍼 (2열 레이아웃) */
+.ps2-wrap{
+  width:90%;
+  max-width:1400px;
+  margin:6rem auto;
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap:4rem 3rem;
+  align-items:start;
+}
+
+/* 텍스트 영역 */
+.ps2-text{
+  opacity:0;
+  transform:translateY(40px);
+  transition:opacity .7s ease, transform .7s ease;
+  font-family:'Pretendard', 'Noto Sans', sans-serif;
+  color:#111;
+}
+.ps2-logo{
+  width:140px;
+  height:auto;
+  display:inline-block;
+  vertical-align:middle;
+}
+.ps2-present{
+  margin-left:1rem;
+  font-size:1.2rem;
+  vertical-align:middle;
+  color:#333;
+}
+.ps2-p{
+  margin:1.7em 0;
+  font-size:1.5rem;
+  line-height:1.6;
+}
+.ps2-link{
+  display:inline-block;
+  margin-top:2rem;
+  font-weight:600;
+  color:#111;
+  text-decoration:underline;
+}
+
+/* 이미지 그리드 */
+.ps2-grid{
+  opacity:0;
+  transform:translateY(40px);
+  transition:opacity .7s ease .15s, transform .7s ease .15s;
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 1fr;
+  gap:1.2rem;
+}
+.ps2-card{
+  width:100%;
+  aspect-ratio:1/1;
+  background:#eee;
+  overflow:hidden;
+}
+.ps2-card img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+
+/* play 시 나타남 */
+.PartnerSection_02.play .ps2-text,
+.PartnerSection_02.play .ps2-grid{
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* 반응형 */
+@media (max-width:1024px){
+  .ps2-wrap{
+    grid-template-columns:1fr;
+  }
+  .ps2-grid{
+    grid-template-columns:repeat(3, 1fr);
+    order:2;
+  }
+  .ps2-text{
+    order:1;
+  }
+}
+@media (max-width:640px){
+  .ps2-grid{
+    grid-template-columns:repeat(2, 1fr);
+    gap:0.8rem;
+  }
+  .ps2-logo{ width:120px; }
+  .ps2-present{ font-size:0.95rem; }
+  .ps2-p{ font-size:0.95rem; }
+}

@@ -1,70 +1,134 @@
-/* ───────────────────────────────────────────
-   Section2 base
-─────────────────────────────────────────── */
-.whoSection_02{
-    position: relative;
-    width: 100%;
-    min-height: 100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    overflow:hidden;
-    background: linear-gradient(90deg,#4ed7e5 0%, #0e5ccf 100%);
+/* 전체 섹션 */
+.whoSection_02 {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  padding: 6rem 5vw;
+  box-sizing: border-box;
+  background: linear-gradient(135deg, #d6ffe8 0%, #bcd9ff 100%);
+  display: grid;
+  grid-template-columns: 420px 1fr;    /* 로고폭 + 본문 */
+  grid-auto-rows: auto;
+  grid-column-gap: 3vw;
+  grid-row-gap: 2.5rem;
+  color: #000;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity .6s ease, transform .6s ease;
+  font-family: 'Anton', sans-serif;
+}
+
+.whoSection_02.play {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 로고 박스 */
+.w2-logo-box {
+  grid-column: 1 / 2;
+  grid-row: 1 / 3;             /* 로고가 2개의 텍스트 블록 높이만큼 차지 */
+  align-self: start;
+}
+.w2-logo-box img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* 텍스트 (오른쪽 첫 단락은 로고 높이 옆에 들어감) */
+.w2-intro {
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+  font-size: clamp(16px, 1.35vw, 22px);
+  line-height: 1.45;
+}
+
+.w2-desc {
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+  font-size: clamp(16px, 1.35vw, 22px);
+  line-height: 1.45;
+  margin-top: .5rem;
+}
+
+/* CEO 이미지 박스 */
+.w2-ceo-img {
+  grid-column: 1 / 2;
+  grid-row: 3 / 4;
+  max-width: 260px;
+  border-radius: 16px;
+  overflow: hidden;
+}
+.w2-ceo-img img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* CEO 설명 */
+.w2-ceo-desc {
+  font-weight:100;
+  grid-column: 2 / 3;
+  grid-row: 3 / 4;
+  font-size: clamp(16px, 1.35vw, 22px);
+  line-height: 1.45;
+}
+
+/* ========== 반응형 ========== */
+@media (max-width: 1200px) {
+  .whoSection_02 {
+    grid-template-columns: 340px 1fr;
   }
-  
-  /* 텍스트 컨테이너 */
-  .ws2-wrap{
-    width: 90%;
-    max-width: 1400px;
-    text-align: center;
+}
+
+@media (max-width: 900px) {
+  .whoSection_02 {
+    grid-template-columns: 1fr;
   }
-  
-  /* 기본 텍스트 스타일 */
-  .ws2-line{
-    margin: .6em 0 .0em;
-    font-family: 'Anton', sans-serif;
-    color:#fff;
-    line-height:1;
-    opacity:0;
-    transform: translateY(40px);
-    font-size: clamp(2.8rem, 8vw, 7rem);
-    letter-spacing: .02em;
+
+  .w2-logo-box {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    max-width: 300px;
   }
-  
-  .ws2-sub{
-    margin: .2em 0 1.4em;
-    font-family: 'Anton', sans-serif;
-    color:#000;
-    opacity:0;
-    transform: translateY(40px);
-    font-size: clamp(1.2rem, 3.2vw, 3rem);
-    letter-spacing: .02em;
+
+  .w2-intro {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+    margin-top: 1.8rem;
   }
-  
-  /* play 시 애니메이션 */
-  .whoSection_02.play .ws2-1{
-    animation: fadeUp .7s ease-out forwards;
+
+  .w2-desc {
+    grid-column: 1 / 2;
+    grid-row: 3 / 4;
   }
-  .whoSection_02.play .ws2-2{
-    animation: fadeUp .7s ease-out forwards .15s;
+
+  .w2-ceo-img {
+    grid-column: 1 / 2;
+    grid-row: 4 / 5;
+    max-width: 220px;
+    margin-top: 2.5rem;
   }
-  .whoSection_02.play .ws2-2s{
-    animation: fadeUp .7s ease-out forwards .30s;
+
+  .w2-ceo-desc {
+    grid-column: 1 / 2;
+    grid-row: 5 / 6;
   }
-  .whoSection_02.play .ws2-3{
-    animation: fadeUp .7s ease-out forwards .45s;
+}
+
+@media (max-width: 600px) {
+  .whoSection_02 {
+    padding: 5rem 6vw;
   }
-  .whoSection_02.play .ws2-3s{
-    animation: fadeUp .7s ease-out forwards .60s;
+  .w2-intro,
+  .w2-desc,
+  .w2-ceo-desc {
+    font-size: clamp(15px, 4vw, 20px);
   }
-  
-  @keyframes fadeUp{
-    from{opacity:0; transform:translateY(40px);}
-    to  {opacity:1; transform:translateY(0);}
+  .w2-logo-box {
+    max-width: 240px;
   }
-  
-  /* 모바일에서 좌측 정렬이 필요하면 */
-  @media (max-width:768px){
-    .ws2-wrap{ text-align:left; }
+  .w2-ceo-img {
+    max-width: 180px;
   }
-  
+}

@@ -16,15 +16,15 @@ export default function Slidebar({ isOpen, onClose }) {
           <header id="header">
             <nav id="nav">
               <ul>
-                <li><a>HOME</a></li>
-                <li><a>WHAT WE DO</a></li>
-                <li><a>WHO WE ARE</a></li>
-                <li><a>BUSINESS CONSULTING & DEVELOPMENT</a></li>
-                <li><a>STRATEGIC PARTNERSHIP</a></li>
+                <li><a href="/">HOME</a></li>
+                <li><a href="/we">WHAT WE DO</a></li>
+                <li><a href="/who">WHO WE ARE</a></li>
+                <li><a href="/business"> BUSINESS CONSULTING & DEVELOPMENT</a></li>
+                <li><a href="/partnership">STRATEGIC PARTNERSHIP</a></li>
                 <li className="banrdBusinessFont"><a>Brand Management Business</a></li>
-                <li><a>NEWS</a></li>
-                <li><a>RECRUIT</a></li>
-                <li><a>CONTACT</a></li>
+                <li><a href="/">NEWS</a></li>
+                <li><a href="/">RECRUIT</a></li>
+                <li><a href="/">CONTACT</a></li>
               </ul>
             </nav>
           </header>

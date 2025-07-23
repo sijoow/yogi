@@ -21,6 +21,7 @@
 }
 
 /* 3) 텍스트 기본 상태 (숨김) */
+.whoSection_01_line1{text-align:center;}
 .whoSection_01_line1,
 .whoSection_01_line2 {
   color: #fff;
@@ -52,6 +53,7 @@
   .whoSection_01_text { width: 90%; }
   .whoSection_01_line1,
   .whoSection_01_line2 {
+    text-align:left;
     font-size: clamp(2rem, 22vw, 12rem);
     line-height: 1.1;
   }

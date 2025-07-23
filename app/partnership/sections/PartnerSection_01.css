@@ -1,0 +1,82 @@
+/*───────────────────────────────────────────────
+  PartnerSection_01.css (fade-in-up)
+───────────────────────────────────────────────*/
+
+/* 1) 섹션 기본 */
+.PartnerSection_01{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  width:100%;
+  height:100vh;
+  background:#000; /* 필요시 이미지로 교체 */
+  overflow:hidden;
+}
+
+/* 2) 텍스트 래퍼 */
+.PartnerSection_01_text{
+  width:80%;
+  max-width:1300px;
+  text-align:left;
+}
+
+/* 3) 텍스트 기본 상태 */
+.PartnerSection_01_line1,
+.PartnerSection_01_line2,
+.PartnerSection_01_line3{
+  text-align:center;
+  color:#fff;
+  font-family:'Anton', sans-serif;
+  margin:0;
+  opacity:0;
+  transform:translateY(50px);
+  font-size:clamp(3rem,14vw,25vw);
+  line-height:1;
+  will-change:opacity, transform;
+}
+
+/* 4) play 붙었을 때 */
+.PartnerSection_01.play .PartnerSection_01_line1{
+  animation:fadeInUp .8s ease-out forwards;
+}
+.PartnerSection_01.play .PartnerSection_01_line2{
+  animation:fadeInUp .8s ease-out forwards .3s;
+}
+.PartnerSection_01.play .PartnerSection_01_line3{
+  animation:fadeInUp .8s ease-out forwards .5s;
+}
+
+/* 5) keyframes */
+@keyframes fadeInUp{
+  from{opacity:0; transform:translateY(50px);}
+  to  {opacity:1; transform:translateY(0);}
+}
+
+/* ───────── 반응형 ───────── */
+@media (max-width:767px){
+  .PartnerSection_01_text{width:90%;}
+  .PartnerSection_01_line1,
+  .PartnerSection_01_line2,
+  .PartnerSection_01_line3{
+    text-align:left;
+    font-size:clamp(2rem,22vw,12rem);
+    line-height:1.1;
+  }
+}
+@media (min-width:768px) and (max-width:1199px){
+  .PartnerSection_01_text{width:85%;}
+  .PartnerSection_01_line1,
+  .PartnerSection_01_line2,
+  .PartnerSection_01_line3{
+    font-size:clamp(3rem,16vw,15rem);
+    line-height:1.05;
+  }
+}
+@media (min-width:1200px){
+  .PartnerSection_01_text{width:80%;}
+  .PartnerSection_01_line1,
+  .PartnerSection_01_line2,
+  .PartnerSection_01_line3{
+    font-size:clamp(4rem,14vw,18rem);
+  }
+}
