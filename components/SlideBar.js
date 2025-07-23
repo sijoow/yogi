@@ -1,40 +1,47 @@
-import React from "react";
-import "./Slidebar.css";
+// components/Slidebar.jsx
+'use client';
+
+import React from 'react';
+import Link from 'next/link';
+import './Slidebar.css';
 
 export default function Slidebar({ isOpen, onClose }) {
   return (
     <>
-      {/* 배경 오버레이 */}
+      {/* backdrop */}
       <div
-        className={`slide-overlay ${isOpen ? "visible" : ""}`}
+        className={`slide-overlay ${isOpen ? 'visible' : ''}`}
         onClick={onClose}
       />
 
-      {/* 슬라이드 패널 */}
-      <nav className={`slidebar ${isOpen ? "open" : ""}`}>
+      {/* panel */}
+      <nav className={`slidebar ${isOpen ? 'open' : ''}`} aria-hidden={!isOpen}>
         <div className="inner">
           <header id="header">
             <nav id="nav">
-              <ul>
-                <li><a href="/">HOME</a></li>
-                <li><a href="/we">WHAT WE DO</a></li>
-                <li><a href="/who">WHO WE ARE</a></li>
-                <li><a href="/business"> BUSINESS CONSULTING & DEVELOPMENT</a></li>
-                <li><a href="/partnership">STRATEGIC PARTNERSHIP</a></li>
-                <li className="banrdBusinessFont"><a>Brand Management Business</a></li>
-                <li><a href="/">NEWS</a></li>
-                <li><a href="/">RECRUIT</a></li>
-                <li><a href="/">CONTACT</a></li>
+              <ul onClick={onClose}>
+                <li><Link href="/">HOME</Link></li>
+                <li><Link href="/we">WHAT WE DO</Link></li>
+                <li><Link href="/who">WHO WE ARE</Link></li>
+                <li><Link href="/business">BUSINESS CONSULTING &amp; DEVELOPMENT</Link></li>
+                <li><Link href="/partnership">STRATEGIC PARTNERSHIP</Link></li>
+                <li className="banrdBusinessFont">
+                  <Link href="/brand">Brand Management Business</Link>
+                </li>
+                <li><Link href="/news">NEWS</Link></li>
+                <li><Link href="/recruit">RECRUIT</Link></li>
+                <li><Link href="/contact">CONTACT</Link></li>
               </ul>
             </nav>
           </header>
 
-          {/* footer */}
           <footer id="footer">
             <address>
-            #201, 125, Bongeunsa-ro, 
-            Gangnam-gu, Seoul, Korea<br />
-              <a href="tel:+82-10-2880-0721">Tel+82-10-2880-0721 / Fax +82-303-3441-6747 </a>
+              #201, 125, Bongeunsa-ro, <br />
+              Gangnam-gu, Seoul, Korea<br />
+              <a href="tel:+82-10-2880-0721">
+                Tel +82-10-2880-0721 / Fax +82-303-3441-6747
+              </a>
             </address>
             <ul className="contact_mail">
               <li>
