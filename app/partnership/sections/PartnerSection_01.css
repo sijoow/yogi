@@ -1,82 +1,122 @@
-/*───────────────────────────────────────────────
-  PartnerSection_01.css (fade-in-up)
-───────────────────────────────────────────────*/
+/* ───────────────────────────────────────────────
+   Strategic Partnership Section
+   ─────────────────────────────────────────────── */
 
-/* 1) 섹션 기본 */
-.PartnerSection_01{
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  width:100%;
-  height:100vh;
-  background:#000; /* 필요시 이미지로 교체 */
-  overflow:hidden;
-}
-
-/* 2) 텍스트 래퍼 */
-.PartnerSection_01_text{
-  width:80%;
-  max-width:1300px;
-  text-align:left;
-}
-
-/* 3) 텍스트 기본 상태 */
-.PartnerSection_01_line1,
-.PartnerSection_01_line2,
-.PartnerSection_01_line3{
-  text-align:center;
-  color:#fff;
-  font-family:'Anton', sans-serif;
-  margin:0;
-  opacity:0;
-  transform:translateY(50px);
-  font-size:clamp(3rem,14vw,25vw);
-  line-height:1;
-  will-change:opacity, transform;
-}
-
-/* 4) play 붙었을 때 */
-.PartnerSection_01.play .PartnerSection_01_line1{
-  animation:fadeInUp .8s ease-out forwards;
-}
-.PartnerSection_01.play .PartnerSection_01_line2{
-  animation:fadeInUp .8s ease-out forwards .3s;
-}
-.PartnerSection_01.play .PartnerSection_01_line3{
-  animation:fadeInUp .8s ease-out forwards .5s;
-}
-
-/* 5) keyframes */
-@keyframes fadeInUp{
-  from{opacity:0; transform:translateY(50px);}
-  to  {opacity:1; transform:translateY(0);}
-}
-
-/* ───────── 반응형 ───────── */
-@media (max-width:767px){
-  .PartnerSection_01_text{width:90%;}
-  .PartnerSection_01_line1,
-  .PartnerSection_01_line2,
-  .PartnerSection_01_line3{
-    text-align:left;
-    font-size:clamp(2rem,22vw,12rem);
+   .ps01{
+    width:100%;
+    min-height:100vh;
+    background: linear-gradient(135deg,#c9f7df 0%, #8fb6ff 100%);
+    padding:7vw 6vw 10vw;
+    box-sizing:border-box;
+    color:#111;
+    font-family:'Pretendard','Noto Sans',sans-serif;
+    overflow:hidden;
+    opacity:0;
+    transform:translateY(40px);
+    transition:opacity .7s ease, transform .7s ease;
+  }
+  .ps01.play{
+    opacity:1;
+    transform:translateY(0);
+  }
+  
+  /* 타이틀 */
+  .ps01-title{
+    font-family:'Anton',sans-serif;
+    font-size: clamp(2.5rem,5vw,3.8rem);
+    margin:0 0 3vw;
     line-height:1.1;
   }
-}
-@media (min-width:768px) and (max-width:1199px){
-  .PartnerSection_01_text{width:85%;}
-  .PartnerSection_01_line1,
-  .PartnerSection_01_line2,
-  .PartnerSection_01_line3{
-    font-size:clamp(3rem,16vw,15rem);
-    line-height:1.05;
+  
+  /* 상단 로고 + 소개 */
+  .ps01-top{
+    display:flex;
+    gap:3vw;
+    align-items:center;
+    flex-wrap:wrap;
+    margin-bottom:5vw;
   }
-}
-@media (min-width:1200px){
-  .PartnerSection_01_text{width:80%;}
-  .PartnerSection_01_line1,
-  .PartnerSection_01_line2,
-  .PartnerSection_01_line3{
-    font-size:clamp(4rem,14vw,18rem);
+  .ps01-logos{
+    display:flex;
+    align-items:center;
+    gap:1.8vw;
   }
-}
+  .ps01-logo{
+    height: clamp(48px,5vw,85px);
+    width:auto;
+    object-fit:contain;
+  }
+  .ps01-x{
+    font-size: clamp(2rem,4vw,3rem);
+    font-weight:700;
+  }
+  .ps01-intro{
+    flex:1 1 450px;
+    font-size: clamp(1rem,1.3vw,1.25rem);
+    line-height:1.6;
+    margin:0;
+  }
+  
+  /* 인물 카드 */
+  .ps01-card{
+    background: rgba(255,255,255,.45);
+    border: 3px solid #111;
+    border-radius: 28px;
+    padding:3vw 3vw 3.5vw;
+    display:flex;
+    gap:2.5vw;
+    flex-wrap:wrap;
+  }
+  .ps01-photo{
+    flex:0 0 clamp(220px,24vw,320px);
+    border-radius:22px;
+    overflow:hidden;
+  }
+  .ps01-photo img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+  }
+  .ps01-card-body{
+    flex:1 1 400px;
+    min-width:260px;
+  }
+  .ps01-name{
+    font-family:'Anton',sans-serif;
+    font-size: clamp(1.8rem,3vw,2.6rem);
+    margin:0 0 1.8vw;
+  }
+  .ps01-columns{
+    display:grid;
+    grid-template-columns: repeat(auto-fit,minmax(260px,1fr));
+    gap:2vw 3vw;
+    font-size: clamp(.95rem,1.15vw,1.1rem);
+    line-height:1.55;
+  }
+  .ps01-columns ul{
+    list-style:none;
+    padding:0;
+    margin:0;
+  }
+  .ps01-columns li{
+    margin-bottom:1.2rem;
+  }
+  .ps01-columns li span{
+    font-weight:600;
+  }
+  
+  /* Responsive tweaks */
+  @media (max-width:768px){
+    .ps01-top{ gap:6vw; }
+    .ps01-intro{ font-size:1rem; }
+    .ps01-card{ padding:7vw 6vw; }
+    .ps01-photo{ flex:0 0 100%; max-width:320px; margin:auto; }
+    .ps01-name{ text-align:center; margin-top:4vw; }
+  }
+  @media (max-width:480px){
+    .ps01-title{ font-size:2.2rem; }
+    .ps01-logos{ gap:4vw; }
+    .ps01-x{ font-size:2rem; }
+  }
+  

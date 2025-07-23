@@ -1,63 +1,97 @@
 'use client';
 
-import React, { useRef, useEffect } from 'react';
+import { useRef, useEffect } from 'react';
 import './PartnerSection_02.css';
 
-const IMGS = [
-  '/imgs/sample1.jpg','/imgs/sample2.jpg','/imgs/sample3.jpg',
-  '/imgs/sample4.jpg','/imgs/sample5.jpg','/imgs/sample6.jpg',
-  '/imgs/sample7.jpg','/imgs/sample8.jpg','/imgs/sample9.jpg',
-]; // 실제 경로로 교체
-
-export default function PartnerSection_02({ id = 'partnerSec2' }) {
+export default function PartnerSection_02({ id = 'partnerSec02' }) {
   const ref = useRef(null);
 
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
+
     const io = new IntersectionObserver(
-      ([e]) => e.isIntersecting ? el.classList.add('play') : el.classList.remove('play'),
-      { threshold: 0.35 }
+      ([entry]) => {
+        entry.isIntersecting ? el.classList.add('play') : el.classList.remove('play');
+      },
+      { threshold: 0.4 }
     );
     io.observe(el);
     return () => io.disconnect();
   }, []);
 
   return (
-    <section id={id} ref={ref} className="PartnerSection_02">
-      <div className="ps2-wrap">
-        {/* 좌측 텍스트 */}
-        <div className="ps2-text">
-          <img src="https://yogibo.kr/web/img/icon/new2/main_logo_off.png" alt="yogibo" className="ps2-logo" />
-          <span className="ps2-present">presented by Yogi Corporation</span>
+    <section id={id} ref={ref} className="ps02">
+      {/* 헤더 */}
+      <h2 className="ps02-title">Strategic Partnership</h2>
+      <div className="ps02-logos">
+        <img src="/imgs/yogi_logo_black.svg" alt="Yogi" className="ps02-logo yogi" />
+        <span className="ps02-x">×</span>
+        <img src="/imgs/orchesta_logo.svg" alt="Orchesta" className="ps02-logo orchesta" />
+      </div>
 
-          <p className="ps2-p">
-            Yogibo is a lifestyle brand offering bean bags, living accessories, body pillows,
-            cushions, and stuffed animals featuring various character designs.
-          </p>
-          <p className="ps2-p">
-            What sets Yogibo apart is its patented technology that allows a single product to
-            transform into multiple forms.
-          </p>
-          <p className="ps2-p">
-            Founded in 2009 in the USA, Yogibo became the world’s No.1 bean bag sofa brand within
-            just seven years. Today, Yogibo has over 160 stores worldwide, including the USA,
-            Canada, Japan, South Korea, Taiwan, Thailand, Singapore, and various countries across Europe.
-          </p>
+      {/* 카드 두 개 */}
+      <div className="ps02-cards">
+        {/* Nimrod */}
+        <article className="ps02-card">
+          <div className="ps02-photo">
+            <img src="/imgs/nimrod.jpg" alt="Nimrod Moyal" />
+          </div>
+          <div className="ps02-info">
+            <h3 className="ps02-name">Nimrod Moyal</h3>
 
-          <a href="https://www.yogibo.kr" target="_blank" rel="noreferrer" className="ps2-link">
-            www.yogibo.kr
-          </a>
-        </div>
+            <ul className="ps02-history">
+              <li>
+                <span>2024 – Present</span><br/>
+                Global Partner of <strong>Orchesta</strong>
+              </li>
+              <li>
+                Global Project Director in <strong>NM REAL Intelligence</strong>,<br/>
+                (Partnership with <strong>Dynata Group</strong>) Hague, Netherlands
+              </li>
+              <li>
+                <span>1994 – 2024</span><br/>
+                Managing Director in <strong>ADK INSIGHTS</strong> Hoofddorp, Netherlands
+              </li>
+              <li>
+                <span>Education</span><br/>
+                Erasmus University, Rotterdam School of Management MBA
+              </li>
+            </ul>
+          </div>
+        </article>
 
-        {/* 우측 이미지 그리드 */}
-        <div className="ps2-grid">
-          {IMGS.map((src, i) => (
-            <div key={i} className="ps2-card">
-              <img src={src} alt={`yogibo-${i}`} />
-            </div>
-          ))}
-        </div>
+        {/* Ran */}
+        <article className="ps02-card">
+          <div className="ps02-photo">
+            <img src="/imgs/ran.jpg" alt="Ran Landau" />
+          </div>
+          <div className="ps02-info">
+            <h3 className="ps02-name">Ran Landau</h3>
+
+            <ul className="ps02-history">
+              <li>
+                <span>2025 – Present</span><br/>
+                Global Partner of <strong>Orchesta</strong>
+              </li>
+              <li>
+                <span>2023 – Present</span><br/>
+                Global Sales and Business Development Director in<br/>
+                <strong>Mommy Care International</strong>, Yavne Israel
+              </li>
+              <li>
+                <span>2013 – 2020</span><br/>
+                Founder and Managing Partner of <strong>Bura International Trade</strong>,<br/>
+                Ramat HaSharon Israel
+              </li>
+              <li>
+                <span>Education</span><br/>
+                Tel Aviv University MBA<br/>
+                Tel Aviv University B.A. Economics &amp; Management
+              </li>
+            </ul>
+          </div>
+        </article>
       </div>
     </section>
   );

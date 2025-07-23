@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useRef, useEffect } from 'react';
-import './PartnerSection_03.css';
+import './BrandSection_03.css';
 
 const IMGS = [
   '/imgs/sf_01.jpg','/imgs/sf_02.jpg','/imgs/sf_03.jpg',
@@ -9,7 +9,7 @@ const IMGS = [
   '/imgs/sf_07.jpg','/imgs/sf_08.jpg','/imgs/sf_09.jpg',
 ]; // 실제 경로로 교체
 
-export default function PartnerSection_03({ id = 'partnerSec3' }) {
+export default function BrandSection_03({ id = 'BrandSec3' }) {
   const ref = useRef(null);
 
   useEffect(() => {
@@ -29,7 +29,7 @@ export default function PartnerSection_03({ id = 'partnerSec3' }) {
   }, []);
 
   return (
-    <section id={id} ref={ref} className="PartnerSection_03">
+    <section id={id} ref={ref} className="BrandSection_03">
       <div className="ps3-wrap">
         {/* 왼쪽 텍스트 */}
         <div className="ps3-text">
