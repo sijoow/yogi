@@ -30,7 +30,7 @@ export default function Section1({ id = 'sec1' }) {
     io.observe(el);
     return () => io.disconnect();
   }, []);
-
+//
   return (
     <section id={id} ref={sectionRef} className="BusinessSection_01">
       <div className="BusinessSection_01_text">
