@@ -7,27 +7,41 @@ export default function SectionIndicator({ sectionIds }) {
   const [activeIndex, setActiveIndex] = useState(0);
 
   useEffect(() => {
-    const observers = sectionIds.map((id, idx) => {
-      const el = document.getElementById(id);
-      if (!el) return null;
+    const sections = sectionIds
+      .map(id => document.getElementById(id))
+      .filter(Boolean);
 
-      const observer = new IntersectionObserver(
+    if (!sections.length) return;
+
+    const observers = sections.map((el, idx) => {
+      const io = new IntersectionObserver(
         ([entry]) => {
-          if (entry.isIntersecting) {
-            setActiveIndex(idx);
-          }
+          if (entry.isIntersecting) setActiveIndex(idx);
         },
-        {
-          rootMargin: '0px 0px 50% 0px',  // 위쪽만 감지 폭 축소 → 좀 더 빨리 인식
-          threshold: 0.5,                  // 50% 이상 보일 때도 교차로 판단
-        }
+        { rootMargin: '-45% 0px -55% 0px', threshold: 0 }
       );
-      observer.observe(el);
-      return observer;
+      io.observe(el);
+      return io;
     });
 
+    // 맨 위/아래 보정
+    const onScroll = () => {
+      if (window.scrollY <= 1) {
+        setActiveIndex(0);
+        return;
+      }
+      const atBottom =
+        window.innerHeight + window.scrollY >=
+        document.body.offsetHeight - 1;
+      if (atBottom) setActiveIndex(sections.length - 1);
+    };
+
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+
     return () => {
-      observers.forEach(obs => obs && obs.disconnect());
+      observers.forEach(o => o.disconnect());
+      window.removeEventListener('scroll', onScroll);
     };
   }, [sectionIds]);
 

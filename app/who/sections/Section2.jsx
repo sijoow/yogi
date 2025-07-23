@@ -2,7 +2,7 @@
 'use client';
 
 import React, { useEffect, useRef } from 'react';
-import './weSection_02.css';
+import './whoSection_02.css';
 
 export default function Section02({ id = 'sec2' }) {
   const ref = useRef(null);
@@ -27,7 +27,7 @@ export default function Section02({ id = 'sec2' }) {
   }, []);
 
   return (
-    <section id={id} ref={ref} className="weSection_02">
+    <section id={id} ref={ref} className="whoSection_02">
       <div className="ws2-wrap">
         <h2 className="ws2-line ws2-1">YOGI CORPORATION IS</h2>
 

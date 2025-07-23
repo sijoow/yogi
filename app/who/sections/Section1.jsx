@@ -2,7 +2,7 @@
 'use client';
 
 import React, { useEffect, useRef } from 'react';
-import './weSection_01.css';
+import './whoSection_01.css';
 
 export default function Section1({ id = 'sec1' }) {
   const sectionRef = useRef(null);
@@ -27,10 +27,10 @@ export default function Section1({ id = 'sec1' }) {
   }, []);
 
   return (
-    <section id={id} ref={sectionRef} className="weSection_01">
-      <div className="weSection_01_text">
-        <h1 className="weSection_01_line1">NO RESULTS</h1>
-        <h1 className="weSection_01_line2">NO BUSINESS</h1>
+    <section id={id} ref={sectionRef} className="whoSection_01">
+      <div className="whoSection_01_text">
+        <h1 className="whoSection_01_line1">WE KNOW</h1>
+        <h1 className="whoSection_01_line2">WHAT WE DO</h1>
       </div>
     </section>
   );

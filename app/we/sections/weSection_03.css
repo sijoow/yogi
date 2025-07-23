@@ -1,0 +1,72 @@
+/* ─────────────────────────────────────────────
+   Section 03 : Blue background + titles + desc
+───────────────────────────────────────────── */
+
+.weSection_03{
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+    /* 푸른 느낌 배경 */
+    background: linear-gradient(110deg, #5ad9e9 0%, #0e5bcc 100%);
+  }
+  
+  /* 내부 래퍼 */
+  .ws3-wrap{
+    width: 92%;
+    max-width: 1500px;
+    text-align: center;
+    color:#fff;
+  }
+  
+  /* 제목 공통 */
+  .ws3-title{
+    margin: .2em 0;
+    font-family: 'Anton', sans-serif;
+    line-height: 1.05;
+    letter-spacing: .015em;
+    opacity:0;
+    transform: translateY(40px);
+    color:#111; /* 이미지에선 검정 느낌, 필요시 #fff로 변경 */
+    font-size: clamp(2.5rem, 9vw, 9rem);
+  }
+  
+  /* 설명 */
+  .ws3-desc{
+    margin-top: 1.6rem;
+    font-family: 'Anton', sans-serif; /* 혹은 Roboto 등 */
+    font-weight: 400;
+    line-height: 1.35;
+    letter-spacing: .01em;
+    opacity:0;
+    transform: translateY(40px);
+    color:#fff;
+    font-size: clamp(1rem, 2.2vw, 2.2rem);
+  }
+  
+  /* 애니메이션 트리거 */
+  .weSection_03.play .ws3-1{
+    animation: fadeUp .7s ease-out forwards;
+  }
+  .weSection_03.play .ws3-2{
+    animation: fadeUp .7s ease-out forwards .18s;
+  }
+  .weSection_03.play .ws3-desc{
+    animation: fadeUp .8s ease-out forwards .35s;
+  }
+  
+  /* keyframes */
+  @keyframes fadeUp{
+    from{ opacity:0; transform: translateY(40px); }
+    to  { opacity:1; transform: translateY(0);     }
+  }
+  
+  /* 반응형 추가 조정 */
+  @media (max-width:768px){
+    .ws3-wrap{ text-align:left; }
+    .ws3-title{ color:#fff; } /* 모바일에서 배경 대비가 약하면 흰색 */
+  }
+  

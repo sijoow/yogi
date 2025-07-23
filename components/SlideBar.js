@@ -16,41 +16,15 @@ export default function Slidebar({ isOpen, onClose }) {
           <header id="header">
             <nav id="nav">
               <ul>
-                <li>
-                  <a href="#main" onClick={onClose}>
-                    <img src="https://www.boosterz.co.kr/img/content/menu01.png" alt="HOME" />
-                  </a>
-                </li>
-                <li>
-                  <a href="#sub01" onClick={onClose}>
-                    <img src="https://www.boosterz.co.kr/img/content/menu02.png" alt="Who we are" />
-                  </a>
-                </li>
-                <li>
-                  <a href="#sub02" onClick={onClose}>
-                    <img src="https://www.boosterz.co.kr/img/content/menu03-1.png" alt="WHAT WE DO" />
-                  </a>
-                </li>
-                <li>
-                  <a href="#sub03" onClick={onClose}>
-                    <img src="https://www.boosterz.co.kr/img/content/menu04-1.png" alt="PARTNERSHIP" />
-                  </a>
-                </li>
-                <li>
-                  <a href="#sub04" onClick={onClose}>
-                    <img src="https://www.boosterz.co.kr/img/content/menu06.png" alt="OUR CAMPAIGN" />
-                  </a>
-                </li>
-                <li>
-                  <a href="https://boosterz.team/" target="_blank" rel="noreferrer">
-                    <img src="https://www.boosterz.co.kr/img/content/recruit.png" alt="recruit" />
-                  </a>
-                </li>
-                <li>
-                  <a href="#contact" className="open_btn" onClick={onClose}>
-                    <img src="https://www.boosterz.co.kr/img/content/menu05.png" alt="contact" />
-                  </a>
-                </li>
+                <li><a>HOME</a></li>
+                <li><a>WHAT WE DO</a></li>
+                <li><a>WHO WE ARE</a></li>
+                <li><a>BUSINESS CONSULTING & DEVELOPMENT</a></li>
+                <li><a>STRATEGIC PARTNERSHIP</a></li>
+                <li className="banrdBusinessFont"><a>Brand Management Business</a></li>
+                <li><a>NEWS</a></li>
+                <li><a>RECRUIT</a></li>
+                <li><a>CONTACT</a></li>
               </ul>
             </nav>
           </header>
@@ -58,9 +32,9 @@ export default function Slidebar({ isOpen, onClose }) {
           {/* footer */}
           <footer id="footer">
             <address>
-            125, Bongeunsa-ro, Gangnam-gu, <br />
-            Seoul, Republic of Korea<br />
-              <a href="tel:+82-2-557-0920">02-557-0920</a>
+            #201, 125, Bongeunsa-ro, 
+            Gangnam-gu, Seoul, Korea<br />
+              <a href="tel:+82-10-2880-0721">Tel+82-10-2880-0721 / Fax +82-303-3441-6747 </a>
             </address>
             <ul className="contact_mail">
               <li>

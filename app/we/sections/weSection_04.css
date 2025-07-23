@@ -1,0 +1,73 @@
+/* ─────────────────────────────────────────────
+   Section 4 : BRAND MANAGEMENT BUSINESS
+─────────────────────────────────────────────*/
+.weSection_04 {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    padding: 12vh 6vw;
+    box-sizing: border-box;
+  
+    /* 파스텔 그라디언트 배경 */
+    background: linear-gradient(135deg, #c9ffe7 0%, #9ed0ff 100%);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* 공통 텍스트 스타일 */
+  .weSec04_title,
+  .weSec04_desc {
+    font-family: 'Anton', sans-serif;
+    color: #111;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  
+  /* 타이틀 */
+  .weSec04_title {
+    font-size: clamp(36px, 7vw, 96px);
+    line-height: 1.05;
+    margin-bottom: 8vh;
+  }
+  
+  /* 본문(설명) */
+  .weSec04_desc {
+    font-family: 'Anton', sans-serif; /* 필요 시 다른 폰트로 변경 */
+    font-size: clamp(18px, 2.4vw, 28px);
+    line-height: 1.35;
+    max-width: 1100px;
+  }
+  
+  /* play 붙었을 때 애니메이션 */
+  .weSection_04.play .weSec04_title {
+    animation: fadeUp 0.7s ease-out forwards;
+  }
+  .weSection_04.play .weSec04_desc {
+    animation: fadeUp 0.7s ease-out 0.15s forwards;
+  }
+  
+  /* keyframes */
+  @keyframes fadeUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* 모바일 조정 */
+  @media (max-width: 768px) {
+    .weSection_04 {
+      padding: 10vh 5vw;
+      align-items: flex-start;
+      text-align: left;
+    }
+    .weSec04_title,
+    .weSec04_desc {
+      text-align: left;
+    }
+  }
+  

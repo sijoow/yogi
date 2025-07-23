@@ -127,19 +127,19 @@
 .inner {
   width: calc(505 / 1430 * 100%);
   min-width: 450px;
-  max-width: 505px;
+  max-width: 1400px;
   padding: 0;
-  text-align: left;
+  text-align: center;
   margin:0 auto;
 }
 
 .inner #header{
   display:inline-block;
   width:100%;
+  max-width:1600px
 }
 .inner #header ul li{ 
   width:100%;
-  margin-top:8%;
 }
 .inner #header ul li:first-child{
   margin-top:0px;
@@ -150,7 +150,14 @@
   padding-top:5%;
   margin-top:7%;
 }
+address{font-weight:200;font-style: normal;}
 
+.banrdBusinessFont{color:skyblue;}
+.inner #header ul li{margin-top:3%;}
+.inner #header ul li a{line-height:1.2;}
+.inner #header ul li a{font-size:4vw;}
+
+.inner #header ul li a:hover{color:red!important;cursor:pointer;}
 
 /*이너 부분 css 반응형*/
 @media (max-width: 600px) {
@@ -189,27 +196,6 @@ h1.logo{
   max-width:665px;
   min-width:320px;
 }
- nav ul li:nth-child(1) img{width: auto; height:31px; }
- nav ul li:nth-child(2) img{width: auto; height:31px; }
- nav ul li:nth-child(3) img{width: auto; height:31px; }
- nav ul li:nth-child(4) img{width: auto; height:31px; }
- nav ul li:nth-child(5) img{width: auto; height:31px; }
- nav ul li:nth-child(6) img{width: auto; height:31px; }
-nav ul li:nth-child(7) img{width: auto; height:31px; }
-#site_map footer{
-  margin-top:calc(80/846*100%);
-  padding-top:calc(20/846*100%);;
-}
 
-#header{width:90%}
- #nav{width:90%}
-.inner #footer{
-  border-top:1px solid #fff;
-  padding-top:5%;
-  margin-top:7%;
-  width:90%
-}
-
-
-
+.inner #header ul li a{font-size:8vw;}
 }
