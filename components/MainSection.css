@@ -11,8 +11,6 @@
   overflow: hidden;
 }
 
-
-
 /* 1) 섹션 기본 설정 */
 #mainSection {
   position: relative;
@@ -41,10 +39,9 @@
 #mainSection::before {
   content: '';
   position: absolute;
-  inset: 0;                     /* top:0; right:0; bottom:0; left:0; */
-  background-color: rgba(10, 25, 80, 0.5);
-                                /* RGBA(파랑 계열) + 투명도 50% */
-  z-index: -1;                  /* 비디오 위, 텍스트 아래 */
+  inset: 0;                    
+  background-color:  #27346A;                     
+  z-index: -1;                 
   pointer-events: none;
 }
 

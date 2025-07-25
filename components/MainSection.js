@@ -33,7 +33,7 @@ export default function MainSection() {
     <section id="mainSection" ref={sectionRef}>
       <video
         className="bg-video"
-        src="https://yogico.cafe24.com/video/yogico_h1.mp4"
+        src="https://yogico.cafe24.com/video/yogico_h2.mp4"
         autoPlay
         muted
         loop
