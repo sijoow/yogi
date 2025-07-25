@@ -1,22 +1,52 @@
 @import "tailwindcss";
 
-/* 1) 글로벌 컬러/폰트 변수 설정 */
+/* 1) OpenSans 웹폰트 선언 */
+@font-face {
+  font-family: 'OpenSans';
+  font-style: normal;
+  font-weight: 200;
+  font-display: swap;
+  src: url('https://yogico.cafe24.com/font//web/font/OpenSans-Light.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'OpenSans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('https://yogico.cafe24.com/font//web/font/OpenSans-Regular.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'OpenSans';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('https://yogico.cafe24.com/font//web/font/OpenSans-Bold.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'OpenSans';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url('https://yogico.cafe24.com/font//web/font/OpenSans_Condensed-ExtraBold.ttf') format('truetype');
+}
+
+/* 2) 전역 변수에 OpenSans 연결 */
 :root {
   --background: #ffffff;
   --foreground: #171717;
-  /* Next.js에서 Anton을 주입한 CSS 변수 사용 */
-  --font-base: var(--font-anton), sans-serif;
+  --font-base: 'OpenSans', sans-serif;
 }
 
-/* 2) @theme inline (예: Geist 테마) */
+/* 3) 테마 블록도 모두 OpenSans 사용 */
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  /* sans, mono 폰트 모두 Anton으로 덮어쓰기 */
-  --font-sans: var(--font-anton), sans-serif;
-  --font-mono: var(--font-anton), sans-serif;
+  --font-heading: var(--font-anton), sans-serif;
+  --font-sans: var(--font-base);
+  --font-mono: var(--font-base);
 }
 
+/* 다크 모드 색상 */
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
@@ -24,27 +54,27 @@
   }
 }
 
-/* 전역 여백 초기화 및 수평 스크롤 숨기기 */
-html,
-body {
+/* 4) 전역 여백 초기화 및 기본 폰트 설정 */
+html, body {
   margin: 0;
   padding: 0;
   height: 100%;
-  overflow-x: hidden;
-  /* Anton을 기본 폰트로 설정 */
+  overflow-x: hidden;        /* 수평 스크롤 제거 */
   font-family: var(--font-base);
+  background-color: var(--background);
+  color: var(--foreground);
 }
 
-/* Next.js#__next 컨테이너도 100% 높이를 가져야 snap-container가 동작 */
+/* next.js#__next 컨테이너도 100% 높이를 가져야 snap-container가 동작 */
 #__next {
   height: 100%;
 }
 
-/* snap-container 설정 (수직 스크롤만 허용) */
+/* 5) snap-container 설정 (수직 스크롤만 허용) */
 .snap-container {
   height: 100%;
   overflow-y: auto;
-  overflow-x: hidden;
+  overflow-x: hidden;        /* 혹시 모를 수평 스크롤도 제거 */
   scroll-snap-type: y mandatory;
   scroll-behavior: smooth;
 }

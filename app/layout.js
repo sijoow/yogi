@@ -1,16 +1,12 @@
 // app/layout.js
 import "./globals.css";
 import "./styles/globals.css";
-import { Open_Sans } from 'next/font/google';
+import { Anton } from 'next/font/google';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import Script from 'next/script';
 
-const openSans = Open_Sans({
-  subsets: ['latin'],
-  weight: ['300','400','600','700'], // 필요에 따라 조절
-  variable: '--font-open-sans'
-});
+const anton = Anton({ weight: '400', subsets: ['latin'], variable: '--font-anton' });
 
 export default function RootLayout({ children }) {
   return (
@@ -27,7 +23,7 @@ export default function RootLayout({ children }) {
           strategy="afterInteractive"
         />
       </head>
-      <body className={`${openSans.className} flex flex-col h-full`}>
+      <body className={`${anton.className} flex flex-col h-full`}>
         <Navbar />
         <main className="flex-1 w-full overflow-auto">
           {children}

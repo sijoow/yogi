@@ -13,9 +13,9 @@
   overflow: hidden;
 }
 .section02_text {
-  width: 80%;
+  width: 100%;
   max-width: 1300px;
-  text-align: left;
+  text-align:center;
 }
 .section02_line1,
 .section02_line2 {
@@ -39,38 +39,42 @@
 }
 
 
-
 /*레이아웃 별 폰트 크기 수정 작업*/
 @media (min-width: 1300px) {
   .section02_line1,
   .section02_line2 {
-    text-align:center;
     font-size:200px;
-    font-weight:800;
-    letter-spacing:-10px;
+    line-height: 220px;
+    letter-spacing: -2px;
+    font-weight:400;
+    max-width:1000px;
+    margin:0 auto;
   }
 }
 
+
 @media (max-width: 1299px) {
+  .section02_text{text-align:center;}
   .section02_line1,
   .section02_line2 {
-    font-size:140px;
-    font-weight:800;
-    letter-spacing:-10px;
+    font-size:170px;
+    line-height: 190px;
+    letter-spacing: -2px;
+    font-weight:400;
   }
 }
+
+
 @media (max-width: 900px) {
   .section02_line1,
   .section02_line2 {
     width:90%;
     margin:0 auto;
-    display:inline;
+    display:inline-block;
     font-size:90px;
-    font-weight:800;
-    letter-spacing:-2px;
-    white-space: normal;
-    word-break: break-all;
-    overflow-wrap: break-word;
+    line-height: 110px;
+    letter-spacing: -2px;
+    font-weight:400;
     text-align:center;
   }
   .mobile-br {
@@ -78,20 +82,33 @@
   }
 }
 
-@media (max-width: 400px) {
-  .section01{text-align:left;}
+@media (max-width: 550px) {
   .section02_line1,
   .section02_line2 {
     width:90%;
-    text-align:left;
     margin:0 auto;
-    display:inline;
-    font-size:65px;
-    font-weight:800;
-    letter-spacing:-2px;
-    white-space: normal;
-    word-break: break-all;
-    overflow-wrap: break-word;
+    display:inline-block;
+    font-size:60px;
+    line-height: 80px;
+    letter-spacing: -2px;
+    font-weight:400;
+  }
+  .mobile-br {
+    display: block;
+  }
+}
+
+
+@media (max-width: 330px) {
+  .section02_line1,
+  .section02_line2 {
+    width:90%;
+    margin:0 auto;
+    display:inline-block;
+    font-size:50px;
+    line-height: 70px;
+    letter-spacing: -2px;
+    font-weight:400;
   }
   .mobile-br {
     display: block;

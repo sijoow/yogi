@@ -28,10 +28,18 @@ export default function MainSection() {
     observer.observe(el);
     return () => observer.disconnect();
   }, []);
-
+  
   return (
     <section id="mainSection" ref={sectionRef}>
-      <h1 className="main_line1">TOWARD</h1>
+      <video
+        className="bg-video"
+        src="https://yogico.cafe24.com/video/yogico_h1.mp4"
+        autoPlay
+        muted
+        loop
+        playsInline
+      />
+      <h1 className="main_line1 ">TOWARD</h1>
       <h1 className="main_line2">OPPORTUNITIES</h1>
       <h1 className="main_line3">&amp; POSSIBILITIES</h1>      
     </section>

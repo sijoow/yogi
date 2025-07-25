@@ -28,7 +28,7 @@ export default function Section01() {
 
   return (
     <section id="section01" ref={sectionRef}>
-      <h1 className="section01_line1">BUSINESS CONSULTING</h1>
+      <h1 className="section01_line1">BUSINESS <br className="mobile-br" />CONSULTING</h1>
       <h1 className="section01_line2">&amp; DEVELOPMENT</h1>
     </section>
   );

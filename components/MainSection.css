@@ -11,42 +11,9 @@
   overflow: hidden;
 }
 
-/* 2) 배경 반짝임 keyframes */
-@keyframes bgSparkle {
-  0%, 100% { filter: brightness(1); }
-  50%      { filter: brightness(1.6); }
-}
 
-/* 3) 화살표 펄스 keyframes */
-@keyframes arrow-pulse {
-  0%, 100% { opacity: 1; transform: translateX(0); }
-  50%      { opacity: 0.6; transform: translateX(5px); }
-}
 
-/* 4) 배경이미지 pseudo-element */
-#mainSection::after {
-  content: '';
-  position: absolute;
-  z-index: -1;           /* 텍스트보다 뒤로 */
-  top: 20px;             /* 시작 시 살짝 아래 */
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: url('https://yogibo.openhost.cafe24.com/yogico/img/section/test_bg.png')
-              no-repeat center/cover;
-  transform: scale(1.05);
-  /* animation: bgSparkle 4s ease-in-out infinite;
-  transition: top 1s ease-in-out; */
-}
-
-/*───────────────────────────────────────────────
-  텍스트 애니메이션
-─────/*───────────────────────────────────────────────
-  MainSection.css
-  — 배경 + 3줄 텍스트 애니메이션
-───────────────────────────────────────────────*/
-
-/* 1) 섹션 기본 및 배경 (건드리지 마세요) */
+/* 1) 섹션 기본 설정 */
 #mainSection {
   position: relative;
   width: 100%;
@@ -57,21 +24,32 @@
   justify-content: center;
   align-items: center;
 }
-@keyframes bgSparkle {
-  0%,100% { filter: brightness(1); }
-  50%     { filter: brightness(1.6); }
+#mainSection .bg-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: auto;
+  height: 100%;
+  min-width: 101%;
+  min-height: 100%;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+  z-index: -2;                  /* 한 단계 더 뒤로 */
 }
-#mainSection::after {
+
+/* 2) 파란색 오버레이 레이어 */
+#mainSection::before {
   content: '';
   position: absolute;
-  z-index: -1;
-  top: 20px; left: 0; right: 0; bottom: 0;
-  background: url('https://yogibo.openhost.cafe24.com/yogico/img/mainBanner/home_1.jpg')
-              no-repeat center/cover;
-  transform: scale(1.05);
-  /* animation: bgSparkle 4s ease-in-out infinite;
-  transition: top 1s ease-in-out; */
+  inset: 0;                     /* top:0; right:0; bottom:0; left:0; */
+  background-color: rgba(10, 25, 80, 0.5);
+                                /* RGBA(파랑 계열) + 투명도 50% */
+  z-index: -1;                  /* 비디오 위, 텍스트 아래 */
+  pointer-events: none;
 }
+
+
+
 
 /* 1) 섹션 기본 */
 #mainSection {
@@ -89,6 +67,7 @@
 .main_line1,
 .main_line2,
 .main_line3 {
+  font-family: 'Anton';
   color: #fff;
   line-height: 1;
   opacity: 0;
@@ -128,9 +107,10 @@
   .main_line1,
   .main_line2,
   .main_line3 {
-    font-size:170px;
-    font-weight:800;
-    letter-spacing:-10px;
+    font-size:200px;
+    line-height: 220px;
+    letter-spacing: -2px;
+    font-weight:400;
   }
 }
 
@@ -139,9 +119,10 @@
   .main_line1,
   .main_line2,
   .main_line3 {
-    font-size:140px;
-    font-weight:800;
-    letter-spacing:-10px;
+    font-size:170px;
+    line-height: 190px;
+    letter-spacing: -2px;
+    font-weight:400;
   }
 }
 @media (max-width: 900px) {
@@ -152,8 +133,9 @@
     margin:0 auto;
     display:inline;
     font-size:90px;
-    font-weight:800;
-    letter-spacing:-2px;
+    line-height: 110px;
+    letter-spacing: -2px;
+    font-weight:400;
     white-space: normal;
     word-break: break-all;
     overflow-wrap: break-word;
@@ -161,18 +143,36 @@
   }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 550px) {
   
   .main_line1,
   .main_line2,
   .main_line3 {
     width:90%;
-    text-align:left;
     margin:0 auto;
     display:inline;
     font-size:60px;
-    font-weight:800;
-    letter-spacing:-2px;
+    line-height: 80px;
+    letter-spacing: -2px;
+    font-weight:400;
+    white-space: normal;
+    word-break: break-all;
+    overflow-wrap: break-word;
+  }
+}
+
+
+@media (max-width: 330px) {
+  .main_line1,
+  .main_line2,
+  .main_line3 {
+    width:90%;
+    margin:0 auto;
+    display:inline;
+    font-size:50px;
+    line-height: 70px;
+    letter-spacing: -2px;
+    font-weight:400;
     white-space: normal;
     word-break: break-all;
     overflow-wrap: break-word;
