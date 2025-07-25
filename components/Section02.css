@@ -9,7 +9,7 @@
   align-items: center;
   width: 100%;
   height: 100vh;
-  background: #000 url('https://your-domain.com/path/to/clouds.jpg') no-repeat center/cover;
+  background: #0B182C ;
   overflow: hidden;
 }
 .section02_text {
@@ -20,11 +20,9 @@
 .section02_line1,
 .section02_line2 {
   color: #fff;
-  font-family: 'Anton', sans-serif;
   margin: 0;
   opacity: 0;
   transform: translateY(50px);
-  font-size: clamp(3rem, 14vw, 25vw);
   line-height: 1;
 }
 @keyframes fadeInUp {
@@ -35,46 +33,68 @@
 #section02.play .section02_line2 { animation: fadeInUp 0.8s ease-out forwards 0.3s; }
 
 
-/*───────────────────────────────────────────────
-  반응형: 모바일 (최대 767px)
-───────────────────────────────────────────────*/
-@media (max-width: 767px) {
-  .section02_text {
-    width: 90%;               /* 더 좁게 잡아서 좌우 여백 확보 */
-  }
+.mobile-br {
+  display: none;
+  
+}
+
+
+
+/*레이아웃 별 폰트 크기 수정 작업*/
+@media (min-width: 1300px) {
   .section02_line1,
   .section02_line2 {
-    /* 최소 2rem, 뷰포트 너비 기준 18vw, 최대 12rem */
-    font-size: clamp(2rem, 22vw, 12rem);
-    line-height: 1.1;
+    text-align:center;
+    font-size:200px;
+    font-weight:800;
+    letter-spacing:-10px;
   }
 }
 
-/*───────────────────────────────────────────────
-  반응형: 태블릿 (768px ~ 1199px)
-───────────────────────────────────────────────*/
-@media (min-width: 768px) and (max-width: 1199px) {
-  .section02_text {
-    width: 85%;
-  }
+@media (max-width: 1299px) {
   .section02_line1,
   .section02_line2 {
-    /* 최소 3rem, 뷰포트 너비 기준 16vw, 최대 15rem */
-    font-size: clamp(3rem, 16vw, 15rem);
-    line-height: 1.05;
+    font-size:140px;
+    font-weight:800;
+    letter-spacing:-10px;
+  }
+}
+@media (max-width: 900px) {
+  .section02_line1,
+  .section02_line2 {
+    width:90%;
+    margin:0 auto;
+    display:inline;
+    font-size:90px;
+    font-weight:800;
+    letter-spacing:-2px;
+    white-space: normal;
+    word-break: break-all;
+    overflow-wrap: break-word;
+    text-align:center;
+  }
+  .mobile-br {
+    display: block;
   }
 }
 
-/*───────────────────────────────────────────────
-  반응형: 데스크탑 (1200px 이상)
-───────────────────────────────────────────────*/
-@media (min-width: 1200px) {
-  .section02_text {
-    width: 80%;
-  }
+@media (max-width: 400px) {
+  .section01{text-align:left;}
   .section02_line1,
   .section02_line2 {
-    /* 최소 4rem, 뷰포트 너비 기준 14vw, 최대 18rem */
-    font-size: clamp(4rem, 14vw, 18rem);
+    width:90%;
+    text-align:left;
+    margin:0 auto;
+    display:inline;
+    font-size:65px;
+    font-weight:800;
+    letter-spacing:-2px;
+    white-space: normal;
+    word-break: break-all;
+    overflow-wrap: break-word;
+  }
+  .mobile-br {
+    display: block;
   }
 }
+

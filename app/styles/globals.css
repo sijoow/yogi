@@ -2,32 +2,30 @@
 
 /* 1) CSS reset 또는 normalize (간단 예시) */
 *, *::before, *::after {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
-  
-  main{
-    overflow-x:hidden;
-  }
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  overflow-x: hidden;
+}
+
 /* 2) 기본 body 스타일 */
 html, body {
   width: 100%;
   height: 100%;
-  /* Anton 폰트로 변경 (Next.js font variable 사용 시) */
+  /* Next.js가 주입한 --font-anton 변수를 사용 */
   font-family: var(--font-anton), sans-serif;
   background-color: #fff;
   color: #000;
-  font-family: 'Anton', sans-serif;
 }
 
-  /* 3) 스크롤 스냅 */
-  .snap-y {
-    scroll-snap-type: y mandatory;
-  }
-  .snap-mandatory > * {
-    scroll-snap-align: start;
-  }
-  
-  /* 그 외 공통 유틸 클래스… */
-  
+/* 3) 스크롤 스냅 */
+.snap-y {
+  scroll-snap-type: y mandatory;
+}
+.snap-mandatory > * {
+  scroll-snap-align: start;
+}
+

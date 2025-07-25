@@ -16,9 +16,7 @@ export default function Navbar() {
     <>
       <header className="navbar">
         <h1 className="logo">
-          <Link href="/" aria-label="Home">
-          <span role="img" aria-label="Home"></span>
-        </Link>
+          <Link href="/" aria-label="Home"><img src="https://yogibo.kr/yogico/img/icon/symbol.png" className="logo" alt="로고"/></Link>
         </h1>
         <button
           className={`menu btn_tl ${menuOpen ? 'open_btn' : ''}`}

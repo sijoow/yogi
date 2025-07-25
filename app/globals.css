@@ -1,16 +1,20 @@
 @import "tailwindcss";
 
+/* 1) 글로벌 컬러/폰트 변수 설정 */
 :root {
   --background: #ffffff;
   --foreground: #171717;
-  font-family: var(--font-roboto), sans-serif;
+  /* Next.js에서 Anton을 주입한 CSS 변수 사용 */
+  --font-base: var(--font-anton), sans-serif;
 }
 
+/* 2) @theme inline (예: Geist 테마) */
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  /* sans, mono 폰트 모두 Anton으로 덮어쓰기 */
+  --font-sans: var(--font-anton), sans-serif;
+  --font-mono: var(--font-anton), sans-serif;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -19,15 +23,19 @@
     --foreground: #ededed;
   }
 }
+
 /* 전역 여백 초기화 및 수평 스크롤 숨기기 */
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
   height: 100%;
-  overflow-x: hidden;        /* 수평 스크롤 제거 */
+  overflow-x: hidden;
+  /* Anton을 기본 폰트로 설정 */
+  font-family: var(--font-base);
 }
 
-/* next.js#__next 컨테이너도 100% 높이를 가져야 snap-container가 동작 */
+/* Next.js#__next 컨테이너도 100% 높이를 가져야 snap-container가 동작 */
 #__next {
   height: 100%;
 }
@@ -36,7 +44,7 @@ html, body {
 .snap-container {
   height: 100%;
   overflow-y: auto;
-  overflow-x: hidden;        /* 혹시 모를 수평 스크롤도 제거 */
+  overflow-x: hidden;
   scroll-snap-type: y mandatory;
   scroll-behavior: smooth;
 }

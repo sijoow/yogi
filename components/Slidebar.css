@@ -1,5 +1,6 @@
 /* Slidebar.css */
-
+#nav ul li{font-weight:600;}
+.search-icon-btn{background:none;border:none;}
 /* ─── (1) 오버레이 ───────────────────────────────────────────── */
 .slide-overlay {
   position: fixed;
@@ -80,6 +81,8 @@
   height: 32px;
   z-index: 20;   /* 슬라이드바보다 낮게, X 버튼이 대신 위로 올라옴 */
   cursor: pointer;
+  background:none!important;
+  border:none!important;
 }
 
 .btn_tl.open_btn {
@@ -150,7 +153,7 @@
   padding-top:5%;
   margin-top:7%;
 }
-address{font-weight:200;font-style: normal;}
+address{font-style: normal;}
 
 .banrdBusinessFont{color:skyblue;}
 .inner #header ul li{margin-top:3%;}
@@ -159,6 +162,15 @@ address{font-weight:200;font-style: normal;}
 
 .inner #header ul li a:hover{color:red!important;cursor:pointer;}
 
+.logo{
+  position:absolute;
+  top:calc(30/720*100%);
+  left:calc(30/720*100%);
+  width:calc(156/720*100%);
+  z-index:1;
+  max-width:220px;
+  filter: brightness(0) invert(1);
+}
 /*이너 부분 css 반응형*/
 @media (max-width: 600px) {
 /* 기본버튼 */
@@ -167,12 +179,13 @@ h1.logo{
   left:calc(28/720*100%);
   width:calc(156/720*100%);
 }
-
 .btn_tl{
   top: 22.5px;
   right: 16.5px;
   width:28px;
   height:21.5px;
+  background:none!important;
+  border:none!important;
 }
 .btn_tl span{height:2px;}
 .btn_tl span.middle{top:10px;}

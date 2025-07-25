@@ -23,9 +23,13 @@ export default function Section02() {
   return (
     <section id="section02" ref={sectionRef}>
       <div className="section02_text">
-        <h1 className="section02_line1">NO SUCCESS</h1>
-        <h1 className="section02_line2">NO BUSINESS</h1>
+      <h1 className="section02_line1">NO<br className="mobile-br" /> SUCCESS
+      </h1>
+      <h1 className="section02_line2">
+        NO<br className="mobile-br" /> BUSINESS
+      </h1>
       </div>
     </section>
   );
 }
+
