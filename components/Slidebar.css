@@ -158,7 +158,7 @@ address{font-style: normal;}
 .banrdBusinessFont{color:skyblue;}
 .inner #header ul li{margin-top:3%;}
 .inner #header ul li a{line-height:1.2;}
-.inner #header ul li a{font-size:4vw;}
+.inner #header ul li a{font-size:3vw;font-weight:800}
 
 .inner #header ul li a:hover{color:red!important;cursor:pointer;}
 

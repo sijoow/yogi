@@ -27,11 +27,8 @@
 .section03_line2,
 .section03_line3 {
   color: #fff;
-  font-family: 'Anton', sans-serif;
   opacity: 0;
   line-height: 1;
-  /* Section01과 동일한 폰트 크기 */
-  font-size: 8vw;
 }
 
 /* 4) play 클래스 붙였을 때 애니메이션 */
