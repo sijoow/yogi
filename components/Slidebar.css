@@ -149,6 +149,7 @@
 }
 
 .inner #footer{
+  font-family:'OpenSans';
   border-top:1px solid #fff;
   padding-top:5%;
   margin-top:7%;
@@ -160,7 +161,7 @@ address{font-style: normal;}
 .inner #header ul li a{line-height:1.2;}
 .inner #header ul li a{font-size:3vw;font-weight:800}
 
-.inner #header ul li a:hover{color:red!important;cursor:pointer;}
+.inner #header ul li a:hover{color:#00bdd4!important;cursor:pointer;}
 
 .logo{
   position:absolute;
@@ -211,4 +212,16 @@ h1.logo{
 }
 
 .inner #header ul li a{font-size:8vw;}
+}
+
+/*activeData*/
+.slidebar nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+/* 현재 페이지인 링크에만 회색(#888) 적용 */
+.slidebar nav ul li a.active {
+  color: #888;
 }

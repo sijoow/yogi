@@ -1,7 +1,7 @@
 // app/we/page.js
 'use client';
 
-import './Partner.css';
+import '../we/we.css';
 import SectionIndicator from '@/components/SectionIndicator';
 import Section1 from './sections/Section1';
 import Section2 from './sections/Section2';

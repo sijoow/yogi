@@ -1,11 +1,22 @@
-// components/Slidebar.jsx
 'use client';
 
 import React from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import './Slidebar.css';
 
+const menuItems = [
+  { href: '/', label: 'HOME' },
+  { href: '/who', label: 'WHO WE ARE' },
+  { href: '/we', label: 'WHAT WE DO' },
+  { href: '/business', label: 'BUSINESS CONSULTING & DEVELOPMENT' },
+  { href: '/news', label: 'NEWS' },
+  { href: '/recruit', label: 'RECRUIT' },
+];
+
 export default function Slidebar({ isOpen, onClose }) {
+  const pathname = usePathname();
+
   return (
     <>
       {/* backdrop */}
@@ -20,17 +31,16 @@ export default function Slidebar({ isOpen, onClose }) {
           <header id="header">
             <nav id="nav">
               <ul onClick={onClose}>
-                <li><Link href="/">HOME</Link></li>
-                <li><Link href="/we">WHAT WE DO</Link></li>
-                <li><Link href="/who">WHO WE ARE</Link></li>
-                <li><Link href="/business">BUSINESS CONSULTING &amp; DEVELOPMENT</Link></li>
-                <li><Link href="/partnership">STRATEGIC PARTNERSHIP</Link></li>
-                <li className="banrdBusinessFont">
-                  <Link href="/brand">Brand Management Business</Link>
-                </li>
-                <li><Link href="/news">NEWS</Link></li>
-                <li><Link href="/recruit">RECRUIT</Link></li>
-                <li><Link href="/contact">CONTACT</Link></li>
+                {menuItems.map(item => (
+                  <li key={item.href}>
+                    <Link
+                      href={item.href}
+                      className={pathname === item.href ? 'active' : ''}
+                    >
+                      {item.label}
+                    </Link>
+                  </li>
+                ))}
               </ul>
             </nav>
           </header>
