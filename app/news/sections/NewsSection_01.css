@@ -1,9 +1,9 @@
 /*───────────────────────────────────────────────
-  BrandSection_01.css (fade-in-up)
+  NewsSection_01.css (fade-in-up)
 ───────────────────────────────────────────────*/
 
 /* 1) 섹션 기본 */
-.BrandSection_01{
+.NewsSection_01{
   display:flex;
   justify-content:center;
   align-items:center;
@@ -14,16 +14,16 @@
 }
 
 /* 2) 텍스트 래퍼 */
-.BrandSection_01_text{
+.NewsSection_01_text{
   width:80%;
   max-width:1300px;
   text-align:left;
 }
 
 /* 3) 텍스트 기본 상태 */
-.BrandSection_01_line1,
-.BrandSection_01_line2,
-.BrandSection_01_line3{
+.NewsSection_01_line1,
+.NewsSection_01_line2,
+.NewsSection_01_line3{
   text-align:center;
   color:#fff;
   font-family:'Anton', sans-serif;
@@ -36,13 +36,13 @@
 }
 
 /* 4) play 붙었을 때 */
-.BrandSection_01.play .BrandSection_01_line1{
+.NewsSection_01.play .NewsSection_01_line1{
   animation:fadeInUp .8s ease-out forwards;
 }
-.BrandSection_01.play .BrandSection_01_line2{
+.NewsSection_01.play .NewsSection_01_line2{
   animation:fadeInUp .8s ease-out forwards .3s;
 }
-.BrandSection_01.play .BrandSection_01_line3{
+.NewsSection_01.play .NewsSection_01_line3{
   animation:fadeInUp .8s ease-out forwards .5s;
 }
 
@@ -54,29 +54,30 @@
 
 /* ───────── 반응형 ───────── */
 @media (max-width:767px){
-  .BrandSection_01_text{width:90%;}
-  .BrandSection_01_line1,
-  .BrandSection_01_line2,
-  .BrandSection_01_line3{
+  .NewsSection_01_text{width:90%;}
+  .NewsSection_01_line1,
+  .NewsSection_01_line2,
+  .NewsSection_01_line3{
     text-align:left;
     font-size:clamp(2rem,22vw,12rem);
     line-height:1.1;
+    text-align:center;
   }
 }
 @media (min-width:768px) and (max-width:1199px){
-  .BrandSection_01_text{width:85%;}
-  .BrandSection_01_line1,
-  .BrandSection_01_line2,
-  .BrandSection_01_line3{
+  .NewsSection_01_text{width:85%;}
+  .NewsSection_01_line1,
+  .NewsSection_01_line2,
+  .NewsSection_01_line3{
     font-size:clamp(3rem,16vw,15rem);
     line-height:1.05;
   }
 }
 @media (min-width:1200px){
-  .BrandSection_01_text{width:80%;}
-  .BrandSection_01_line1,
-  .BrandSection_01_line2,
-  .BrandSection_01_line3{
+  .NewsSection_01_text{width:80%;}
+  .NewsSection_01_line1,
+  .NewsSection_01_line2,
+  .NewsSection_01_line3{
     font-size:clamp(4rem,14vw,18rem);
   }
 }
