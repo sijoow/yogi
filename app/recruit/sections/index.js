@@ -6,4 +6,5 @@ import Section3 from './Section3';
 
 export const sectionComponents = [
   Section1,
+  Section2,
 ];

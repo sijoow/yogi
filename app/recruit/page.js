@@ -4,8 +4,10 @@
 import '../we/we.css';
 import SectionIndicator from '@/components/SectionIndicator';
 import Section1 from './sections/Section1';
+import Section2 from './sections/Section2';
 
-const sectionIds = ['sec1'];
+
+const sectionIds = ['sec1','sec2'];
 
 export default function WePage() {
   return (
@@ -15,6 +17,7 @@ export default function WePage() {
 
       {/* 실제 섹션들 */}
       <Section1 id="sec1" />
+      <Section2 id="sec2" />
     </div>
   );
 }
