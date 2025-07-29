@@ -1,82 +1,155 @@
 /*───────────────────────────────────────────────
-  BusinessSection_01.css
+  BusinessSection_01.css (반응형 추가)
 ───────────────────────────────────────────────*/
 
 /* 섹션 기본 */
-.BusinessSection_01{
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  width:100%;
-  height:100vh;
-  background:#000;            /* 필요 시 이미지로 교체 */
-  overflow:hidden;
+.BusinessSection_01 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  background: url('https://yogibo.openhost.cafe24.com/yogico/whatwedo_bg.jpg')
+    center/cover no-repeat;
+  overflow: hidden;
 }
 
 /* 텍스트 래퍼 */
-.BusinessSection_01_text{
-  width:80%;
-  max-width:1300px;
-  text-align:left;
+.BusinessSection_01_text {
+  width: 80%;
+  max-width: 1300px;
+  text-align: center;
 }
 
 /* 텍스트 기본 상태 (깜빡임 방지용 visibility) */
 .BusinessSection_01_line1,
-.BusinessSection_01_line2{
-  color:#fff;
-  font-family:'Anton', sans-serif;
-  margin:0;
-  text-align:center;
-
-  visibility:hidden;
-  opacity:0;
-  transform:translateY(30px);
-
-  font-size:clamp(3rem, 14vw, 25vw);
-  line-height:1;
-  transition:opacity .4s ease-out, transform .4s ease-out, visibility 0s linear .4s;
-  will-change:opacity, transform;
+.BusinessSection_01_line2 {
+  color: #fff;
+  font-family: 'Anton', sans-serif;
+  margin: 0;
+  text-align: center;
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(30px);
+  line-height: 1;
+  transition: opacity 0.4s ease-out, transform 0.4s ease-out,
+    visibility 0s linear 0.4s;
+  will-change: opacity, transform;
 }
 
 /* play일 때 보이기 */
 .BusinessSection_01.play .BusinessSection_01_line1,
-.BusinessSection_01.play .BusinessSection_01_line2{
-  visibility:visible;
-  opacity:1;
-  transform:translateY(0);
-  transition-delay:0s;
+.BusinessSection_01.play .BusinessSection_01_line2 {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0s;
 }
 
 /* 개별 딜레이 */
-.BusinessSection_01.play .BusinessSection_01_line1{
-  transition-delay:0s;
+.BusinessSection_01.play .BusinessSection_01_line1 {
+  transition-delay: 0s;
 }
-.BusinessSection_01.play .BusinessSection_01_line2{
-  transition-delay:.12s;
+.BusinessSection_01.play .BusinessSection_01_line2 {
+  transition-delay: 0.12s;
 }
 
-/* ───────── 반응형 ───────── */
-@media (max-width:767px){
-  .BusinessSection_01_text{ width:90%; }
+/*───────────────────────────────────────────────
+   Section02.css과 동일한 반응형 브레이크포인트
+───────────────────────────────────────────────*/
+
+/* 1) 큰 화면 (1300px 이상) */
+@media (min-width: 1300px) {
+  .BusinessSection_01_text {
+  }
   .BusinessSection_01_line1,
-  .BusinessSection_01_line2{
-    text-align:left;
-    font-size:clamp(2rem, 22vw, 12rem);
-    line-height:1.1;
+  .BusinessSection_01_line2 {
+    font-size: 200px;
+    line-height: 220px;
+    letter-spacing: -2px;
+    font-weight: 400;
+    max-width: 1000px;
+    margin: 0 auto;
   }
 }
-@media (min-width:768px) and (max-width:1199px){
-  .BusinessSection_01_text{ width:85%; }
+
+/* 2) 중간 화면 (1299px 이하) */
+@media (max-width: 1299px) {
+  .BusinessSection_01_text {
+    text-align: center;
+  }
   .BusinessSection_01_line1,
-  .BusinessSection_01_line2{
-    font-size:clamp(3rem, 16vw, 15rem);
-    line-height:1.05;
+  .BusinessSection_01_line2 {
+    font-size: 170px;
+    line-height: 190px;
+    letter-spacing: -2px;
+    font-weight: 400;
   }
 }
-@media (min-width:1200px){
-  .BusinessSection_01_text{ width:80%; }
+
+/* 3) 태블릿/작은 데스크탑 (900px 이하) */
+@media (max-width: 900px) {
   .BusinessSection_01_line1,
-  .BusinessSection_01_line2{
-    font-size:clamp(4rem, 14vw, 18rem);
+  .BusinessSection_01_line2 {
+    width: 70%;
+    margin: 0 auto;
+    display: inline-block;
+    font-size: 120px;
+    line-height: 130px;
+    letter-spacing: -2px;
+    font-weight: 400;
+    text-align: left;
+  }
+}
+
+/* 4) 중간 모바일 (550px 이하) */
+@media (max-width: 550px) {
+  .BusinessSection_01_text {
+    width:100%;
+  }
+  .BusinessSection_01_line1,
+  .BusinessSection_01_line2 {
+    width: 90%;
+    margin: 0 auto;
+    display: inline-block;
+    font-size: 120px;
+    line-height: 130px;
+    letter-spacing: -2px;
+    font-weight: 400;
+    text-align: left;
+  }
+}
+
+/* 5) 작은 모바일 (400px 이하) */
+@media (max-width: 400px) {
+  .BusinessSection_01_text {
+    width:100%;
+  }
+
+  .BusinessSection_01_line1,
+  .BusinessSection_01_line2 {
+    width: 90%;
+    margin: 0 auto;
+    display: inline-block;
+    font-size: 85px;
+    line-height: 95px;
+    letter-spacing: -2px;
+    font-weight: 400;
+    text-align: left;
+  }
+}
+
+/* 6) 극소형 모바일 (330px 이하) */
+@media (max-width: 330px) {
+  .BusinessSection_01_line1,
+  .BusinessSection_01_line2 {
+    width: 90%;
+    margin: 0 auto;
+    display: inline-block;
+    font-size: 70px;
+    line-height: 80px;
+    letter-spacing: -2px;
+    font-weight: 400;
+    text-align: left;
   }
 }

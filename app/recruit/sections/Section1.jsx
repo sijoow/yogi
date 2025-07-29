@@ -29,7 +29,7 @@ export default function Section1({ id = 'sec1' }) {
   return (
     <section id={id} ref={sectionRef} className="BrandSection_01">
       <div className="BrandSection_01_text">
-        <h1 className="BrandSection_01_line1">Recruit</h1>
+        <h1 className="BrandSection_01_line1">RECRUIT</h1>
       </div>
     </section>
   );

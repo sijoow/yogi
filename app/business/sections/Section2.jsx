@@ -23,14 +23,14 @@ export default function BusinessSection_02({ id = 'bizSec2' }) {
 
   return (
     <section id={id} ref={ref} className="BusinessSection_02">
-      <h2 className="bs2-title">What We Do</h2>
+      <h2 className="bs2-title">WHAT WE DO</h2>
 
       <div className="bs2-columns">
         {/* LEFT COLUMN */}
         <ul className="bs2-list">
           <li className="bs2-item">
             <h3>Business Consulting</h3>
-            <p>Unlock the designated markets with actionable strategies and tailor‑made entry solutions.</p>
+            <p>Unlock the designated markets with actionable strategies and tailor-made entry solutions.</p>
           </li>
 
           <li className="bs2-item">
@@ -40,7 +40,7 @@ export default function BusinessSection_02({ id = 'bizSec2' }) {
 
           <li className="bs2-item">
             <h3>Local Representation &amp; Business Liaison</h3>
-            <p>Acting on your behalf to represent your interests, build networks, and support deal‑making locally.</p>
+            <p>Acting on your behalf to represent your interests, build networks, and support deal-making locally.</p>
           </li>
 
           <li className="bs2-item">
