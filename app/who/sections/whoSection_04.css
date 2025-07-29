@@ -1,85 +1,145 @@
 /* whoSection_04.css – Market Analysis & Marketing */
 
-.whoSection_04{
-  position:relative;
-  width:100%;
-  min-height:100vh;
-  padding:8vh 6vw 12vh;
-  box-sizing:border-box;
+.whoSection_04 {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  padding: 8vh 6vw 12vh;
+  box-sizing: border-box;
   background: url('/img/bg_building.jpg') center/cover no-repeat, #000000;
-  color:#fff;
-  overflow:hidden;
-  font-family:'Anton', sans-serif;
+  color: #fff;
+  overflow: hidden;
+  font-family: 'OpenSans', sans-serif;
 }
 
 /* 제목 */
-.ws4-heading{
-  font-size:clamp(32px,4vw,60px);
-  margin:0 0 6vh;
-  display:inline-block;
-  padding:.4rem 1.2rem;
+.ws4-heading {
+  display: inline-block;
+  padding: .4rem 1.2rem;
 }
 
-/* 카드 리스트 */
-.ws4-cards{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:4vw 3vw;
+/* 카드 래퍼 */
+.ws4-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4vw 3vw;
 }
 
 /* 카드 */
-.ws4-card{
-  max-width:420px;
-  margin:0 auto;
-  text-align:center;
-  opacity:0;
-  transform:translateY(25px);
-  transition:opacity .6s ease, transform .6s ease;
+.ws4-card {
+  text-align: center;
+  max-width: 420px;
+  margin: 0 auto;
+  opacity: 0;
+  transform: translateY(25px);
+  transition: opacity .6s ease, transform .6s ease;
 }
 
-/* 등장 순서 */
-.whoSection_04.play .ws4-card:nth-child(1){opacity:1;transform:none;transition-delay:.1s;}
-.whoSection_04.play .ws4-card:nth-child(2){opacity:1;transform:none;transition-delay:.2s;}
-.whoSection_04.play .ws4-card:nth-child(3){opacity:1;transform:none;transition-delay:.3s;}
+/* 순차 등장 */
+.whoSection_04.play .ws4-card:nth-child(1) { opacity:1; transform:none; transition-delay:.1s; }
+.whoSection_04.play .ws4-card:nth-child(2) { opacity:1; transform:none; transition-delay:.2s; }
+.whoSection_04.play .ws4-card:nth-child(3) { opacity:1; transform:none; transition-delay:.3s; }
 
-/* 아바타 */
-.ws4-avatar{
-  width:180px;
-  height:180px;
-  margin:0 auto 1.5rem;
-  border-radius:50%;
-  background:#e5e5e5;
-  overflow:hidden;
-  border:8px solid #fff;
+/* 아바타 원형 */
+.ws4-avatar {
+  width: 200px;
+  height: 200px;
+  margin: 0 auto 1.5rem;
+  border-radius: 50%;
+  background: #e5e5e5;
+  overflow: hidden;
+  border: 3px solid #fff;
 }
-.ws4-avatar img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-}
-
-/* 텍스트 */
-.ws4-name{
-  font-size:clamp(22px,2.4vw,36px);
-  margin:0 0 .4rem;
-}
-.ws4-role{
-  font-size:clamp(18px,1.6vw,26px);
-  margin:0 0 1.2rem;
-}
-.ws4-bio{
-  font-family:'Anton', sans-serif;
-  font-size:clamp(16px,1.4vw,22px);
-  line-height:1.35;
-  margin:0;
+.ws4-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
-/* 반응형 */
-@media(max-width:1199px){
-  .ws4-cards{grid-template-columns:1fr 1fr;}
+
+/* 반응형 컬럼 전환 */
+@media (max-width: 1199px) {
+  .ws4-cards { grid-template-columns: 1fr 1fr; }
 }
-@media(max-width:767px){
-  .whoSection_04{padding:12vh 6vw 16vh;}
-  .ws4-cards{grid-template-columns:1fr;gap:8vh 0;}
-  .ws4-avatar{width:160px;height:160px;border-width:6px;}
+@media (max-width: 767px) {
+  .whoSection_04 { padding: 12vh 6vw 16vh; }
+  .ws4-cards { grid-template-columns: 1fr; gap: 8vh 0; }
+  .ws4-avatar { width: 160px; height: 160px; border-width: 6px; }
+}
+
+
+/* ========== 폰트 크기 & 줄간격 커스텀 ========== */
+
+/* 대형 스크린: 1600px 이상 */
+@media (min-width: 1600px) {
+  .ws4-heading {
+    font-size: 60px;
+    line-height: 1.5;
+    margin-bottom: 6vh;
+    font-weight: 600;
+  }
+  .ws4-name {
+    font-size: 36px;
+    line-height: 1.5;
+    font-weight: 600;
+  }
+  .ws4-role {
+    font-size: 26px;
+    line-height: 1.5;
+    margin-bottom: 1.2rem;
+    font-weight: 600;
+  }
+  .ws4-bio {
+    font-size: 18px;
+    line-height: 1.5;
+  }
+}
+
+/* 중간 스크린: 1300px 이하 */
+@media (max-width: 1300px) {
+  .ws4-heading {
+    font-size: 48px;
+    line-height: 1.4;
+    margin-bottom: 5vh;
+  }
+  .ws4-name {
+    font-size: 32px;
+    line-height: 1.4;
+  }
+  .ws4-role {
+    font-size: 22px;
+    line-height: 1.4;
+  }
+  .ws4-bio {
+    font-size: 18px;
+    line-height: 1.4;
+  }
+}
+
+/* 소형 스크린: 500px 이하 */
+@media (max-width: 500px) {
+  .ws4-heading {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 1.5;
+    margin-bottom: 4vh;
+  }
+  .ws4-name {
+    font-size: 22px;
+    line-height: 1.5;
+    font-weight: 600;
+  }
+  .ws4-role {
+    font-size: 18px;
+    line-height: 1.5;
+    font-weight: 600;
+  }
+  .ws4-bio {
+    margin-top: 10px;
+    font-size: 16px;
+    line-height: 1.5;
+  }
 }

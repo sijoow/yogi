@@ -29,7 +29,7 @@ export default function Section4({ id = 'sec4' }) {
 
         <article className="ws4-card">
           <div className="ws4-avatar">
-            {/* <img src="/img/team/junsoo.jpg" alt="Junsoo Han" /> */}
+            <img src="https://yogibo.kr/yogico/step/Y_s_step_02.png" alt="Junsoo Han" />
           </div>
           <h3 className="ws4-name">Junsoo Han</h3>
           <p className="ws4-role">Analysis Manager</p>
@@ -43,7 +43,7 @@ export default function Section4({ id = 'sec4' }) {
 
         <article className="ws4-card">
           <div className="ws4-avatar">
-            {/* <img src="/img/team/ihyeon.jpg" alt="Ihyeon Kim" /> */}
+            <img src="https://yogibo.kr/yogico/step/Y_s_step_01.png" alt="Ihyeon Kim" />
           </div>
           <h3 className="ws4-name">Ihyeon Kim</h3>
           <p className="ws4-role">Marketing Director</p>
@@ -57,7 +57,7 @@ export default function Section4({ id = 'sec4' }) {
 
         <article className="ws4-card">
           <div className="ws4-avatar">
-            {/* <img src="/img/team/yubin.jpg" alt="Yubin Lee" /> */}
+             <img src="https://yogibo.kr/yogico/step/Y_s_step_03.png" alt="Yubin Lee" /> 
           </div>
           <h3 className="ws4-name">Yubin Lee</h3>
           <p className="ws4-role">Marketing Manager</p>

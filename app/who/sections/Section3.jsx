@@ -30,7 +30,7 @@ export default function Section3({ id = 'sec3' }) {
         {/* 1 */}
         <article className="ws3-card">
           <div className="ws3-avatar">
-            {/* 이미지가 있다면 <img src="/path/jay.jpg" alt="Jaehong (Jay) Lee" /> */}
+          <img src="https://yogibo.kr/yogico/step/Y_step_01.png" alt="Jaehong (Jay) Lee" />
           </div>
           <h3 className="ws3-name">Jaehong (Jay) Lee</h3>
           <p className="ws3-role">Co‑Founder &amp; COO</p>
@@ -46,7 +46,7 @@ export default function Section3({ id = 'sec3' }) {
         {/* 2 */}
         <article className="ws3-card">
           <div className="ws3-avatar">
-            {/* <img src="/path/kim.jpg" alt="Kyungsoo Kim" /> */}
+           <img src="https://yogibo.kr/yogico/step/Y_step_02.jpg" alt="Kyungsoo Kim" />
           </div>
           <h3 className="ws3-name">Kyungsoo Kim</h3>
           <p className="ws3-role">CRO</p>
@@ -61,7 +61,7 @@ export default function Section3({ id = 'sec3' }) {
         {/* 3 */}
         <article className="ws3-card">
           <div className="ws3-avatar">
-            {/* <img src="/path/tim.jpg" alt="Dukhee (Tim) Hong" /> */}
+           <img src="https://yogibo.kr/yogico/step/Y_step_03.png" alt="Dukhee (Tim) Hong" />
           </div>
           <h3 className="ws3-name">Dukhee (Tim) Hong</h3>
           <p className="ws3-role">CPO</p>
