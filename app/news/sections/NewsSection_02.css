@@ -2,7 +2,7 @@
 
 /* 1) 섹션 전체 패딩/배경 */
 .NewsSection_02 {
-  font-family:'OpenSans', sans-serif;
+  font-family: 'OpenSans', sans-serif;
   padding: 4rem 2rem;
   background-color: #fff;
 }
@@ -23,8 +23,8 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 5rem;
-  width:80%;
-  margin:0 auto;
+  width: 80%;
+  margin: 0 auto;
 }
 
 /* 4) 카드 개별 스타일 */
@@ -54,19 +54,26 @@
   line-height: 1.3;
 }
 
-/* 4-3) 카드 요약문 */
+/* 4-3) 카드 요약문 (최대 6줄 이후 말줄임) */
 .NewsSection_02_cardExcerpt {
   flex: 1;
   font-size: 0.9rem;
   line-height: 1.5;
   color: #555;
   margin: 0 0 1rem;
+
+  /* multi-line truncate */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 6;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 /* 4-4) 버튼 */
 .NewsSection_02_button {
   display: inline-block;
-  max-width:140px;
+  max-width: 140px;
   padding: 0.5rem 1rem;
   font-size: 0.875rem;
   font-weight: 500;
@@ -80,4 +87,14 @@
 .NewsSection_02_button:hover {
   background: #000;
   color: #fff;
+}
+
+/* 5) 모바일(≤500px)에서 섹션 패딩 제거 */
+@media (max-width: 500px) {
+  .NewsSection_02 {
+    padding: 0;
+  }
+  .NewsSection_02{
+    padding-bottom:100px;
+  }
 }
