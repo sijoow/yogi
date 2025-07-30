@@ -33,7 +33,7 @@ export default function Section02({ id = 'sec2' }) {
 
         {/* 2. CEO 이미지 */}
         <div className="w2-ceo-img">
-          <img src="https://yogibo.kr/yogico/step/Representative_bg.png" alt="CEO" />
+          <img src="https://yogibo.kr/yogico/step/Representative_bg2.png" alt="CEO" />
         </div>
 
         {/* 3. 첫 번째 소개 */}
