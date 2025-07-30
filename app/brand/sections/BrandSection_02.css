@@ -25,7 +25,6 @@
   opacity:0;
   transform:translateY(40px);
   transition:opacity .7s ease, transform .7s ease;
-  font-family:'Pretendard', 'Noto Sans', sans-serif;
   color:#111;
 }
 .ps2-logo{
