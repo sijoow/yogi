@@ -31,8 +31,8 @@ export default function Section4({ id = 'sec4' }) {
           <div className="ws4-avatar">
             <img src="https://yogibo.kr/yogico/step/Y_s_step_02.png" alt="Junsoo Han" />
           </div>
-          <h3 className="ws4-name">Junsoo Han</h3>
-          <p className="ws4-role">Analysis Manager</p>
+          <h3 className="ws4-name">JUNSOO HAN</h3>
+          <p className="ws4-role">ANALYSIS MANAGER</p>
           <p className="ws4-bio">
             Junsoo is a versatile marketing and content strategist with over 7 years of experience
             across in‑house, agency, and freelance roles. His strength lies in combining creative
@@ -45,8 +45,8 @@ export default function Section4({ id = 'sec4' }) {
           <div className="ws4-avatar">
             <img src="https://yogibo.kr/yogico/step/Y_s_step_01.png" alt="Ihyeon Kim" />
           </div>
-          <h3 className="ws4-name">Ihyeon Kim</h3>
-          <p className="ws4-role">Marketing Director</p>
+          <h3 className="ws4-name">IHYEON KIM</h3>
+          <p className="ws4-role">MARKETING DIRECTOR</p>
           <p className="ws4-bio">
             Ihyeon Kim is a seasoned marketing and HRD professional with over 11 years of experience,
             including 8+ years at Lotte Cinema. Her unique blend of marketing, design, and team
@@ -59,8 +59,8 @@ export default function Section4({ id = 'sec4' }) {
           <div className="ws4-avatar">
              <img src="https://yogibo.kr/yogico/step/Y_s_step_03.png" alt="Yubin Lee" /> 
           </div>
-          <h3 className="ws4-name">Yubin Lee</h3>
-          <p className="ws4-role">Marketing Manager</p>
+          <h3 className="ws4-name">YUBIN LEE</h3>
+          <p className="ws4-role">MARKETING MANAGER</p>
           <p className="ws4-bio">
             Yubin is a versatile content and marketing professional with 4+ years of experience in
             content planning, production, and digital marketing. Her strengths lie in trend‑driven

@@ -23,7 +23,7 @@ export default function Section3({ id = 'sec3' }) {
 
   return (
     <section id={id} ref={ref} className="whoSection_03">
-      <h2 className="ws3-heading">Managing Team</h2>
+      <h2 className="ws3-heading">MANAGING TEAM</h2>
 
       <div className="ws3-cards">
 
@@ -32,8 +32,8 @@ export default function Section3({ id = 'sec3' }) {
           <div className="ws3-avatar">
           <img src="https://yogibo.kr/yogico/step/Y_step_01.png" alt="Jaehong (Jay) Lee" />
           </div>
-          <h3 className="ws3-name">Jaehong (Jay) Lee</h3>
-          <p className="ws3-role">Co‑Founder &amp; COO</p>
+          <h3 className="ws3-name">JAEHONG (Jay) LEE </h3>
+          <p className="ws3-role">CO‑Founder &amp; COO</p>
           <p className="ws3-bio">
             Jay has over a decade of expertise in materials research and product innovation.
             He spent 11 years as a researcher at KCG, specializing in advanced materials and
@@ -48,7 +48,7 @@ export default function Section3({ id = 'sec3' }) {
           <div className="ws3-avatar">
            <img src="https://yogibo.kr/yogico/step/Y_step_02.jpg" alt="Kyungsoo Kim" />
           </div>
-          <h3 className="ws3-name">Kyungsoo Kim</h3>
+          <h3 className="ws3-name">KYUNGSOO KIN</h3>
           <p className="ws3-role">CRO</p>
           <p className="ws3-bio">
             Dr. Kim is a R&amp;D leader with a Ph.D. in Chemical Engineering from Wayne State
@@ -63,7 +63,7 @@ export default function Section3({ id = 'sec3' }) {
           <div className="ws3-avatar">
            <img src="https://yogibo.kr/yogico/step/Y_step_03.png" alt="Dukhee (Tim) Hong" />
           </div>
-          <h3 className="ws3-name">Dukhee (Tim) Hong</h3>
+          <h3 className="ws3-name">DUKHEE (TIM) HONG</h3>
           <p className="ws3-role">CPO</p>
           <p className="ws3-bio">
             Tim is a seasoned operations and finance professional with over 16 years of experience

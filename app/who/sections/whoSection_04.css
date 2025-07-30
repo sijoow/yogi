@@ -1,22 +1,27 @@
-/* whoSection_04.css – Market Analysis & Marketing */
+/* whoSection_04.css – WS2 기준 폰트·간격 커스터마이징 for Section4 */
 
+/* ─── 기본 레이아웃 & 로직 ───────────────────────────────── */
 .whoSection_04 {
   position: relative;
   width: 100%;
   min-height: 100vh;
-  padding: 8vh 6vw 12vh;
+  padding: 100px;
   box-sizing: border-box;
-  background: url('/img/bg_building.jpg') center/cover no-repeat, #000000;
+  background: url('/img/bg_building.jpg') center/cover no-repeat, #0a1729;
   color: #fff;
   overflow: hidden;
   font-family: 'Roboto Condensed', sans-serif;
-  font-weight:400;
+  font-weight: 400;
 }
 
 /* 제목 */
 .ws4-heading {
-  display: inline-block;
-  padding: .4rem 1.2rem;
+  font-family: 'Anton', sans-serif;
+  font-weight: 200;
+  font-size: 40px;
+  margin-bottom: 6vh;
+  text-align: left;
+  width: 100%;
 }
 
 /* 카드 래퍼 */
@@ -24,24 +29,23 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 4vw 3vw;
+  text-align: left;
 }
 
 /* 카드 */
 .ws4-card {
-  text-align: center;
+  text-align: left;
   max-width: 420px;
   margin: 0 auto;
   opacity: 0;
   transform: translateY(25px);
   transition: opacity .6s ease, transform .6s ease;
 }
-
-/* 순차 등장 */
 .whoSection_04.play .ws4-card:nth-child(1) { opacity:1; transform:none; transition-delay:.1s; }
 .whoSection_04.play .ws4-card:nth-child(2) { opacity:1; transform:none; transition-delay:.2s; }
 .whoSection_04.play .ws4-card:nth-child(3) { opacity:1; transform:none; transition-delay:.3s; }
 
-/* 아바타 원형 */
+/* 아바타 */
 .ws4-avatar {
   width: 200px;
   height: 200px;
@@ -49,7 +53,6 @@
   border-radius: 50%;
   background: #e5e5e5;
   overflow: hidden;
-  border: 3px solid #fff;
 }
 .ws4-avatar img {
   width: 100%;
@@ -57,90 +60,102 @@
   object-fit: cover;
 }
 
-
-/* 반응형 컬럼 전환 */
-@media (max-width: 1199px) {
-  .ws4-cards { grid-template-columns: 1fr 1fr; }
+/* 이름 / 역할 / 설명 */
+.ws4-name {
+  font-family: 'Anton', sans-serif;
+  font-weight: 200;
+  font-size: 20px;
+  line-height: 1.5;
+  margin: 40px 0 5px;
 }
-@media (max-width: 767px) {
-  .whoSection_04 { padding: 12vh 6vw 16vh; }
-  .ws4-cards { grid-template-columns: 1fr; gap: 8vh 0; }
-  .ws4-avatar { width: 160px; height: 160px; border-width: 6px; }
+.ws4-role {
+  font-family: 'Anton', sans-serif;
+  font-weight: 200;
+  font-size: 20px;
+  line-height: 1.5;
+  margin: 0 0 10px;
 }
-
-
-/* ========== 폰트 크기 & 줄간격 커스텀 ========== */
-
-/* 대형 스크린: 1600px 이상 */
-@media (min-width: 1600px) {
-  .ws4-heading {
-    font-size: 60px;
-    line-height: 1.5;
-    margin-bottom: 6vh;
-    font-weight: 600;
-  }
-  .ws4-name {
-    font-size: 36px;
-    line-height: 1.5;
-    font-weight: 600;
-  }
-  .ws4-role {
-    font-size: 26px;
-    line-height: 1.5;
-    margin-bottom: 1.2rem;
-    font-weight: 600;
-  }
-  .ws4-bio {
-    font-size: 18px;
-    line-height: 1.5;
-  }
+.ws4-bio {
+  font-size: 18px;
+  line-height: 1.5;
+  margin: 0;
 }
 
-/* 중간 스크린: 1300px 이하 */
+/* ─── 대형 스크린: ≥1310px ───────────────────────── */
+@media (min-width: 1310px) {
+  .ws4-name { font-size: 20px; }
+  .ws4-role { font-size: 20px; }
+  .ws4-bio  { font-size: 18px; }
+}
+
+/* ─── 중간 스크린: ≤1300px (2열 유지) ───────────────── */
 @media (max-width: 1300px) {
-  .ws4-heading {
-    font-size: 48px;
-    line-height: 1.4;
-    margin-bottom: 5vh;
+  .ws4-cards {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6vw 4vw;
+  }
+  .ws4-avatar {
+    width: 180px;
+    height: 180px;
+    margin-bottom: 1rem;
+  }
+  .ws4-name { font-size: 18px; margin: 30px 0 5px; }
+  .ws4-role { font-size: 18px; margin-bottom: 8px; }
+  .ws4-bio  { font-size: 16px; }
+}
+
+/* ─── 소형 스크린: ≤900px (1열 중앙정렬) ───────────────── */
+@media (max-width: 900px) {
+  .ws4-heading { text-align: center; }
+  .ws4-cards {
+    grid-template-columns: 1fr;
+    gap: 8vh 0;
+  }
+  .ws4-card { text-align: center; }
+  .ws4-avatar {
+    width: 160px;
+    height: 160px;
+    margin: 0 auto 1rem;
+    border-width: 4px;
   }
   .ws4-name {
-    font-size: 32px;
-    line-height: 1.4;
+    font-size: 18px;
+    margin: 30px 0 5px;
   }
   .ws4-role {
-    font-size: 22px;
-    line-height: 1.4;
+    font-size: 18px;
+    margin-bottom: 8px;
   }
   .ws4-bio {
-    font-size: 18px;
-    line-height: 1.4;
+    font-size: 16px;
+    margin-top: 10px;
+    padding: 0 1rem;
   }
 }
 
-/* 소형 스크린: 500px 이하 */
+/* ─── 초소형 스크린: ≤500px (1열 + 아바타 축소) ───────────── */
 @media (max-width: 500px) {
   .ws4-heading {
-    display: inline-block;
-    width: 100%;
-    text-align: center;
-    font-weight: 600;
     font-size: 32px;
-    line-height: 1.5;
     margin-bottom: 4vh;
   }
+  .ws4-avatar {
+    width: 140px;
+    height: 140px;
+    margin: 0 auto .8rem;
+    border-width: 3px;
+  }
   .ws4-name {
-    font-size: 22px;
-    line-height: 1.5;
-    font-weight: 600;
+    font-size: 16px;
+    margin: 20px 0 4px;
   }
   .ws4-role {
-    font-size: 18px;
-    line-height: 1.5;
-    font-weight: 600;
+    font-size: 16px;
+    margin-bottom: 6px;
   }
   .ws4-bio {
-    margin-top: 10px;
-    font-size: 16px;
+    font-size: 14px;
+    margin-top: 8px;
     line-height: 1.5;
   }
 }
