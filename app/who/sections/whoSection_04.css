@@ -101,7 +101,7 @@
     grid-template-columns: 1fr;
     gap: 8vh 0;
   }
-  .ws4-heading{height:110px;}
+  .ws4-heading{height:160px;}
   .ws4-name{margin-top:40px;font-size:18px;font-family: 'Anton';font-weight: 200;}
   .ws4-role{margin-top:5px;font-size:18px;font-family: 'Anton';font-weight: 200;}
   .ws4-bio{margin-top:10px;font-size:16px;}
