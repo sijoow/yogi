@@ -1,0 +1,138 @@
+/* BrandSection_05.css */
+
+/* ========== SECTION 기본 ========== */
+.BrandSection_05 {
+    width: 100%;
+    padding: 6rem 5vw;
+    box-sizing: border-box;
+    background: #fff;              /* 필요 시 그라데이션 or 다른 배경 지정 */
+    font-family: 'Roboto Condensed', sans-serif;
+    color: #000;
+  }
+  
+  /* ─── 헤딩 ───────────────────────────────── */
+  .bs5-heading {
+    font-family: 'Anton', sans-serif;
+    margin: 0 0 2rem;
+    font-weight: 400;
+  }
+  .bs5-heading span {
+    font-family: inherit;
+    font-size: 0.5em;
+    font-weight: 400;
+    margin-left: 1rem;
+    color: #555;
+  }
+  
+  /* ─── INNER: 2열 그리드 ─────────────────────────────── */
+  .bs5-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+  }
+  
+  /* ─── 개별 아이템 ───────────────────────────────── */
+  .bs5-item {
+    display: flex;
+    flex-direction: column;
+  }
+  /* ─── 증명서 이미지 ───────────────────────────────── */
+  .bs5-item-img {
+    width: 100%;
+    overflow: hidden;
+    max-width:600px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    margin-top:60px;
+  }
+  .bs5-item-img img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    width:100%;
+    max-width:600px;
+  }
+  
+  /* ========== 반응형 ========== */
+  /* 900px 이하: 1열 스택 ─────────────────────────────── */
+  @media (max-width: 900px) {
+    .bs5-inner {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+  }
+  
+
+
+  
+  /* 500px 이하: 폰트 축소 ─────────────────────────────── */
+  @media (min-width: 1300px) {
+    .bs5-heading {color: #3ea6ff;
+        margin: 0 0 8vh;
+        font-family: Anton, sans-serif;
+        font-size: 50px;
+        display: inline-block;
+    }
+    .bs5-item-title {
+     font-size:22px;
+     font-weight:600;
+    }
+    .bs5-item-ref {
+        margin-top:20px;
+        font-size:22px;
+    }
+    .bs5-item-desc {
+        margin-top:20px;
+        font-size:22px;
+    }
+  }
+  
+
+  @media (max-width: 900px) {
+    .bs5-heading {color: #3ea6ff;
+        margin: 0 0 8vh;
+        font-family: Anton, sans-serif;
+        font-size: 40px;
+        display: inline-block;
+    }
+    .bs5-item-title {
+     font-size:22px;
+     font-weight:600;
+    }
+    .bs5-item-ref {
+        margin-top:20px;
+        font-size:22px;
+    }
+    .bs5-item-desc {
+        margin-top:20px;
+        font-size:22px;
+    }
+  }
+  
+
+  @media (max-width: 500px) {
+    .bs5-heading {color: #3ea6ff;
+        font-family: Anton, sans-serif;
+        font-size: 30px;
+        display: inline-block;
+        margin-bottom:40px;
+    }
+    .bs5-heading span{display:inline-block;float:left;margin:0px;}
+
+    .bs5-item-title {
+     font-size:18px;
+     font-weight:600;
+    }
+    .bs5-item-ref {
+        margin-top:15px;
+        font-size:18px;
+    }
+    .bs5-item-desc {
+        margin-top:15px;
+        font-size:18px;
+    }
+  }
+  
+

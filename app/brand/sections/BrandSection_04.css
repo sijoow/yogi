@@ -6,7 +6,7 @@
   padding: 100px;
   padding-top:150px;
   box-sizing: border-box;
-  background: #fff;
+  background: #f7f7f7;
   color: #000;
 }
 
@@ -36,7 +36,7 @@
 
 .chart-block h4 {
   margin-bottom: 0.5rem;
-  font-family: 'Anton', sans-serif;
+  font-weight:500;
 }
 
 .chart-block canvas {
