@@ -235,7 +235,7 @@ h1.logo{
 
 
 /* ─── 반응형: 900px 이하 ───────────────────────────────── */
-@media (max-width: 1500px) {
+@media (min-width:900px) {
   .inner {
     padding: 0
   }
@@ -269,3 +269,29 @@ h1.logo{
     margin-top: 1rem;
   }
 }
+
+
+
+
+
+
+/* ─── 반응형: 900px 이하 ───────────────────────────────── */
+@media (max-width:890px) {
+  .inner #header ul li a{font-size:40px}
+  .inner #header ul li{margin:1rem 0;}
+  .slidebar{padding:0px;padding-top:50px;}
+}
+
+
+
+
+
+
+/* ─── 반응형: 900px 이하 ───────────────────────────────── */
+@media (max-width:400px) {
+  .inner #header ul li a{font-size:40px}
+  .inner #header ul li{margin:1rem 0;}
+  .slidebar{padding:0px;padding-top:50px;}
+}
+
+
