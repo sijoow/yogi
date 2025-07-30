@@ -3,22 +3,21 @@
   position:relative;
   width:100%;
   min-height:100vh;
-  padding:8vh 6vw 12vh;
+  padding:100px;
+  padding-top:150px;
   box-sizing:border-box;
-  background:linear-gradient(90deg, #d3ffe6 0%, #9fc2ff 100%);
-  color:#111;
+  background:#e3f0f9;
+  color:#000;
   overflow:hidden;
 }
 
 /* 타이틀/서브 */
 .bs3-title{
   font-family:'Anton', sans-serif;
-  font-size:clamp(32px,4vw,60px);
-  margin:0 0 2vh;
+  margin:0 0 1vh;
 }
 
 .bs3-sub{
-  font-size:clamp(18px,1.4vw,28px);
   margin:0 0 6vh;
   max-width:1200px;
   line-height:1.35;
@@ -27,8 +26,8 @@
 /* 그리드 */
 .bs3-grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit, minmax(140px, 1fr));
-  gap:3vw 3vw;
+  grid-template-columns:repeat(auto-fit, minmax(175px, 1fr));
+  gap:2vw 2vw;
 }
 
 /* 박스(사각형) */
@@ -54,7 +53,6 @@
 
 .bs3-box span{
   font-family:'Anton', sans-serif;
-  font-size:clamp(18px,1.8vw,28px);
   text-align:center;
 }
 
@@ -70,8 +68,33 @@
 .BusinessSection_03.play .bs3-box:nth-child(5){transition-delay:.25s;}
 /* 필요하면 더 추가 */
 
-/* 반응형 여백 조절 */
-@media(max-width:768px){
-  .BusinessSection_03{padding:10vh 4vw;}
-  .bs3-grid{gap:5vw 4vw;}
+
+
+
+
+/* ─── 폰트 크기 조정 ―───────────────────────────────── */
+
+
+@media (min-width:1310px) {
+.bs3-title{font-size:50px;color:#3da4ff;font-family: 'Anton',sans-serif;;}
+.bs3-sub{font-size:22px;font-family: 'Anton',sans-serif;}  
+
 }
+/* 중간 스크린: 1300px 이하 (2열) */
+@media (max-width: 1300px) {
+  .bs3-title{font-size:50px;color:#3da4ff;font-family: 'Anton',sans-serif;;}
+  .bs3-sub{font-size:22px;font-family: 'Anton',sans-serif;}  
+}
+/* 소형 스크린: 500px 이하 (1열 + 중앙정렬) */
+@media (max-width: 900px) {
+  .BusinessSection_03{padding:10vh 4vw;}
+  .bs3-grid{gap:5vw 4vw;}  
+}
+
+@media (max-width: 500px) {
+  .bs3-title{font-size:40px;color:#3da4ff;font-family: 'Anton',sans-serif;;}
+  .bs3-sub{font-size:18px;font-family: 'Anton',sans-serif;}  
+}
+
+
+

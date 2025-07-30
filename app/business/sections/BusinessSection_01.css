@@ -18,7 +18,7 @@
   color: #fff;
   padding: 0 10px;         /* 양쪽 여유 조금 */
   box-sizing: border-box;
-  font-family: 'Anton';
+  font-family: 'Anton',sans-serif;;
 }
 
 /* 2) 텍스트 기본 스타일 */
