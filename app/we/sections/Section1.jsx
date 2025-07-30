@@ -11,21 +11,26 @@ export default function Section1({ id = 'sec1' }) {
     const el = sectionRef.current;
     if (!el) return;
 
+    // 1) 첫 로드 즉시 노출
+    el.classList.add('play');
+
+    // 2) 스크롤 재진입 시만 다시 트리거하고 싶을 때
     const io = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
           el.classList.add('play');
         } else {
+          // 다시 숨기기 원치 않으면 아래 줄 주석
           el.classList.remove('play');
         }
       },
-      { threshold: 0.5 }
+      { rootMargin: '-10% 0px -90% 0px', threshold: 0 }
     );
 
     io.observe(el);
     return () => io.disconnect();
   }, []);
-
+//
   return (
     <section id={id} ref={sectionRef} className="weSection_01">
       <div className="weSection_01_text">

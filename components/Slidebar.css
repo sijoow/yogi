@@ -1,5 +1,5 @@
 /* Slidebar.css */
-#nav ul li{font-weight:600;}
+#nav ul li{font-weight:600;  font-family: 'Anton';}
 .search-icon-btn{background:none;border:none;}
 /* ─── (1) 오버레이 ───────────────────────────────────────────── */
 .slide-overlay {

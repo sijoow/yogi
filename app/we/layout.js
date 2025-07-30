@@ -14,6 +14,13 @@ const roboto = Roboto_Condensed({
   variable: '--font-roboto-condensed',
 });
 
+const anton = Anton({
+  weight: ['400'],               // 필요에 따라 다른 weight 추가 가능
+  subsets: ['latin'],
+  variable: '--font-roboto-condensed',
+});
+
+
 export default function WeLayout({ children }) {
   return (
     <div className={roboto.className}>

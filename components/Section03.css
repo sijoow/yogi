@@ -12,6 +12,7 @@
   height: 100vh;
   background: url('https://yogibo.openhost.cafe24.com/yogico/img/mainBanner/home_4.jpg');
   overflow: hidden;
+  font-family: 'Anton';
 }
 
 /* 2) 텍스트 블록 (변경 없음) */
