@@ -63,7 +63,7 @@
 /* ─── 폰트 크기 조정 ―───────────────────────────────── */
 /* 대형 스크린: 1600px 이상 */
 @media (min-width:1310px) {
-  .ws3-name{margin-top:40px;font-size:20px;font-family: 'Anton';font-weight: 200;}
+  .ws3-name{margin-top:60px;font-size:20px;font-family: 'Anton';font-weight: 200;}
   .ws3-role{margin-top:5px;font-size:20px;font-family: 'Anton';font-weight: 200;}
   .ws3-bio{margin-top:10px;font-size:18px;}
 
@@ -76,7 +76,7 @@
     gap: 6vw 4vw;
   }
 
-  .ws3-name{margin-top:40px;font-size:18px;font-family: 'Anton';font-weight: 200;}
+  .ws3-name{margin-top:60px;font-size:18px;font-family: 'Anton';font-weight: 200;}
   .ws3-role{margin-top:5px;font-size:18px;font-family: 'Anton';font-weight: 200;}
   .ws3-bio{margin-top:10px;font-size:16px;}
 }
@@ -88,7 +88,7 @@
     grid-template-columns: 1fr;
     gap: 8vh 0;
   }
-  .ws3-name{margin-top:40px;font-size:18px;font-family: 'Anton';font-weight: 200;}
+  .ws3-name{margin-top:60px;font-size:18px;font-family: 'Anton';font-weight: 200;}
   .ws3-role{margin-top:5px;font-size:18px;font-family: 'Anton';font-weight: 200;}
   .ws3-bio{margin-top:10px;font-size:16px;}
   

@@ -1,75 +1,136 @@
 /*───────────────────────────────────────────────
-  Section1.css (fade-in-up 전용)
+  whoSection_01.css 반응형 추가
 ───────────────────────────────────────────────*/
 
-/* 1) 섹션 기본 */
-.whoSection_01 {
+/* 1) 기본 값 (이미 적용한 것) */
+#whoSection_01 {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
   height: 100vh;
-  background: #000; /* 필요시 이미지 추가 */
+  background: #0B182C ;
   overflow: hidden;
+  font-family: 'Anton';
 }
-
-/* 2) 텍스트 래퍼 */
 .whoSection_01_text {
-  width: 80%;
+  width: 100%;
   max-width: 1300px;
-  text-align: left;
+  text-align:center;
 }
-
-/* 3) 텍스트 기본 상태 (숨김) */
-.whoSection_01_line1{text-align:center;}
 .whoSection_01_line1,
 .whoSection_01_line2 {
   color: #fff;
-  font-family: 'Anton', sans-serif;
   margin: 0;
-  opacity: 0;                 /* 숨김 */
-  transform: translateY(50px);/* 아래에서 위로 */
-  font-size: clamp(3rem, 14vw, 25vw);
+  opacity: 0;
+  transform: translateY(50px);
   line-height: 1;
-  will-change: opacity, transform;
 }
-
-/* 4) play 클래스가 붙었을 때 실행 */
-.whoSection_01.play .whoSection_01_line1 {
-  animation: fadeInUp 0.8s ease-out forwards;
-}
-.whoSection_01.play .whoSection_01_line2 {
-  animation: fadeInUp 0.8s ease-out forwards 0.3s;
-}
-
-/* 5) keyframes */
 @keyframes fadeInUp {
   from { opacity: 0; transform: translateY(50px); }
-  to   { opacity: 1; transform: translateY(0);    }
+  to   { opacity: 1; transform: translateY(0); }
+}
+#whoSection_01.play .whoSection_01_line1 { animation: fadeInUp 0.8s ease-out forwards; }
+#whoSection_01.play .whoSection_01_line2 { animation: fadeInUp 0.8s ease-out forwards 0.3s; }
+
+
+.mobile-br {
+  display: none;
+  
 }
 
-/* ───────── 반응형 ───────── */
-@media (max-width: 767px) {
-  .whoSection_01_text { width: 90%; }
+
+/*레이아웃 별 폰트 크기 수정 작업*/
+@media (min-width: 1300px) {
   .whoSection_01_line1,
   .whoSection_01_line2 {
+    font-size:200px;
+    line-height: 220px;
+    letter-spacing: -2px;
+    font-weight:400;
+    max-width:1000px;
+    margin:0 auto;
+  }
+}
+
+
+@media (max-width: 1299px) {
+  .whoSection_01_text{text-align:center;}
+  .whoSection_01_line1,
+  .whoSection_01_line2 {
+    font-size:170px;
+    line-height: 190px;
+    letter-spacing: -2px;
+    font-weight:400;
+  }
+}
+
+
+@media (max-width: 900px) {
+  .whoSection_01_line1,
+  .whoSection_01_line2 {
+    width:70%;
+    margin:0 auto;
+    display:inline-block;
+    font-size:120px;
+    line-height: 130px;
+    letter-spacing: -2px;
+    font-weight:400;
     text-align:left;
-    font-size: clamp(2rem, 22vw, 12rem);
-    line-height: 1.1;
+  }
+  .mobile-br {
+    display: block;
   }
 }
-@media (min-width: 768px) and (max-width: 1199px) {
-  .whoSection_01_text { width: 85%; }
+
+@media (max-width: 550px) {
   .whoSection_01_line1,
   .whoSection_01_line2 {
-    font-size: clamp(3rem, 16vw, 15rem);
-    line-height: 1.05;
+    width:90%;
+    margin:0 auto;
+    display:inline-block;
+    font-size:120px;
+    line-height: 130px;
+    letter-spacing: -2px;
+    font-weight:400;
+  }
+  .mobile-br {
+    display: block;
   }
 }
-@media (min-width: 1200px) {
-  .whoSection_01_text { width: 80%; }
+
+
+@media (max-width: 400px) {
   .whoSection_01_line1,
   .whoSection_01_line2 {
-    font-size: clamp(4rem, 14vw, 18rem);
+    width:90%;
+    margin:0 auto;
+    display:inline-block;
+    font-size:85px;
+    line-height: 95px;
+    letter-spacing: -2px;
+    font-weight:400;
+  }
+  .mobile-br {
+    display: block;
   }
 }
+
+
+
+@media (max-width: 330px) {
+  .whoSection_01_line1,
+  .whoSection_01_line2 {
+    width:90%;
+    margin:0 auto;
+    display:inline-block;
+    font-size:70px;
+    line-height: 80px;
+    letter-spacing: -2px;
+    font-weight:400;
+  }
+  .mobile-br {
+    display: block;
+  }
+}
+
