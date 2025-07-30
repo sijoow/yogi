@@ -9,7 +9,6 @@ const menuItems = [
   { href: '/', label: 'HOME' },
   { href: '/who', label: 'WHO WE ARE' },
   { href: '/we', label: 'WHAT WE DO' },
-  { href: '/business', label: 'BUSINESS CONSULTING & DEVELOPMENT' },
   { href: '/news', label: 'NEWS' },
   { href: '/recruit', label: 'RECRUIT' },
 ];
