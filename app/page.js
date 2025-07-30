@@ -17,8 +17,8 @@ export default function Home() {
     <div className="snap-container">
       <MainSection />
       <Section01 />
-      <Section02 />
       <Section03 />
+      <Section02 />
 
     </div>
   );

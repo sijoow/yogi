@@ -39,6 +39,7 @@ export default function MainSection() {
         loop
         playsInline
       />
+      <h1 className="main_line0">YOGI CORPORATION</h1>
       <h1 className="main_line1 ">TOWARD</h1>
       <h1 className="main_line2">OPPORTUNITIES</h1>
       <h1 className="main_line3">&amp; POSSIBILITIES</h1>      

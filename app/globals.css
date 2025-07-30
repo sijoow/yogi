@@ -1,47 +1,20 @@
 @import "tailwindcss";
 
-/* 1) OpenSans 웹폰트 선언 */
-@font-face {
-  font-family: 'OpenSans';
-  font-style: normal;
-  font-weight: 200;
-  font-display: swap;
-  src: url('https://yogico.cafe24.com/font//web/font/OpenSans-Light.ttf') format('truetype');
-}
-@font-face {
-  font-family: 'OpenSans';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url('https://yogico.cafe24.com/font//web/font/OpenSans-Regular.ttf') format('truetype');
-}
-@font-face {
-  font-family: 'OpenSans';
-  font-style: normal;
-  font-weight: 600;
-  font-display: swap;
-  src: url('https://yogico.cafe24.com/font//web/font/OpenSans-Bold.ttf') format('truetype');
-}
-@font-face {
-  font-family: 'OpenSans';
-  font-style: normal;
-  font-weight: 800;
-  font-display: swap;
-  src: url('https://yogico.cafe24.com/font//web/font/OpenSans_Condensed-ExtraBold.ttf') format('truetype');
-}
+/* 1) Roboto Condensed 웹폰트 불러오기 */
+/* (HTML <head>에 아래 링크를 추가해 주세요) */
+/* <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet"> */
 
-/* 2) 전역 변수에 OpenSans 연결 */
+/* 2) 전역 변수에 Roboto Condensed 연결 */
 :root {
   --background: #ffffff;
   --foreground: #171717;
-  --font-base: 'OpenSans', sans-serif;
+  --font-base: 'Roboto Condensed', sans-serif;
 }
 
-/* 3) 테마 블록도 모두 OpenSans 사용 */
+/* 3) 테마 블록도 모두 Roboto Condensed 사용 */
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-heading: var(--font-anton), sans-serif;
   --font-sans: var(--font-base);
   --font-mono: var(--font-base);
 }
@@ -55,15 +28,18 @@
 }
 
 /* 4) 전역 여백 초기화 및 기본 폰트 설정 */
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
   height: 100%;
   overflow-x: hidden;        /* 수평 스크롤 제거 */
-  font-family: var(--font-base);
   background-color: var(--background);
   color: var(--foreground);
-  font-family:'OpenSans', sans-serif;
+
+  /* 기본 폰트 패밀리 */
+  font-family: var(--font-base);
+  font-weight: 400;
 }
 
 /* next.js#__next 컨테이너도 100% 높이를 가져야 snap-container가 동작 */

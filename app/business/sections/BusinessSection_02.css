@@ -1,12 +1,4 @@
-/*───────────────────────────────────────────────
-  BusinessSection_02.css
-  • 이미지 그라데이션(#55CDF5 → #3078D5)
-  • 텍스트 모두 white
-  • 폰트: Roboto Condensed (regular)
-───────────────────────────────────────────────*/
 
-/* 1) Google Font 로드 */
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400&display=swap');
 
 .BusinessSection_02 {
   position: relative;
@@ -14,21 +6,18 @@
   min-height: 100vh;
   padding: 8vh 6vw 12vh;
   box-sizing: border-box;
+  background:#0b182b;
 
   /* 그라데이션 배경 (이미지와 최대한 유사하게) */
-  background: linear-gradient(90deg, #55CDF5 0%, #3078D5 100%);
-  
+  /* background: linear-gradient(90deg, #55CDF5 0%, #3078D5 100%); */
   /* 텍스트 흰색, 폰트 설정 */
   color: #fff;
-  font-family: 'Roboto Condensed', sans-serif;
-  
   overflow: hidden;
 }
 
 /* 타이틀 */
 .bs2-title {
-  font-weight:600;
-  font-size: clamp(32px, 4vw, 60px);
+  color:#3ea6ff!important;;
   margin: 0 0 6vh;
   color: inherit;
 }
@@ -59,17 +48,15 @@
 /* 항목 제목 */
 .bs2-item h3 {
   margin: 0 0 .4rem;
-  font-size: clamp(20px, 2vw, 30px);
   color: inherit;
-  font-weight:600;
 }
 
 /* 항목 설명 */
 .bs2-item p {
   margin: 0;
-  font-size: clamp(16px, 1.3vw, 22px);
   line-height: 1.4;
   color: inherit;
+  font-weight:300;
 }
 
 /* 애니메이션 트리거 */
@@ -90,3 +77,14 @@
     grid-template-columns: 1fr;
   }
 }
+
+
+
+
+@media (min-width: 1500px) {
+
+}
+
+
+
+
