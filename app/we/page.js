@@ -16,6 +16,8 @@ import BusinessSection_04 from '../business/sections/Section4'
 
 import Brand0 from '../brand/sections/Section0'
 import Brand1 from '../brand/sections/Section1'
+import Brand2 from '../brand/sections/Section4'
+
 import Section6 from '../brand/sections/Section2'
 import Section7 from '../brand/sections/Section3'
 
@@ -40,10 +42,11 @@ export default function WePage() {
       <Section3 id="sec3" />
       <Section4 id="sec4" /> */}
       {/* <Section5 id="sec5" /> */}
-       <Brand0 id="sec5" />
-       <Brand1 id="sec5" />
-      <Section6 id="sec5" />
-      <Section7 id="sec6" />
+        <Brand0 id="sec5" />
+        <Brand1 id="sec5" />
+        <Section6 id="sec5" />
+        <Section7 id="sec6" />
+        <Brand2 id="sec5" /> 
     </div>
   );
 }
