@@ -13,11 +13,11 @@ import BusinessSection_04 from '@/app/business/sections/Section4';
 
 export const sectionComponents = [
   Section1,
-  Section2,
-  Section3,
-  Section4,
   BusinessSection_01,
   BusinessSection_02,
   BusinessSection_03,
   BusinessSection_04,
+  Section2,
+  Section3,
+  Section4,
 ];

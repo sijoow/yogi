@@ -32,6 +32,7 @@
     transform: translateY(40px);
     color:#111; /* 이미지에선 검정 느낌, 필요시 #fff로 변경 */
     font-size: clamp(2.5rem, 9vw, 9rem);
+    
   }
   
   /* 설명 */
