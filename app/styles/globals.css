@@ -1,5 +1,6 @@
 /* app/styles/globals.css */
 
+.section-indicator{display:none!important;}
 /* 1) CSS reset 또는 normalize (간단 예시) */
 *, *::before, *::after {
     box-sizing: border-box;

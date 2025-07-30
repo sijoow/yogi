@@ -1,87 +1,136 @@
-.BrandSection_04{
-  position:relative;
-  width:100%;
-  min-height:100vh;
-  padding:8vh 6vw 12vh;
-  box-sizing:border-box;
-  background:linear-gradient(90deg,#d3ffe6 0%, #9fc2ff 100%);
-  color:#111;
-  overflow:hidden;
+/* BrandSection_04.css */
+
+.BrandSection_04 {
+  position: relative;
+  width: 100%;
+  padding: 100px;
+  padding-top:150px;
+  box-sizing: border-box;
+  background: #fff;
+  color: #000;
 }
 
-.bs4-title{
-  font-family:'Anton', sans-serif;
-  font-size:clamp(32px,4vw,60px);
-  margin:0 0 6vh;
+.excl-title {
+  font-family: 'Anton', sans-serif;
+  margin-bottom: 1rem;
 }
 
-/* 리스트 */
-.bs4-list{
-  list-style:none;
-  margin:0;
-  padding:0;
-  display:flex;
-  flex-direction:column;
-  gap:5vh;
+.excl-intro {
+  line-height: 1.6;
+  margin-bottom: 6rem;
+  color: #333;
 }
 
-/* 아이템 */
-.bs4-item{
-  display:flex;
-  gap:3vw;
-  align-items:flex-start;
-  opacity:0;
-  transform:translateY(24px);
-  transition:opacity .5s ease, transform .5s ease;
+.triple-chart {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  align-items: start;
 }
 
-/* play 시 순차 등장 */
-.BrandSection_04.play .bs4-item{
-  opacity:1;
-  transform:none;
-}
-.BrandSection_04.play .bs4-item:nth-child(1){transition-delay:.05s;}
-.BrandSection_04.play .bs4-item:nth-child(2){transition-delay:.15s;}
-.BrandSection_04.play .bs4-item:nth-child(3){transition-delay:.25s;}
-
-/* 사진 박스 (사각형) */
-.bs4-photo{
-  width:180px;
-  height:140px;
-  border-radius:12px;
-  overflow:hidden;
-  background:#e7e7e7;          /* 이미지 없을 때 placeholder */
-  flex:0 0 auto;
-}
-.bs4-photo img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
+.chart-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-/* 텍스트 */
-.bs4-text{
-  flex:1 1 auto;
-}
-.bs4-name{
-  font-family:'Anton', sans-serif;
-  font-size:clamp(20px,2vw,32px);
-  margin:0 0 12px;
-}
-.bs4-quote{
-  font-size:clamp(16px,1.2vw,20px);
-  line-height:1.5;
-  margin:0;
+.chart-block h4 {
+  margin-bottom: 0.5rem;
+  font-family: 'Anton', sans-serif;
 }
 
-/* 반응형 */
-@media(max-width:900px){
-  .bs4-item{
-    flex-direction:column;
-    gap:2vh;
-  }
-  .bs4-photo{
-    width:160px;
-    height:120px;
+.chart-block canvas {
+  width: 100% !important;
+  height: 250px !important;
+}
+
+.chart-block p {
+  margin-top: 0.75rem;
+  color: #555;
+  text-align: center;
+}
+
+
+
+/* 태블릿: 2열 */
+@media (max-width: 900px) {
+  .triple-chart {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
+
+/* 모바일: 1열 + 패딩 축소 */
+@media (max-width: 600px) {
+  .BrandSection_04 {
+    padding: 4rem 1rem 1rem;
+  }
+  .triple-chart {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .chart-block canvas {
+    height: 200px !important;
+  }
+  .chart-block h4 {
+  }
+  .chart-block p {
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+  }
+}
+
+
+
+
+
+
+/* ─── 폰트 크기 조정 ―───────────────────────────────── */
+/* 대형 스크린: 1600px 이상 */
+@media (min-width:1310px) {
+  .excl-title {
+    color: #3ea6ff;
+    margin: 0 0 4vh;
+    font-size:50px;
+    font-family: 'Anton', sans-serif;
+    display: inline-block;
+  }
+  .excl-intro{
+    font-size:20px;
+  }
+}
+/* 중간 스크린: 1300px 이하 (2열) */
+@media (max-width: 1300px) {
+
+}
+/* 소형 스크린: 500px 이하 (1열 + 중앙정렬) */
+@media (max-width: 900px) {
+  .excl-title {
+    color: #3ea6ff;
+    margin: 0 0 4vh;
+    font-size:40px;
+    font-family: 'Anton', sans-serif;
+    display: inline-block;
+  }
+  .excl-intro{
+    font-size:18px;
+  }
+  
+}
+
+
+@media (max-width: 500px) {
+  .excl-title {
+    color: #3ea6ff;
+    margin: 0 0 4vh;
+    font-size:30px;
+    font-family: 'Anton', sans-serif;
+    display: inline-block;
+  }
+  .excl-intro{
+    font-size:16px;
+  }
+}
+
+
+
+

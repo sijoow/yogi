@@ -1,17 +1,17 @@
-// components/sections/Section1.jsx
+// components/BrandSection_01.jsx
 'use client';
 
 import React, { useEffect, useRef } from 'react';
 import './BrandSection_01.css';
 
-export default function Section1({ id = 'sec1' }) {
+export default function BrandSection_01() {
   const sectionRef = useRef(null);
 
   useEffect(() => {
     const el = sectionRef.current;
     if (!el) return;
 
-    const io = new IntersectionObserver(
+    const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
           el.classList.add('play');
@@ -19,20 +19,21 @@ export default function Section1({ id = 'sec1' }) {
           el.classList.remove('play');
         }
       },
-      { threshold: 0.5 }
+      {
+        root: null,        // viewport
+        threshold: 0.5,    // 50% 보이면 트리거
+      }
     );
 
-    io.observe(el);
-    return () => io.disconnect();
+    observer.observe(el);
+    return () => observer.disconnect();
   }, []);
-
+  
   return (
-    <section id={id} ref={sectionRef} className="BrandSection_01">
-      <div className="BrandSection_01_text">
-        <h1 className="BrandSection_01_line1">MAKING</h1>
-        <h1 className="BrandSection_01_line2">LIFESTYLE</h1>
-        <h1 className="BrandSection_01_line3">BETTER</h1>
-      </div>
+    <section id="BrandSection_01" ref={sectionRef}>
+      <h1 className="main_line1 ">MAKING</h1>
+      <h1 className="main_line2">LIFESTYLE</h1>
+      <h1 className="main_line3">BETTER</h1>      
     </section>
   );
 }

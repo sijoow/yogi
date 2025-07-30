@@ -1,0 +1,27 @@
+/* TripleChart.css */
+
+.triple-chart {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3rem;
+  }
+  
+  .chart-block {
+    flex: 1 1 calc(33% - 2rem);
+  }
+  
+  .chart-block h4 {
+    margin-bottom: 1rem;
+    font-family: 'Anton', sans-serif;
+    font-size: 1.25rem;
+  }
+  
+  @media (max-width: 900px) {
+    .triple-chart {
+      flex-direction: column;
+    }
+    .chart-block {
+      flex: 1 1 100%;
+    }
+  }
+  
