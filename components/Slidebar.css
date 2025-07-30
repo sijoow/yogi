@@ -123,46 +123,6 @@
   transform: translateY(-14px) rotate(-45deg);
 }
 
-
-
-/*안쪽 데이터*/
-
-.inner {
-  width: calc(505 / 1430 * 100%);
-  min-width: 450px;
-  max-width: 1400px;
-  padding: 0;
-  text-align: center;
-  margin:0 auto;
-}
-
-.inner #header{
-  display:inline-block;
-  width:100%;
-  max-width:1600px
-}
-.inner #header ul li{ 
-  width:100%;
-}
-.inner #header ul li:first-child{
-  margin-top:0px;
-}
-
-.inner #footer{
-  font-family:'OpenSans';
-  border-top:1px solid #fff;
-  padding-top:5%;
-  margin-top:7%;
-}
-address{font-style: normal;}
-
-.banrdBusinessFont{color:skyblue;}
-.inner #header ul li{margin-top:3%;}
-.inner #header ul li a{line-height:1.2;}
-.inner #header ul li a{font-size:3vw;font-weight:800}
-
-.inner #header ul li a:hover{color:#00bdd4!important;cursor:pointer;}
-
 .logo{
   position:absolute;
   top:calc(30/720*100%);
@@ -203,25 +163,109 @@ h1.logo{
   transform: translateY(-14px) rotate(-45deg);
 }
 
-
-/*레이아웃*/
-.inner{
-  width:90%;
-  max-width:665px;
-  min-width:320px;
 }
 
-.inner #header ul li a{font-size:8vw;}
+
+
+
+/* ─── inner 컨테이너 ───────────────────────────────── */
+.inner {
+
+  width: 100%;              /* 화면 끝까지 */
+  padding: 0;               /* 여백은 개별 요소에서 */
+  margin: 0 auto;
+  text-align: center;       /* 메뉴·푸터 중앙 정렬 */
+  position: relative;
 }
 
-/*activeData*/
-.slidebar nav ul li a {
+/* ─── 네비게이션 (메뉴) ─────────────────────────────── */
+.inner #header {
+  width: 100%;
+}
+.inner #header ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  padding-top:50px;
+  padding-bottom:20px;
+}
+.inner #header ul li {
+  margin: 2rem 0;           /* 위아래 여백 */
+}
+.inner #header ul li:first-child {
+  margin-top: 0;
+}
+.inner #header ul li a {
+  display: inline-block;
+  font-size: 3vw;
+  font-weight: 800;
   color: #fff;
   text-decoration: none;
-  transition: color 0.2s ease;
+  line-height: 1.2;
+  transition: color 0.2s;
+}
+.inner #header ul li a:hover,
+.inner #header ul li a.banrdBusinessFont {  /* Business Consulting 강조 */
+  color: #3ea6ff!important;
 }
 
-/* 현재 페이지인 링크에만 회색(#888) 적용 */
-.slidebar nav ul li a.active {
+/* ─── 푸터 전폭 라인 + 주소 ───────────────────────────── */
+.inner #footer {
+  width: 100%;
+  border-top: 1px solid #444;   /* 상단 라인 */
+  padding-top: 2rem;
+  margin-top: 2rem;
+}
+.inner #footer address {
+  font-style: normal;
   color: #888;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  display: block;
+  margin-bottom: 1rem;
+  font-family: 'Roboto' Condensed, sans-serif;
+}
+.inner #footer a {
+  display: block;
+  color: #888;
+  text-decoration: none;
+}
+
+
+
+
+/* ─── 반응형: 900px 이하 ───────────────────────────────── */
+@media (max-width: 1500px) {
+  .inner {
+    padding: 0
+  }
+
+  /* 메뉴 간격 좁히기 */
+  .inner #header ul {
+    padding-top: 4rem;
+    padding-bottom: 1rem;
+  }
+  .inner #header ul li {
+    margin: 1rem 0;         /* 위아래 여백 축소 */
+  }
+
+  /* 메뉴 폰트 크기 축소 */
+  .inner #header ul li a {
+    font-size: 60px        /* 화면 너비의 5% */
+  }
+
+  /* 푸터 여백 조정 */
+  .inner #footer {
+    padding-top: 1.5rem;
+    margin-top: 1.5rem;
+  }
+  .inner #footer address,
+  .inner #footer a {
+    font-size: 0.8rem;      /* 폰트 살짝 작게 */
+    line-height: 1.3;
+  }
+  /* 하단 라인 위치 조정 */
+  .inner #footer::after {
+    margin-top: 1rem;
+  }
 }

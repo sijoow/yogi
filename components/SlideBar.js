@@ -11,6 +11,7 @@ const menuItems = [
   { href: '/we', label: 'WHAT WE DO' },
   { href: '/news', label: 'NEWS' },
   { href: '/recruit', label: 'RECRUIT' },
+  
 ];
 
 export default function Slidebar({ isOpen, onClose }) {
@@ -45,7 +46,7 @@ export default function Slidebar({ isOpen, onClose }) {
           </header>
 
           <footer id="footer">
-            <address>
+            <address style={{fontFamily:'Roboto Condensed'}}>
               #201, 125, Bongeunsa-ro, <br />
               Gangnam-gu, Seoul, Korea<br />
               <a href="tel:+82-10-2880-0721">

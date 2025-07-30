@@ -33,7 +33,7 @@
 .w2-intro1      { grid-area: intro1; }
 .w2-intro2      { grid-area: intro2; }
 .w2-pillar-list { grid-area: pillar; list-style:decimal inside; padding:0; margin:0; }
-.w2-ceo-desc    { grid-area: ceodesc; padding-bottom:4rem; }
+.w2-ceo-desc    { grid-area: ceodesc;}
 
 .w2-logo-box img {
   width:100%; max-width:300px; display:block;
@@ -126,7 +126,7 @@
   .w2-intro1,
   .w2-intro2 {font-size:20px;}
   .w2-pillar-list {font-size:20px;font-weight:500;}
-  .w2-ceo-desc > strong {font-size:24px;font-weight:600;padding-top:50px;padding-bottom:30px;}
+  .w2-ceo-desc > strong {font-size:24px;font-weight:600;padding-top:50px;}
   .w2-ceo-desc {font-size:20px;}
 }
 
