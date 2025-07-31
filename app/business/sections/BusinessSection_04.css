@@ -3,7 +3,7 @@
   position: relative;
   width: 100%;
   min-height: 100vh;
-  padding: 150px 5vw 100px;
+  padding: 150px 100px 100px;
   box-sizing: border-box;
   background: #0b182b;
   color: #fff;
@@ -164,7 +164,12 @@
     .bs4-logos{font-size:60px;font-weight:100;}
     .bs4-card_name{font-size:25px;font-weight:600;}
     .bs4-card_exps p{font-size:16px;}
+    .BusinessSection_04 {
+      padding: 4rem 1rem 1rem;
+    }
+
   }
+  
   /* 소형 스크린: 500px 이하 (1열 + 중앙정렬) */
   @media (max-width: 900px) {
     .bs4-title{font-size:50px;color:#3da4ff;text-align: center;}

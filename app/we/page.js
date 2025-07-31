@@ -41,16 +41,12 @@ export default function WePage() {
       <BusinessSection_02 id="sec8"/>
       <BusinessSection_03 id="sec9"/>
       <BusinessSection_04 id="sec10"/>
-      {/* <Section2 id="sec2" />
-      <Section3 id="sec3" />
-      <Section4 id="sec4" /> */}
-      {/* <Section5 id="sec5" /> */}
-        <Brand0 id="sec5" />
-        <Brand1 id="sec5" />
-        <Section6 id="sec5" />
-        <Section7 id="sec6" />
-        <Brand2 id="sec5" /> 
-        <Brand3 id="sec5" /> 
+      <Brand0 id="sec5" />
+      <Brand1 id="sec5" />
+      <Section6 id="sec5" />
+      <Section7 id="sec6" />
+      <Brand2 id="sec5" /> 
+      <Brand3 id="sec5" /> 
     </div>
   );
 }

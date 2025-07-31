@@ -130,16 +130,13 @@
   width:calc(156/720*100%);
   z-index:1;
   max-width:220px;
+  min-width:40px;
   filter: brightness(0) invert(1);
 }
 /*이너 부분 css 반응형*/
 @media (max-width: 600px) {
 /* 기본버튼 */
-h1.logo{
-  top:calc(12/720*100%);
-  left:calc(28/720*100%);
-  width:calc(156/720*100%);
-}
+
 .btn_tl{
   top: 22.5px;
   right: 16.5px;
@@ -164,8 +161,6 @@ h1.logo{
 }
 
 }
-
-
 
 
 /* ─── inner 컨테이너 ───────────────────────────────── */

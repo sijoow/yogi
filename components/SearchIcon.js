@@ -9,8 +9,8 @@ export default function SearchIcon({ mapOpen, setMapOpen }) {
     <>
       {/* 1) 검색 아이콘 버튼 */}
       <button className="search-icon-btn" onClick={toggleMap}>
-        <img
-          src="https://www.boosterz.co.kr/img/btn/ico_local_w.png"
+        <img 
+          src="https://yogibo.openhost.cafe24.com/yogico/img/icon/icon_map.png"
           alt="Search map"
         />
       </button>

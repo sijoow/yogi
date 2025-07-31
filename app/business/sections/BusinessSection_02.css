@@ -4,7 +4,7 @@
   position: relative;
   width: 100%;
   min-height: 100vh;
-  padding: 100px;
+  padding: 150px 100px 100px;
   padding-top:150px;
   box-sizing: border-box;
   background:#0b182b;
@@ -103,8 +103,9 @@
   .bs2-title{font-size:40px;}
   .bs2-item h3{font-size:22px;}
   .bs2-item p{font-size:18px;}
-  .BusinessSection_02{padding:50px;padding-top:150px;}
-  
+  .BusinessSection_02 {
+    padding: 4rem 1rem 1rem;
+  }
 }
 
 
@@ -112,7 +113,9 @@
   .bs2-title{font-size:30px;}
   .bs2-item h3{font-size:20px;}
   .bs2-item p{font-size:16px;}
-  .BusinessSection_02{padding:30px;padding-top:100px;}
+  .BusinessSection_02 {
+    padding: 4rem 1rem 1rem;
+  }
 }
 
 

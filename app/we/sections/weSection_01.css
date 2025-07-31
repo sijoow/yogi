@@ -71,6 +71,7 @@
     max-width: 1000px;
     margin: 0 auto;
   }
+  .br{display:none;}
 }
 
 /* 2) 중간 화면 (1299px 이하) */
@@ -85,6 +86,7 @@
     letter-spacing: -2px;
     font-weight: 400;
   }
+  .br{display:none;}
 }
 
 /* 3) 태블릿/작은 데스크탑 (900px 이하) */
@@ -100,6 +102,7 @@
     font-weight: 400;
     text-align: left;
   }
+  .br{display:none;}
 }
 
 /* 4) 중간 모바일 (550px 이하) */
@@ -118,6 +121,7 @@
     font-weight: 400;
     text-align: left;
   }
+  .br{display:block;}
 }
 
 /* 5) 작은 모바일 (400px 이하) */
@@ -137,6 +141,7 @@
     font-weight: 400;
     text-align: left;
   }
+  .br{display:block;}
 }
 
 /* 6) 극소형 모바일 (330px 이하) */
@@ -152,4 +157,5 @@
     font-weight: 400;
     text-align: left;
   }
+  .br{display:block;}
 }

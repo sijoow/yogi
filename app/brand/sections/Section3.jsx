@@ -9,12 +9,13 @@ import 'swiper/css/pagination';
 import './BrandSection_03.css';
 
 const IMGS = [
-  'https://yogibo.openhost.cafe24.com/yogico/img/banner/img_01.png',
-  'https://yogibo.openhost.cafe24.com/yogico/img/banner/img_01.png',
-  'https://yogibo.openhost.cafe24.com/yogico/img/banner/img_01.png',
-  'https://yogibo.openhost.cafe24.com/yogico/img/banner/img_01.png',
-  'https://yogibo.openhost.cafe24.com/yogico/img/banner/img_01.png',
-
+  'https://yogibo.openhost.cafe24.com/yogico/img/banner/img_001.png',
+  'https://yogibo.openhost.cafe24.com/yogico/img/banner/img_002.png',
+  'https://yogibo.openhost.cafe24.com/yogico/img/banner/img_003.png',
+  'https://yogibo.openhost.cafe24.com/yogico/img/banner/img_004.png',
+  'https://yogibo.openhost.cafe24.com/yogico/img/banner/img_005.png',
+  'https://yogibo.openhost.cafe24.com/yogico/img/banner/img_006.png',
+  'https://yogibo.openhost.cafe24.com/yogico/img/banner/img_007.png',
 ];
 
 export default function BrandSection_03({ id = 'BrandSec2' }) {

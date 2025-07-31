@@ -13,13 +13,15 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: url('https://yogibo.openhost.cafe24.com/yogico/img/mainBanner/home_2.jpg')
+  background: url('https://yogibo.openhost.cafe24.com/yogico/img/banner/home_2.jpg')
   no-repeat center/cover;
   color: #fff;
   padding: 0 10px;         /* 양쪽 여유 조금 */
   box-sizing: border-box;
   font-family: 'Anton';
 }
+
+
 
 /* 2) 텍스트 기본 스타일 */
 .section01_line1,

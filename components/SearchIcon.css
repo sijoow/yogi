@@ -8,12 +8,6 @@
     position: fixed;
     bottom: calc(60 / 1080 * 100%);
     right: calc(60 / 1920 * 100%);
-    width: calc(27 / 1920 * 100%);
-    height: calc(42 / 1920 * 100%);
-    min-width: 14px;
-    min-height: 30px;
-    max-width: 20px;
-    max-height: 42px;
     transition: all 0.2s ease-in-out;
     z-index: 3;
     cursor:pointer;
