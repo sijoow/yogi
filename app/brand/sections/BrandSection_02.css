@@ -1,106 +1,173 @@
-/* 섹션 기본 */
-.BrandSection_02{
-  width:100%;
-  min-height:100vh;
-  background:#fff;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  overflow:hidden;
+/* BrandSection_02.css */
+
+/* ─── 1. 전체 섹션 ───────────────────────────────── */
+.BrandSection_02 {
+  position: relative;
+  width: 100%;
+  padding: 100px;
+  margin-top:50px;
+  box-sizing: border-box;
+  background: #fff;
+  color: #000;
+  font-family: 'Roboto', sans-serif;
 }
 
-/* 래퍼 (2열 레이아웃) */
-.ps2-wrap{
-  width:90%;
-  max-width:1400px;
-  margin:6rem auto;
-  display:grid;
-  grid-template-columns: 1fr 1fr;
-  gap:4rem 3rem;
-  align-items:start;
+/* ─── 2. 내부 래퍼 ───────────────────────────────── */
+.ps2-wrap {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
 }
 
-/* 텍스트 영역 */
-.ps2-text{
-  opacity:0;
-  transform:translateY(40px);
-  transition:opacity .7s ease, transform .7s ease;
-  color:#111;
-}
-.ps2-logo{
-  width:140px;
-  height:auto;
-  display:inline-block;
-  vertical-align:middle;
-}
-.ps2-present{
-  margin-left:1rem;
-  font-size:1.2rem;
-  vertical-align:middle;
-  color:#333;
-}
-.ps2-p{
-  margin:1.7em 0;
-  font-size:1.5rem;
-  line-height:1.6;
-}
-.ps2-link{
-  display:inline-block;
-  margin-top:2rem;
-  font-weight:600;
-  color:#111;
-  text-decoration:underline;
+/* ─── 3. 로고 & 소개 텍스트 ─────────────────────────── */
+.ps2-logo {
+  display: block;
+  margin: 0 auto 1rem;
+  max-width: 200px;
 }
 
-/* 이미지 그리드 */
-.ps2-grid{
-  opacity:0;
-  transform:translateY(40px);
-  transition:opacity .7s ease .15s, transform .7s ease .15s;
-  display:grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-auto-rows: 1fr;
-  gap:1.2rem;
-}
-.ps2-card{
-  width:100%;
-  aspect-ratio:1/1;
-  background:#eee;
-  overflow:hidden;
-}
-.ps2-card img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  display:block;
+/* ─── 4. SEE MORE 버튼 ─────────────────────────────── */
+.ps2-see-more {
+  display: inline-block;
+  width:200px;
+  height:44px;
+  line-height:43px;
+  font-size:22px;
+  background: #3482e7;
+  color: #fff;
+  text-decoration: none;
+  font-family:'Anton';
+  margin-top:40px;
 }
 
-/* play 시 나타남 */
-.BrandSection_02.play .ps2-text,
-.BrandSection_02.play .ps2-grid{
-  opacity:1;
-  transform:translateY(0);
+
+
+/* Hover 시 그림자+살짝 떠 있는 효과 */
+.ps2-see-more:hover {
+  /* 아래로 퍼지는 그림자 */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  /* 약간 올라온 듯한 느낌 */
+  transform: translateY(-2px);
 }
 
-/* 반응형 */
-@media (max-width:1024px){
-  .ps2-wrap{
-    grid-template-columns:1fr;
+
+
+/* ─── 5. Swiper 래퍼 ───────────────────────────────── */
+.ps2-swiper {
+  margin-top:70px;
+  cursor:pointer;
+  position: relative; /* pagination, nav 버튼 절대위치 기준 */
+}
+
+/* ─── 6. 이미지 그리드 (Swiper 슬롯) ─────────────── */
+.ps2-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+.ps2-card img {
+  width: 100%;
+  border-radius: 8px;
+  display: block;
+}
+
+/* ─── 7. Pagination 불릿 (슬라이드 위 중앙) ───────── */
+
+
+
+
+
+.swiper-wrapper{padding-top:40px;}
+.swiper-pagination-horizontal{
+  z-index:999;top:0;height:10px;
+}
+.swiper-pagination-bullet-active{
+  background:#3ea5ff;
+}
+.ps2-swiper .swiper-button-prev,
+.ps2-swiper .swiper-button-next {
+  position: absolute;
+  top: 65%;
+  width: 2rem;
+  height: 2rem;
+  transform: translateY(-50%);
+  color: #fff;
+  z-index: 10;
+  opacity: 0.8;
+}
+
+
+.ps2-swiper .swiper-button-next:hover {
+  color:#3ea5ff
+}
+
+.ps2-swiper .swiper-button-prev:hover{
+  color:#3ea5ff
+}
+.ps2-swiper .swiper-button-prev {
+  left:1rem
+}
+.ps2-swiper .swiper-button-next {
+  right: 1rem;
+}
+.ps2-swiper .swiper-button-prev::after,
+.ps2-swiper .swiper-button-next::after {
+  font-size: 2rem;
+}
+
+
+/* ─── 9. 반응형 그리드 ─────────────────────────────── */
+/* 900px 이하: 2열 */
+@media (max-width: 900px) {
+  .ps2-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
-  .ps2-grid{
-    grid-template-columns:repeat(3, 1fr);
-    order:2;
-  }
-  .ps2-text{
-    order:1;
-  }
 }
-@media (max-width:640px){
-  .ps2-grid{
-    grid-template-columns:repeat(2, 1fr);
-    gap:0.8rem;
+/* 600px 이하: 1열 */
+@media (max-width: 600px) {
+  .ps2-grid {
+    grid-template-columns: 1fr;
   }
-  .ps2-logo{ width:120px; }
-  .ps2-present{ font-size:0.95rem; }
-  .ps2-p{ font-size:0.95rem; }
+  .BrandSection_02{padding:50px;}
 }
+
+@media (max-width: 900px) {
+  .ps2-p{width:100%;margin:0 auto;}
+
+}
+
+
+
+
+
+/*폰트 부분*/
+@media (min-width: 1300px) {
+  .ps2-present{color:#c9c9c9;font-size:18px;}
+  .ps2-p{width:80%;margin:0 auto;margin-top:30px;font-size:16px;}
+}
+
+@media (max-width: 1299px) {
+  .ps2-present{color:#c9c9c9;font-size:18px;}
+  .ps2-p{width:80%;margin:0 auto;margin-top:30px;font-size:16px;}
+}
+
+@media (max-width: 900px) {
+  .ps2-present{color:#c9c9c9;font-size:16px;}
+  .ps2-p{width:100%;margin-top:30px;font-size:14px;}
+  .br{display:none;}
+}
+
+@media (max-width: 550px) {
+  .ps2-present{color:#c9c9c9;font-size:16px;}
+  .ps2-p{width:100%;margin-top:30px;font-size:14px;}
+  .br{display:none;}
+  .BrandSection_02{padding:10px;padding-bottom:50px;}
+}
+
+
+@media (max-width: 330px) {
+  .ps2-present{color:#c9c9c9;font-size:16px;}
+  .ps2-p{width:100%;margin-top:30px;font-size:14px;}
+  .br{display:none;}
+}
+
