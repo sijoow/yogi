@@ -295,3 +295,8 @@ h1.logo{
 }
 
 
+
+.slidebar nav ul li a.active,
+.inner #header ul li a.active {
+  color: #3ea6ff !important;
+}

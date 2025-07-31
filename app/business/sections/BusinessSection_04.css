@@ -1,6 +1,4 @@
-/* BusinessSection_04.css */
-
-/* ─── SECTION: 기본 레이아웃 & 배경 ───────────────────────────────── */
+/* ─── SECTION 기본 ───────────────────────────────── */
 .BusinessSection_04 {
   position: relative;
   width: 100%;
@@ -13,122 +11,140 @@
   overflow: hidden;
 }
 
-/* ─── 타이틀 ───────────────────────────────── */
+/* ─── TITLE ──────────────────────────────────────── */
 .bs4-title {
   font-family: 'Anton', sans-serif;
-  margin: 0 0 2rem;
-
+  font-size: 2.5rem;
+  color: #3da4ff;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
 }
 
-/* ─── 상단: 로고 그룹 (3) : 설명 (7) ───────────────────────────────── */
+/* ─── TOP 로고+설명 ──────────────────────────────── */
 .bs4-top {
   display: grid;
-  grid-template-columns: 3fr 7fr;  /* 3:7 비율 */
+  grid-template-columns: 3fr 7fr;
   align-items: center;
-  column-gap: 2rem;
+  gap: 2rem;
   margin-bottom: 3rem;
 }
-
-/* 로고 + × + 오르체스타 */
 .bs4-logos {
-  grid-column: 1;
   display: flex;
   align-items: center;
   gap: 1rem;
 }
 .bs4-logo {
   height: 100px;
-  width: auto;
   object-fit: contain;
 }
-.yogi{filter: brightness(0) invert();margin-left:5%;}
-.bs4-multiply {
-  color: #fff;
-}
-
-/* 설명 텍스트 */
+.yogi { filter: brightness(0) invert(1);margin-left:10px; }
+.bs4-multiply { font-size: 2rem; }
 .bs4-desc {
-  grid-column: 2;
-  margin: 0;
+  font-size: 1.1rem;
+  line-height: 1.6;
 }
 
-/* ─── 카드 그리드 ───────────────────────────────── */
+
+
+
+
+/* ─── CARD GRID ────────────────────────────────── */
 .bs4-cards {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
 }
 
-/* 연결  */
-.bs4-card {
-  background: rgba(255,255,255,0.05);
+/* ─── PROFILE CARD ─────────────────────────────── */
+.bs4-card_profile {
+  background:#061123;
+  border: 1px solid rgba(255,255,255,0.15);
   border-radius: 12px;
-  padding-top: 100%; /* 정사각형 비율 */
-  position: relative;
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+.bs4-card_profile:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.4);
+}
+
+/* Avatar */
+.bs4-card_avatar {
+  width: 180px;
+  height: 180px;
+  margin-bottom: 1rem;
+  overflow: hidden;
+  border-radius: 50%;
+}
+.bs4-card_avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Name */
+.bs4-card_name {
+  text-align:left;
+  width:100%;
+  margin: .5rem 0 1rem;
+  color: #fff;
+}
+.bs4-card_exps{
+  width:100%;
+}
+/* Experiences */
+.bs4-card_exps p {
+  width:100%;
+  margin-bottom: .5rem;
+}
+.bs4-card_period {
+  font-weight: bold;
+  color: #fff;
+}
+
+
+/* Education */
+.bs4-card_edu {
+  margin-top: 1rem;
+  width: 100%;
+}
+.bs4-card_edu strong {
+  display: block;
+  margin-bottom: .5rem;
+  color: #fff;
+}
+.bs4-card_edu p {
+
+  line-height: 1.4;
+  margin: 0 0 .5rem;
+}
+
+/* ─── 애니메이션 on scroll ───────────────────── */
+.BusinessSection_04.play .bs4-card_profile {
+  opacity: 1;
+  transform: none;
+}
+.bs4-card_profile {
   opacity: 0;
   transform: translateY(30px);
   transition: opacity .6s ease, transform .6s ease;
 }
-.BusinessSection_04.play .bs4-card:nth-child(1) {
-  opacity: 1; transform: none; transition-delay: .1s;
-}
-.BusinessSection_04.play .bs4-card:nth-child(2) {
-  opacity: 1; transform: none; transition-delay: .2s;
-}
-.BusinessSection_04.play .bs4-card:nth-child(3) {
-  opacity: 1; transform: none; transition-delay: .3s;
-}
+.BusinessSection_04.play .bs4-card_profile:nth-child(1) { transition-delay: .1s; }
+.BusinessSection_04.play .bs4-card_profile:nth-child(2) { transition-delay: .2s; }
+.BusinessSection_04.play .bs4-card_profile:nth-child(3) { transition-delay: .3s; }
 
-
-/* ─── 반응형 ───────────────────────────────── */
+/* ─── RESPONSIVE ──────────────────────────────── */
 @media (max-width: 900px) {
-  .bs4-top {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
-  .bs4-logos {
-    justify-content: center;
-    grid-column: 1;
-    margin:0 auto;
-    width:60px;
-  }
-  .bs4-desc {
-    grid-column: 1;
-  }
-  .bs4-cards {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
-  }
-  
+  .bs4-top { grid-template-columns: 1fr; text-align: center; }
+  .bs4-logos { justify-content: center; }
+  .bs4-cards { grid-template-columns: 1fr; }
 }
 
 
-/* ─── 반응형 ───────────────────────────────── */
 
-/* 900px 이하: 카드 1열 */
-@media (max-width: 900px) {
-  .bs4-cards {
-    grid-template-columns: 1fr;
-    gap: 2.5rem;
-  }
-}
-
-/* 500px 이하: 모바일 예외 조정 */
-@media (max-width: 500px) {
-  .bs4-title {
-    text-align: center;
-    margin-bottom: 4vh;
-  }
-  .bs4-avatar,
-  .bs4-logos,
-  .bs4-desc {
-    text-align: center;
-  }
-  .bs4-cards {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
-}
 
 /* ─── 폰트 크기 조정 ―───────────────────────────────── */
 
@@ -136,6 +152,9 @@
   .bs4-title{font-size:50px;color:#3da4ff;font-family: 'Anton',sans-serif;;}
   .bs4-desc{font-size:22px;}
   .bs4-logos{font-size:60px;font-weight:100;}
+
+  .bs4-card_name{font-size:25px;font-weight:600;}
+  .bs4-card_exps p{font-size:16px;}
   }
   /* 중간 스크린: 1300px 이하 (2열) */
   @media (max-width: 1300px) {
@@ -143,7 +162,8 @@
     .bs4-desc{font-size:20px;}
     .bs4-logo{height:70px;}
     .bs4-logos{font-size:60px;font-weight:100;}
-
+    .bs4-card_name{font-size:25px;font-weight:600;}
+    .bs4-card_exps p{font-size:16px;}
   }
   /* 소형 스크린: 500px 이하 (1열 + 중앙정렬) */
   @media (max-width: 900px) {
@@ -151,6 +171,8 @@
     .bs4-desc{font-size:20px;}
     .bs4-logo{height:70px;}
     .BusinessSection_04{padding:10vh 4vw;}
+    .bs4-card_name{font-size:25px;font-weight:600;}
+    .bs4-card_exps p{font-size:16px;}
   }
   
   @media (max-width: 500px) {
@@ -158,6 +180,8 @@
     .bs4-desc{font-size:18px;    margin: 0 0 6vh;}
     .bs4-logo{height:70px;}
     .BusinessSection_04{padding:10vh 4vw;}
+    .bs4-card_name{font-size:25px;font-weight:600;}
+    .bs4-card_exps p{font-size:16px;}
   }
   
   
