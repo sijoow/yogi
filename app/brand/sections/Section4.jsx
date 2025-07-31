@@ -31,9 +31,9 @@ export default function TripleChart() {
         data: {
           labels: [''],
           datasets: [
-            { label: 'EPS', data: [35.0], backgroundColor: '#2b7a4a', borderWidth: 1 },
-            { label: 'EPP', data: [39.6], backgroundColor: '#7f7f7f', borderWidth: 1 },
-            { label: 'HRF', data: [45.5], backgroundColor: '#b93f4a', borderWidth: 1 }
+            { label: 'EPS', data: [35.0], backgroundColor: '#192A44', borderWidth: 1 },
+            { label: 'EPP', data: [39.6], backgroundColor: '#66CCFF', borderWidth: 1 },
+            { label: 'HRF', data: [45.5], backgroundColor: '#2C80ED', borderWidth: 1 }
           ]
         },
         options: {
@@ -45,8 +45,7 @@ export default function TripleChart() {
           }
         }
       });
-    }
-
+    }            
     // ─── Line 차트 1 (압축강도)
     if (lineRef1.current) {
       lineChart1Ref.current = new Chart(lineRef1.current, {
@@ -54,9 +53,9 @@ export default function TripleChart() {
         data: {
           labels: ["0%", "10%", "25%", "50%", "75%", ""],
           datasets: [
-            { label: 'EPP', data: [null,10,25,49,90], borderColor: '#7f7f7f', tension: .1, borderWidth: 5 },
-            { label: 'EPS', data: [null,8,23,49,65],   borderColor: '#2b7a4a', tension: .1, borderWidth: 5 },
-            { label: 'HRF', data: [null,10,15,35,55], borderColor: '#b93f4a', tension: .1, borderWidth: 5 }
+            { label: 'EPP', data: [null,10,25,49,90], borderColor: '#192A44', tension: .1, borderWidth: 5 },
+            { label: 'EPS', data: [null,8,23,49,65],   borderColor: '#66CCFF', tension: .1, borderWidth: 5 },
+            { label: 'HRF', data: [null,10,15,35,55], borderColor: '#2C80ED', tension: .1, borderWidth: 5 }
           ]
         },
         options: {
@@ -79,9 +78,9 @@ export default function TripleChart() {
         data: {
           labels: ["", "", "", "", "", ""],
           datasets: [
-            { label: 'EPP', data: [null,0,10,20,35,50], borderColor: '#7f7f7f', tension:.1, borderWidth:5, pointRadius:0 },
-            { label: 'EPS', data: [null,0,11,16,21,26],   borderColor: '#2b7a4a', tension:.1, borderWidth:5, pointRadius:0 },
-            { label: 'HRF', data: [null,3,30,40,55,60],   borderColor: '#b93f4a', tension:.1, borderWidth:5, pointRadius:0 },
+            { label: 'EPP', data: [null,0,10,20,35,50], borderColor: '#192A44', tension:.1, borderWidth:5, pointRadius:0 },
+            { label: 'EPS', data: [null,0,11,16,21,26],   borderColor: '#66CCFF', tension:.1, borderWidth:5, pointRadius:0 },
+            { label: 'HRF', data: [null,3,30,40,55,60],   borderColor: '#2C80ED', tension:.1, borderWidth:5, pointRadius:0 },
             { label: '',    data: [null,0,10,20,30,45],   borderColor: '#7f7f7f', borderDash:[5,5], borderWidth:1, pointRadius:0 },
             { label: '',    data: [null,0,10,15,20,25],   borderColor: '#2b7a4a', borderDash:[5,5], borderWidth:1, pointRadius:0 },
             { label: '',    data: [null,0,10,30,50,70],   borderColor: '#b93f4a', borderDash:[5,5], borderWidth:1, pointRadius:0 }

@@ -128,7 +128,6 @@
   .ps3-grid {
     grid-template-columns: 1fr;
   }
-  .BrandSection_02{padding:50px;}
 }
 
 @media (max-width: 900px) {
@@ -152,16 +151,19 @@
 }
 
 @media (max-width: 900px) {
+  .BrandSection_03 {
+    padding: 4rem 1rem 1rem;
+  }
+
   .ps3-present{color:#c9c9c9;font-size:16px;}
-  .ps3-p{width:100%;margin-top:30px;font-size:14px;}
+  .ps3-p{width:100%;margin-top:30px;font-size:14px;text-align:left;}
   .br{display:none;}
 }
 
 @media (max-width: 550px) {
   .ps3-present{color:#c9c9c9;font-size:16px;}
-  .ps3-p{width:100%;margin-top:30px;font-size:14px;}
+  .ps3-p{width:100%;margin-top:30px;font-size:14px;text-align:left;}
   .br{display:none;}
-  .BrandSection_03{padding:10px;padding-bottom:50px;}
 }
 
 
